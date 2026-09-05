@@ -1,0 +1,97 @@
+/* Clone Cabinet — COLORWAY BRIDGE.
+
+   The app's components reference BRAND tokens (--rose-alloy, --electric-iris, --porcelain,
+   the permitted gradients, --shadow-card …). Every colorway skin instead publishes the 25
+   SEMANTIC aliases (--text-metal, --text-signal, --surface-canvas …). This file derives the
+   brand tokens FROM the semantic aliases, so any colorway re-skins the whole app with no
+   component change and no per-skin code.
+
+   Scoped to [data-colorway], NOT :root — see design_handoff README's "How theming is wired".
+   Ported verbatim from the design handoff's prototype/colorway-bridge.css. */
+
+[data-colorway] {
+  /* Ground used by every shadow and protection gradient — the deepest surface the active
+     colorway publishes. */
+  --shadow-ground: var(--surface-inset);
+
+  /* Type + neutrals */
+  --porcelain: var(--text-primary);
+  --porcelain-raised: var(--surface-raised);
+  --archive-ink: var(--text-inverse);
+  --iris-smoke: var(--text-tertiary);
+  --vapor: var(--line-strong);
+  --graphite: var(--line-strong);
+  --graphite-soft: var(--surface-shelf);
+
+  /* Metal. Skins publish one metal value; the "light" step is that metal lifted toward the
+     page's type colour so hover has somewhere to go. */
+  --rose-alloy: var(--text-metal);
+  --rose-alloy-light: color-mix(in oklab, var(--text-metal) 74%, var(--text-primary));
+
+  /* Signal. Never a fill larger than a chip — these are cores, edges, glows. */
+  --electric-iris: var(--text-signal);
+  --iris-core: color-mix(in oklab, var(--text-signal) 62%, var(--text-primary));
+
+  /* Semantic status. Metal carries caution; the signal carries confirmation. */
+  --oxblood: var(--surface-raised);
+  --warning: var(--text-metal);
+
+  /* Permitted gradients only: luminous signal falloff, metal sweep, protection. */
+  --grad-iris-seam: linear-gradient(180deg,
+    color-mix(in oklab, var(--text-signal) 62%, var(--shadow-ground)) 0%,
+    var(--text-signal) 50%,
+    color-mix(in oklab, var(--text-signal) 34%, var(--text-primary)) 100%);
+  --grad-iris-seam-h: linear-gradient(90deg,
+    transparent 0%, var(--text-signal) 50%, transparent 100%);
+  --grad-rose-reflection: linear-gradient(135deg,
+    color-mix(in oklab, var(--text-metal) 62%, var(--shadow-ground)) 0%,
+    var(--text-metal) 38%,
+    color-mix(in oklab, var(--text-metal) 55%, var(--text-primary)) 52%,
+    color-mix(in oklab, var(--text-metal) 70%, var(--shadow-ground)) 100%);
+  --grad-depth: linear-gradient(180deg,
+    var(--surface-inset) 0%, var(--surface-canvas) 55%, var(--surface-raised) 100%);
+  --grad-protect-top: linear-gradient(180deg,
+    color-mix(in oklab, var(--shadow-ground) 85%, transparent) 0%,
+    transparent 100%);
+  --grad-protect-bottom: linear-gradient(180deg,
+    transparent 0%,
+    color-mix(in oklab, var(--shadow-ground) 72%, transparent) 58%,
+    color-mix(in oklab, var(--shadow-ground) 96%, transparent) 100%);
+
+  /* Elevation: depth inside a dark cabinet, never lift on a light page. */
+  --shadow-card: inset 0 1px 0 color-mix(in oklab, var(--text-primary) 6%, transparent),
+                 0 12px 28px -20px color-mix(in oklab, var(--shadow-ground) 92%, transparent);
+  --shadow-sheet: 0 -18px 60px -20px color-mix(in oklab, var(--shadow-ground) 95%, transparent);
+  --shadow-inset-tray: inset 0 1px 3px color-mix(in oklab, var(--shadow-ground) 62%, transparent);
+
+  /* Glow is a separate system from shadow, reserved for the signal. */
+  --glow-iris-sm: 0 0 8px color-mix(in oklab, var(--text-signal) 50%, transparent);
+  --glow-iris-md: 0 0 16px color-mix(in oklab, var(--text-signal) 55%, transparent),
+                  0 0 40px color-mix(in oklab, var(--text-signal) 30%, transparent);
+  --glow-rose-sm: 0 0 12px color-mix(in oklab, var(--text-metal) 28%, transparent);
+
+  /* Tints the components reach for repeatedly, expressed against the active colorway's type
+     colour so they invert correctly on light skins. */
+  --tint-04: color-mix(in oklab, var(--text-primary) 4%, transparent);
+  --tint-06: color-mix(in oklab, var(--text-primary) 6%, transparent);
+  --tint-08: color-mix(in oklab, var(--text-primary) 8%, transparent);
+  --tint-10: color-mix(in oklab, var(--text-primary) 10%, transparent);
+  --tint-14: color-mix(in oklab, var(--text-primary) 14%, transparent);
+  --tint-22: color-mix(in oklab, var(--text-primary) 22%, transparent);
+}
+
+/* Light-ground colorways need the metal darkened rather than lightened, and shadows read as
+   contact shadows instead of vault depth. They also need the text ramp re-toned: on a dark
+   ground the tertiary step is a dimmed cream and reads fine, but on a near-white ground the
+   same token collapses toward unreadable at the 10-11px sizes the micro-labels and % figures
+   use. Since this system treats numbers and codes as content, the tertiary step folds into
+   secondary on light grounds — the three-step ramp becomes two, which is the right trade when
+   the third step is unreadable. Weight and tracking still separate labels from body. */
+[data-mode="day"] [data-colorway] {
+  --text-tertiary: var(--text-secondary);
+  --rose-alloy-light: color-mix(in oklab, var(--text-metal) 72%, var(--text-inverse));
+  --shadow-card: 0 1px 2px color-mix(in oklab, var(--text-primary) 5%, transparent),
+                 0 10px 24px -18px color-mix(in oklab, var(--text-primary) 18%, transparent);
+  --shadow-inset-tray: inset 0 1px 3px color-mix(in oklab, var(--text-primary) 12%, transparent);
+  --shadow-ground: var(--surface-canvas);
+}

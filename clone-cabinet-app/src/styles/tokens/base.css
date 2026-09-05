@@ -1,0 +1,136 @@
+/* Clone Cabinet — base tokens.
+   Colorway-independent: typography, spacing, radii, sizing, motion.
+   Colour lives in colorway-skins.css + colorway-bridge.css — never add a hex here.
+   Source: design_handoff_clone_cabinet_app/README.md "Design tokens" section. */
+
+:root {
+  /* Typography */
+  --font-display: "Space Grotesk", "Manrope", sans-serif;
+  --font-ui: "Inter", sans-serif;
+  --font-editorial: "Cormorant Garamond", Georgia, serif;
+  --font-mono: "IBM Plex Mono", "Space Mono", monospace;
+
+  --text-display-size: 36px;
+  --text-display-line: 40px;
+  --text-display-weight: 500;
+  --text-h1-size: 28px;
+  --text-h1-line: 32px;
+  --text-h1-weight: 600;
+  --text-h2-size: 22px;
+  --text-h2-line: 28px;
+  --text-h2-weight: 600;
+  --text-h3-size: 17px;
+  --text-h3-line: 22px;
+  --text-h3-weight: 600;
+  --text-body-size: 15px;
+  --text-body-line: 22px;
+  --text-body-weight: 400;
+  --text-compact-size: 13px;
+  --text-compact-line: 18px;
+  --text-compact-weight: 500;
+  --text-label-size: 11px;
+  --text-label-line: 14px;
+  --text-label-weight: 600;
+  --text-micro-size: 10px;
+  --text-micro-line: 14px;
+  --text-micro-weight: 400;
+
+  --track-wordmark: .16em;
+  --track-label: .08em;
+  --track-micro: .04em;
+  --track-display: -.01em;
+  --track-body: 0em;
+
+  /* Spacing scale */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+
+  --page-padding: 20px;
+  --card-gap: 12px;
+  --section-gap: 32px;
+  --editorial-gap: 48px;
+
+  /* Radii */
+  --radius-chip: 8px;
+  --radius-card: 16px;
+  --radius-sheet: 24px;
+  --radius-appicon: 23%;
+  --radius-pill: 999px;
+  --radius-inset: 4px;
+
+  /* Sizing */
+  --tap-min: 44px;
+  --control-height: 48px;
+  --control-height-sm: 36px;
+  --topbar-height: 56px;
+  --bottomnav-height: 76px;
+  --side-rail-width: 76px;
+  --content-max: 1440px;
+  --hairline: 1px;
+  --icon-sm: 16px;
+  --icon-md: 20px;
+  --icon-lg: 24px;
+
+  /* Motion — durations */
+  --dur-micro: 140ms;
+  --dur-standard: 250ms;
+  --dur-sheet: 340ms;
+  --dur-signature: 900ms;
+  --dur-press-in: 90ms;
+  --dur-press-out: 200ms;
+  --dur-nav-travel: 260ms;
+  --dur-nav-crossfade: 100ms;
+  --dur-screen-forward: 420ms;
+  --dur-screen-back: 300ms;
+  --dur-iris-decay: 420ms;
+  --dur-hero-open: 440ms;
+  --dur-toast: 2800ms;
+  --dur-proposal-ceremony: 880ms;
+  --dur-launch-hold: 1500ms;
+
+  /* Motion — easing */
+  --ease-material: cubic-bezier(.22, .61, .36, 1);
+  --ease-seam: cubic-bezier(.16, .84, .28, 1);
+  --ease-sheet: cubic-bezier(.2, .9, .24, 1);
+  --ease-standard: cubic-bezier(.22, 1, .36, 1);
+  --ease-press-in: cubic-bezier(.4, 0, 1, 1);
+
+  /* Motion — press + disabled */
+  --press-scale: .985;
+  --disabled-opacity: .38;
+
+  /* Motion — screen transition geometry */
+  --screen-forward-translate: 12px;
+  --screen-forward-scale: .988;
+  --screen-back-translate: -8px;
+  --screen-back-scale: 1.012;
+
+  --blur-glass: blur(20px) saturate(130%);
+  --grain-opacity: .04;
+}
+
+/* Reduced motion: collapse everything, drop the press scale. Honoured globally. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-micro: .01ms;
+    --dur-standard: .01ms;
+    --dur-sheet: .01ms;
+    --dur-signature: .01ms;
+    --dur-press-in: .01ms;
+    --dur-press-out: .01ms;
+    --dur-nav-travel: .01ms;
+    --dur-nav-crossfade: .01ms;
+    --dur-screen-forward: .01ms;
+    --dur-screen-back: .01ms;
+    --dur-iris-decay: .01ms;
+    --dur-hero-open: .01ms;
+    --dur-proposal-ceremony: .01ms;
+    --press-scale: 1;
+  }
+}

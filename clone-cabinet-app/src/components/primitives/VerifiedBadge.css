@@ -1,0 +1,19 @@
+.cc-verified-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: var(--radius-pill);
+  background: var(--rose-alloy);
+  color: var(--surface-canvas);
+}
+
+.cc-verified-badge--sm {
+  width: 20px;
+  height: 20px;
+}
+
+.cc-verified-badge--md {
+  width: 24px;
+  height: 24px;
+}

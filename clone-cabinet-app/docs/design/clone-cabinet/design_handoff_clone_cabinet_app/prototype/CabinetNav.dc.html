@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html data-colorway="riviera-cobalt" data-mode="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/clone-cabinet-design-system-9042f5dd-471f-465e-a61a-eb196a3265bf/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/clone-cabinet-design-system-9042f5dd-471f-465e-a61a-eb196a3265bf/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/clone-cabinet-design-system-9042f5dd-471f-465e-a61a-eb196a3265bf/tokens/modes.css">
+  <link rel="stylesheet" href="_ds/clone-cabinet-design-system-9042f5dd-471f-465e-a61a-eb196a3265bf/tokens/colorways.css">
+  <link rel="stylesheet" href="_ds/clone-cabinet-design-system-9042f5dd-471f-465e-a61a-eb196a3265bf/tokens/colorway-skins.css">
+  <link rel="stylesheet" href="riviera-cobalt.css">
+  <link rel="stylesheet" href="_ds/clone-cabinet-design-system-9042f5dd-471f-465e-a61a-eb196a3265bf/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/clone-cabinet-design-system-9042f5dd-471f-465e-a61a-eb196a3265bf/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/clone-cabinet-design-system-9042f5dd-471f-465e-a61a-eb196a3265bf/tokens/elevation.css">
+  <link rel="stylesheet" href="_ds/clone-cabinet-design-system-9042f5dd-471f-465e-a61a-eb196a3265bf/tokens/motion.css">
+  <link rel="stylesheet" href="_ds/clone-cabinet-design-system-9042f5dd-471f-465e-a61a-eb196a3265bf/tokens/base.css">
+  <link rel="stylesheet" href="_ds/clone-cabinet-design-system-9042f5dd-471f-465e-a61a-eb196a3265bf/styles.css">
+  <script src="_ds/clone-cabinet-design-system-9042f5dd-471f-465e-a61a-eb196a3265bf/_ds_bundle.js"></script>
+</helmet>
+
+<nav aria-label="Primary" style="position:sticky;bottom:0;z-index:20;height:var(--bottomnav-height);display:flex;align-items:stretch;background:var(--surface-nav);backdrop-filter:var(--blur-glass);-webkit-backdrop-filter:var(--blur-glass);border-top:1px solid var(--line-divider)">
+  <div style="position:absolute;inset:0;pointer-events:none;overflow:hidden">
+    <div style="{{ chamberFrame }}">
+      <div style="{{ chamberBox }}">
+        <div style="{{ chamberCore }}"></div>
+      </div>
+    </div>
+  </div>
+
+  <sc-for list="{{ items }}" as="d" hint-placeholder-count="5">
+    <button type="button" onClick="{{ d.pick }}" aria-label="{{ d.label }}" aria-current="{{ d.current }}" style="position:relative;z-index:1;flex:1;min-width:var(--tap-min);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;background:none;border:0;padding:var(--space-2) 0;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:transform 90ms cubic-bezier(.4,0,1,1)" style-active="transform:scale(.985)">
+      <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.Icon" name="{{ d.glyph }}" size="{{ d.size }}" mode="{{ d.mode }}" tone="{{ d.tone }}" hint-size="22px,22px"></x-import>
+      <span style="font-family:var(--font-ui);font-size:var(--type-micro-size);font-weight:600;letter-spacing:var(--track-label);text-transform:uppercase;transition:color 200ms cubic-bezier(.22,1,.36,1);color:{{ d.color }}">{{ d.label }}</span>
+    </button>
+  </sc-for>
+</nav>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:390,&quot;height&quot;:76},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;discover&quot;,&quot;lineage&quot;,&quot;cabinet&quot;,&quot;trade&quot;,&quot;you&quot;],&quot;default&quot;:&quot;cabinet&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;mode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;dark&quot;,&quot;light&quot;],&quot;default&quot;:&quot;dark&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;onChange&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;(id: string) =&gt; void&quot;}}">
+const DESTS = [
+  { id: "discover", label: "Discover", glyph: "discover" },
+  { id: "lineage", label: "Lineage", glyph: "scent-lineage" },
+  { id: "cabinet", label: "Cabinet", glyph: "collection" },
+  { id: "trade", label: "Trade", glyph: "connect" },
+  { id: "you", label: "You", glyph: "private-archive" }
+];
+
+class Component extends DCLogic {
+  constructor(p) {
+    super(p);
+    this.state = { idx: this.idxOf(p && p.active), op: 1, slide: true, flash: 0 };
+  }
+  idxOf(id) {
+    const i = DESTS.findIndex((d) => d.id === id);
+    return i < 0 ? 2 : i;
+  }
+  componentDidUpdate(prev) {
+    if (prev.active === this.props.active) return;
+    const next = this.idxOf(this.props.active);
+    if (next === this.state.idx) return;
+    const far = Math.abs(next - this.state.idx) > 1;
+    this.pulse();
+    if (!far) { this.setState({ idx: next, slide: true, op: 1 }); return; }
+    // non-adjacent: crossfade and reposition rather than sliding past every tab
+    this.setState({ op: 0, slide: false });
+    clearTimeout(this._t);
+    this._t = setTimeout(() => this.setState({ idx: next, op: 1 }), 100);
+  }
+  pulse() {
+    clearTimeout(this._f);
+    this.setState({ flash: 1 });
+    this._f = setTimeout(() => this.setState({ flash: 0 }), 60);
+  }
+  componentWillUnmount() { clearTimeout(this._t); clearTimeout(this._f); }
+  renderVals() {
+    const s = this.state, mode = this.props.mode || "dark";
+    const active = DESTS[s.idx].id;
+    const move = s.slide
+      ? "transform 260ms cubic-bezier(.22,1,.36,1), opacity 160ms linear"
+      : "opacity 100ms linear";
+    return {
+      chamberFrame:
+        "position:absolute;top:7px;bottom:7px;left:0;width:20%;display:flex;align-items:center;justify-content:center;" +
+        "opacity:" + s.op + ";transition:" + move + ";transform:translateX(" + s.idx * 100 + "%)",
+      chamberBox:
+        "position:relative;width:58px;height:100%;border-radius:12px;background:var(--surface-raised);" +
+        "border:1px solid var(--line-metal);box-shadow:inset 0 1px 0 rgba(249,250,252,.10)",
+      chamberCore:
+        "position:absolute;top:-1px;left:50%;transform:translateX(-50%);width:26px;height:1px;" +
+        "background:var(--iris-core, #62B8FF);transition:opacity 420ms cubic-bezier(.22,1,.36,1),box-shadow 420ms cubic-bezier(.22,1,.36,1);" +
+        "opacity:" + (s.flash ? 1 : 0.45) + ";box-shadow:0 0 " + (s.flash ? 14 : 6) + "px rgba(0,140,255," + (s.flash ? 0.28 : 0.14) + ")",
+      items: DESTS.map((d) => {
+        const on = d.id === active;
+        const center = d.id === "cabinet";
+        return {
+          label: d.label, glyph: d.glyph, mode: mode,
+          current: on ? "page" : undefined,
+          size: center ? 24 : 22,
+          tone: on ? "primary" : "tertiary",
+          color: on ? "var(--text-metal)" : center ? "var(--text-secondary)" : "var(--text-tertiary)",
+          pick: () => this.props.onChange && this.props.onChange(d.id)
+        };
+      })
+    };
+  }
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+/* Clone Cabinet — colorway skins.
+   Each colorway publishes the same 25 semantic aliases (--surface-canvas, --text-metal,
+   --text-signal, --line-metal, …). colorway-bridge.css derives the app's brand tokens from
+   these, so adding a new colorway means adding one block here — no component changes.
+
+   Only Riviera Cobalt (board 12) ships with this handoff. The other 12 boards referenced in
+   design_handoff_clone_cabinet_app/README.md live in a design-system bundle that was not
+   included in the package — do not fabricate their values. Add them here, verbatim from the
+   brand board, when they're available.
+
+   Night is the default skin, defined directly on [data-colorway]. Day (only published for
+   Riviera Cobalt and Soft Tech Porcelain) overrides under [data-mode="day"] — see
+   riviera-cobalt-day.css. */
+
+[data-colorway="riviera-cobalt"] {
+  /* Board 12 — six published hexes, verbatim. */
+  --rc-midnight-navy: #071223;
+  --rc-deep-cobalt: #0A1E3F;
+  --rc-sea-glass-blue: #2DB4BF;
+  --rc-bright-electric-blue: #008CFF;
+  --rc-champagne-metal: #E6D6B8;
+  --rc-crystal-white: #F9FAFC;
+
+  /* Night semantic aliases — published verbatim on the board. */
+  --surface-canvas: var(--rc-midnight-navy);
+  --surface-raised: var(--rc-deep-cobalt);
+  --surface-shelf: #0C2A54;
+  --surface-inset: #050D19;
+  --surface-nav: rgba(10, 30, 63, .9);
+  --surface-glass: rgba(249, 250, 252, .06);
+  --surface-glass-strong: rgba(249, 250, 252, .11);
+  --surface-scrim: rgba(7, 18, 35, .8);
+
+  --text-primary: var(--rc-crystal-white);
+  --text-secondary: #B4C2D6;
+  --text-tertiary: #7B8CA6;
+  --text-metal: var(--rc-champagne-metal);
+  --text-signal: var(--rc-sea-glass-blue);
+  --text-inverse: var(--rc-midnight-navy);
+
+  --line-divider: rgba(249, 250, 252, .12);
+  --line-strong: #123561;
+  --line-metal: rgba(230, 214, 184, .55);
+  --line-signal: rgba(0, 140, 255, .6);
+
+  --action-primary-bg: var(--rc-champagne-metal);
+  --action-primary-fg: var(--rc-midnight-navy);
+  --action-secondary-border: rgba(249, 250, 252, .22);
+  --action-secondary-fg: var(--rc-crystal-white);
+
+  --focus-ring: 0 0 0 1px var(--rc-midnight-navy), 0 0 0 3px rgba(0, 140, 255, .65);
+  --glow-signal: 0 0 20px rgba(0, 140, 255, .5);
+
+  color-scheme: dark;
+}

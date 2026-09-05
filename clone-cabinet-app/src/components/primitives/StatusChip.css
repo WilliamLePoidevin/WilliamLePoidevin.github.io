@@ -1,0 +1,59 @@
+.cc-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  padding: 0 var(--space-12);
+  border-radius: var(--radius-chip);
+  border: var(--hairline) solid var(--line-divider);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: var(--text-label-size);
+  line-height: var(--text-label-line);
+  font-weight: var(--text-label-weight);
+  text-transform: uppercase;
+  letter-spacing: var(--track-label);
+  white-space: nowrap;
+  transition: transform var(--dur-press-out) var(--ease-standard),
+    background-color var(--dur-standard) var(--ease-material),
+    border-color var(--dur-standard) var(--ease-material),
+    color var(--dur-standard) var(--ease-material);
+}
+
+button.cc-chip:active {
+  transform: scale(var(--press-scale));
+  transition-duration: var(--dur-press-in);
+  transition-timing-function: var(--ease-press-in);
+}
+
+.cc-chip--selected {
+  border-color: var(--line-metal);
+  color: var(--rose-alloy);
+  background: var(--tint-06);
+}
+
+.cc-chip--cabinet {
+  border-color: var(--line-metal);
+  color: var(--rose-alloy);
+}
+
+.cc-chip--warning {
+  border-color: var(--line-metal);
+  color: var(--warning);
+}
+
+.cc-chip--signal {
+  border-color: var(--line-signal);
+  color: var(--electric-iris);
+}
+
+.cc-chip--success {
+  border-color: var(--line-signal);
+  color: var(--text-signal);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button.cc-chip:active {
+    transform: none;
+  }
+}

@@ -1,0 +1,24 @@
+.cc-toast {
+  display: flex;
+  align-items: center;
+  height: var(--control-height);
+  padding: 0 var(--space-16);
+  border-radius: var(--radius-card);
+  background: var(--surface-raised);
+  border: var(--hairline) solid var(--line-divider);
+  box-shadow: var(--shadow-card);
+  color: var(--text-primary);
+  font-size: var(--text-compact-size);
+  line-height: var(--text-compact-line);
+  animation: cc-sheet-rise var(--dur-sheet) var(--ease-sheet) both;
+}
+
+.cc-toast--success {
+  border-color: var(--line-signal);
+  color: var(--text-signal);
+}
+
+.cc-toast--error {
+  border-color: var(--line-metal);
+  color: var(--warning);
+}

@@ -1,0 +1,2180 @@
+<!DOCTYPE html>
+<html data-mode="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@200;300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&display=swap">
+<link rel="stylesheet" href="_ds/clone-cabinet-design-system-9042f5dd-471f-465e-a61a-eb196a3265bf/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/clone-cabinet-design-system-9042f5dd-471f-465e-a61a-eb196a3265bf/tokens/colors.css">
+<link rel="stylesheet" href="_ds/clone-cabinet-design-system-9042f5dd-471f-465e-a61a-eb196a3265bf/tokens/modes.css">
+<link rel="stylesheet" href="_ds/clone-cabinet-design-system-9042f5dd-471f-465e-a61a-eb196a3265bf/tokens/colorways.css">
+<link rel="stylesheet" href="_ds/clone-cabinet-design-system-9042f5dd-471f-465e-a61a-eb196a3265bf/tokens/colorway-skins.css">
+<link rel="stylesheet" href="_ds/clone-cabinet-design-system-9042f5dd-471f-465e-a61a-eb196a3265bf/tokens/mark.css">
+<link rel="stylesheet" href="_ds/clone-cabinet-design-system-9042f5dd-471f-465e-a61a-eb196a3265bf/tokens/typography.css">
+<link rel="stylesheet" href="_ds/clone-cabinet-design-system-9042f5dd-471f-465e-a61a-eb196a3265bf/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/clone-cabinet-design-system-9042f5dd-471f-465e-a61a-eb196a3265bf/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/clone-cabinet-design-system-9042f5dd-471f-465e-a61a-eb196a3265bf/tokens/motion.css">
+<link rel="stylesheet" href="_ds/clone-cabinet-design-system-9042f5dd-471f-465e-a61a-eb196a3265bf/tokens/base.css">
+<link rel="stylesheet" href="riviera-cobalt.css">
+<link rel="stylesheet" href="colorway-bridge.css">
+<script src="_ds/clone-cabinet-design-system-9042f5dd-471f-465e-a61a-eb196a3265bf/_ds_bundle.js"></script>
+<script src="cc-data.js"></script>
+<style>
+body{margin:0;background:var(--desk-far);color:var(--porcelain);font-family:var(--font-ui)}
+a{color:var(--rose-alloy-light)}a:hover{color:var(--rose-alloy)}
+.cc-scroll{overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none}
+.cc-scroll::-webkit-scrollbar{width:0;height:0}
+.cc-hrow{display:flex;gap:12px;overflow-x:auto;scrollbar-width:none;padding:0 20px}
+.cc-hrow::-webkit-scrollbar{height:0}
+.cc-tap{background:none;border:0;cursor:pointer;color:inherit;font-family:inherit}
+@keyframes cc-launch{0%{transform:scaleY(0);opacity:0}60%{opacity:1}100%{transform:scaleY(1);opacity:1}}
+@keyframes cc-fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes cc-core{0%,100%{opacity:.72;filter:blur(0)}50%{opacity:1;filter:blur(.4px)}}
+@keyframes cc-sheen{0%{transform:translateX(-130%) skewX(-16deg)}100%{transform:translateX(240%) skewX(-16deg)}}
+@keyframes cc-open{from{clip-path:inset(0 50% 0 50%);opacity:.2}to{clip-path:inset(0 0 0 0);opacity:1}}
+@keyframes cc-shift-r{from{transform:translateX(-46px);opacity:.4}to{transform:translateX(0);opacity:1}}
+@keyframes cc-shift-l{from{transform:translateX(46px);opacity:.4}to{transform:translateX(0);opacity:1}}
+@keyframes cc-seam{from{transform:translateX(-50%) scaleY(0);opacity:0}to{transform:translateX(-50%) scaleY(1);opacity:1}}
+@keyframes cc-drift{0%{opacity:.5;transform:translate3d(0,0,0)}50%{opacity:.8;transform:translate3d(0,-6px,0)}100%{opacity:.5;transform:translate3d(0,0,0)}}
+@keyframes cc-plane-a{from{opacity:0;transform:translateY(12px) scale(.988)}60%{opacity:1}to{opacity:1;transform:none}}
+@keyframes cc-plane-b{from{opacity:0;transform:translateY(12px) scale(.988)}60%{opacity:1}to{opacity:1;transform:none}}
+@keyframes cc-plane-back-a{from{opacity:0;transform:translateY(-8px) scale(1.012)}60%{opacity:1}to{opacity:1;transform:none}}
+@keyframes cc-plane-back-b{from{opacity:0;transform:translateY(-8px) scale(1.012)}60%{opacity:1}to{opacity:1;transform:none}}
+button,.cc-tap{transition:transform 90ms cubic-bezier(.4,0,1,1),color 180ms cubic-bezier(.22,1,.36,1),border-color 180ms cubic-bezier(.22,1,.36,1),background-color 180ms cubic-bezier(.22,1,.36,1)}
+button:active,.cc-tap:active{transform:scale(.985)}
+button:not(:active){transition-duration:200ms,180ms,180ms,180ms;transition-timing-function:cubic-bezier(.22,1,.36,1)}
+@media (prefers-reduced-motion:reduce){button:active,.cc-tap:active{transform:none}}
+.cc-wordmark{font-family:"Michroma","Space Grotesk",sans-serif!important;font-weight:400!important}
+.cc-scroll{scroll-behavior:smooth}
+.cc-grain{position:absolute;inset:0;pointer-events:none;opacity:.03;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");background-size:140px 140px}
+</style>
+</helmet>
+
+<div data-mode="{{ mode }}" data-colorway="{{ colorway }}" style="position:relative;min-height:100vh;background:radial-gradient(120% 90% at 50% -10%,var(--desk-near) 0%,var(--desk-mid) 46%,var(--desk-far) 100%);display:flex;flex-direction:column;align-items:center;gap:18px;padding:28px 20px 44px;overflow:hidden">
+  <div style="position:absolute;inset:0;background-image:url('assets/hero-macro.png');background-size:cover;background-position:center 20%;opacity:.07;filter:saturate(.7) contrast(1.05);pointer-events:none"></div>
+  <div style="position:absolute;inset:0;background:radial-gradient(58% 46% at 50% 40%,color-mix(in oklab,var(--shadow-ground) 35%,transparent) 0%,color-mix(in oklab,var(--shadow-ground) 96%,transparent) 100%);pointer-events:none"></div>
+  <div style="position:absolute;left:50%;top:0;width:2px;height:190px;transform:translateX(-50%);background:var(--grad-iris-seam);opacity:.5;filter:blur(.3px);animation:cc-core 4.2s var(--ease-in-out) infinite;pointer-events:none"></div>
+  <div class="cc-grain"></div>
+
+  <sc-if value="{{ showChrome }}" hint-placeholder-val="{{ true }}">
+  <div style="position:relative;z-index:2;display:flex;align-items:center;gap:18px;width:100%;max-width:1180px;justify-content:space-between;flex-wrap:wrap">
+    <div style="display:flex;align-items:baseline;gap:12px">
+      <span class="cc-wordmark" style="font-size:11px;letter-spacing:.14em;white-space:nowrap;color:var(--porcelain)">Clone Cabinet</span>
+      <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:.04em;color:var(--iris-smoke)">PROTOTYPE / {{ screenCode }}</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px">
+      <button class="cc-tap" onClick="{{ toggleMode }}" style="height:32px;padding:0 12px;border:1px solid color-mix(in oklab,var(--text-primary) 14.0%,transparent);border-radius:8px;white-space:nowrap;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--iris-smoke)">{{ modeLabel }}</button>
+      <button class="cc-tap" onClick="{{ toggleWide }}" style="height:32px;padding:0 12px;border:1px solid color-mix(in oklab,var(--text-primary) 14.0%,transparent);border-radius:8px;white-space:nowrap;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--iris-smoke)">{{ wideLabel }}</button>
+      <button class="cc-tap" onClick="{{ restart }}" style="height:32px;padding:0 12px;border:1px solid color-mix(in oklab,var(--rose-alloy) 40%,transparent);border-radius:8px;white-space:nowrap;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--rose-alloy-light)">Restart flow</button>
+    </div>
+  </div>
+  </sc-if>
+
+  <div style="position:relative;z-index:2;width:{{ deviceW }}px;height:{{ deviceH }}px;max-width:100%;border-radius:{{ deviceRadius }}px;padding:1px;background:linear-gradient(160deg,color-mix(in oklab,var(--rose-alloy-light) 55%,transparent) 0%,color-mix(in oklab,var(--rose-alloy) 18%,transparent) 26%,color-mix(in oklab,var(--text-primary) 6%,transparent) 52%,color-mix(in oklab,var(--rose-alloy) 42%,transparent) 100%);box-shadow:0 60px 140px -50px #000,0 0 0 1px color-mix(in oklab,var(--shadow-ground) 90%,transparent),0 0 90px -30px color-mix(in oklab,var(--electric-iris) 28.000000000000004%,transparent);overflow:hidden;flex:none">
+    <div data-colorway="{{ colorway }}" style="position:relative;width:100%;height:100%;display:flex;flex-direction:{{ shellDir }};overflow:hidden;border-radius:{{ innerRadius }}px;background:var(--surface-canvas);color:var(--text-primary);font-family:var(--font-ui);box-shadow:inset 0 1px 0 color-mix(in oklab,var(--text-primary) 8%,transparent),inset 0 -60px 120px -60px color-mix(in oklab,var(--shadow-ground) 35%,transparent)">
+
+      <sc-if value="{{ wide }}" hint-placeholder-val="{{ false }}">
+        <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.SideRail" active="{{ navActive }}" onChange="{{ navChange }}" mode="{{ glyphMode }}" hint-size="76px,100%"></x-import>
+      </sc-if>
+
+      <div style="position:relative;flex:1;display:flex;flex-direction:column;min-width:0;min-height:0">
+
+        <sc-if value="{{ showStatusBar }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 22px 2px;flex:none">
+            <span style="font-family:var(--font-ui);font-size:12px;font-weight:600;color:var(--text-primary)">9:41</span>
+            <div style="display:flex;align-items:center;gap:5px">
+              <span style="width:16px;height:8px;border-radius:2px;background:var(--text-primary);opacity:.85;display:block"></span>
+              <span style="width:10px;height:8px;border-radius:2px;background:var(--text-primary);opacity:.55;display:block"></span>
+              <span style="width:22px;height:9px;border-radius:3px;border:1px solid var(--text-primary);opacity:.7;display:block"></span>
+            </div>
+          </div>
+        </sc-if>
+
+        <div class="cc-scroll" style="flex:1;min-height:0">
+          <div style="max-width:{{ contentMax }};margin:0 auto;{{ screenAnim }}">
+
+            <sc-if value="{{ isLaunch }}" hint-placeholder-val="{{ false }}">
+              <div style="position:relative;height:{{ innerH }}px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;background:var(--grad-depth);overflow:hidden">
+                <div style="position:absolute;inset:0;background-image:url('assets/geometry-process.png');background-size:220%;background-position:center;opacity:.07;pointer-events:none"></div>
+                <div style="position:absolute;left:50%;top:0;bottom:0;width:1px;transform:translateX(-50%);background:linear-gradient(180deg,transparent,color-mix(in oklab,var(--text-primary) 9%,transparent),transparent);pointer-events:none"></div>
+                <div style="position:relative;display:grid;place-items:center;animation:cc-open 1100ms var(--ease-seam) both">
+                  <span style="position:absolute;width:150px;height:150px;background:radial-gradient(closest-side,color-mix(in oklab,var(--electric-iris) 24%,transparent) 0%,transparent 100%);filter:blur(10px);pointer-events:none"></span>
+                  <span style="position:absolute;width:34px;height:170px;background:radial-gradient(closest-side,color-mix(in oklab,var(--electric-iris) 26%,transparent) 0%,transparent 100%);filter:blur(5px);pointer-events:none"></span>
+                  <span style="position:absolute;width:2px;height:148px;background:linear-gradient(180deg,transparent,var(--iris-core) 46%,transparent);animation:cc-launch 900ms cubic-bezier(.22,1,.36,1) both,cc-core 4.2s var(--ease-in-out) 900ms infinite"></span>
+                  <img src="assets/riviera/logo-mark.png" alt="Clone Cabinet" style="position:relative;width:132px;height:auto;display:block;filter:drop-shadow(0 18px 34px color-mix(in oklab,var(--shadow-ground) 70%,transparent)) drop-shadow(0 0 26px color-mix(in oklab,var(--electric-iris) 18%,transparent))">
+                </div>
+                <div style="position:relative;text-align:center;display:flex;flex-direction:column;gap:14px;animation:cc-fade 700ms var(--ease-material) 260ms both">
+                  <span class="cc-wordmark" style="font-size:17px;letter-spacing:.2em;color:var(--porcelain)">Clone Cabinet</span>
+                  <span style="font-family:var(--font-ui);font-size:9px;font-weight:500;letter-spacing:.34em;text-transform:uppercase;color:var(--iris-smoke)">Opening the cabinet</span>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isWelcome }}" hint-placeholder-val="{{ false }}">
+              <div style="position:relative;min-height:{{ innerH }}px;display:flex;flex-direction:column;padding:0 20px 28px;background:var(--grad-depth);animation:cc-fade 420ms var(--ease-material) both;overflow:hidden">
+                <div style="position:absolute;left:-30%;top:-10%;width:160%;height:52%;background-image:url('assets/bottles/hero-macro.png');background-size:cover;background-position:center 30%;opacity:.22;filter:saturate(.85);mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.5) 58%,transparent 100%);-webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.5) 58%,transparent 100%);pointer-events:none"></div>
+                <div style="position:relative;flex:0 0 auto;padding:56px 0 0;display:flex;flex-direction:column;align-items:center;gap:18px">
+                  <img src="assets/riviera/logo-stacked.png" alt="Clone Cabinet" style="width:248px;height:auto;display:block;filter:drop-shadow(0 20px 40px color-mix(in oklab,var(--shadow-ground) 66%,transparent))">
+                </div>
+                <div style="position:relative;flex:1;display:flex;flex-direction:column;justify-content:center;gap:14px;padding:36px 0">
+                  <span style="width:44px;height:1px;background:var(--grad-iris-seam-h);display:block"></span>
+                  <h1 style="margin:0;font-family:var(--font-display);font-size:34px;line-height:39px;font-weight:300;letter-spacing:-.015em;color:var(--text-primary);text-wrap:pretty">Your world of fragrance, <em style="font-family:var(--font-editorial);font-style:italic;font-weight:400;color:var(--rose-alloy-light)">beautifully kept.</em></h1>
+                  <p style="margin:0;font-size:15px;line-height:22px;color:var(--text-secondary);max-width:34ch">Catalogue what you own. Trace where a scent came from. Trade with collectors whose condition notes you can trust.</p>
+                  <div style="display:flex;gap:20px;padding-top:6px">
+                    <span class="cc-micro">DISCOVER</span><span class="cc-micro">LINEAGE</span><span class="cc-micro">CABINET</span><span class="cc-micro">TRADE</span>
+                  </div>
+                </div>
+                <div style="position:relative;display:flex;flex-direction:column;gap:12px">
+                  <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.Button" full="{{ true }}" onClick="{{ startOnboarding }}" hint-size="100%,48px">Enter the Cabinet</x-import>
+                  <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.Button" variant="secondary" full="{{ true }}" onClick="{{ startOnboarding }}" hint-size="100%,48px">Create an account</x-import>
+                  <div style="display:flex;align-items:center;gap:12px;padding:6px 0">
+                    <span style="flex:1;height:1px;background:var(--line-divider)"></span>
+                    <span class="cc-micro">OR CONTINUE WITH</span>
+                    <span style="flex:1;height:1px;background:var(--line-divider)"></span>
+                  </div>
+                  <div style="display:flex;gap:8px">
+                    <button class="cc-tap" onClick="{{ startOnboarding }}" style="flex:1;height:44px;border:1px solid var(--line-divider);border-radius:8px;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;color:var(--text-secondary)">Apple</button>
+                    <button class="cc-tap" onClick="{{ startOnboarding }}" style="flex:1;height:44px;border:1px solid var(--line-divider);border-radius:8px;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;color:var(--text-secondary)">Google</button>
+                    <button class="cc-tap" onClick="{{ startOnboarding }}" style="flex:1;height:44px;border:1px solid var(--line-divider);border-radius:8px;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;color:var(--text-secondary)">Email</button>
+                  </div>
+                  <div style="display:flex;justify-content:center;gap:16px;padding-top:4px">
+                    <span class="cc-micro">PRIVACY</span><span class="cc-micro">TERMS</span>
+                  </div>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isOnboard }}" hint-placeholder-val="{{ false }}">
+              <div style="min-height:{{ innerH }}px;display:flex;flex-direction:column;padding:24px 20px 28px;gap:24px">
+                <div style="display:flex;align-items:center;justify-content:space-between">
+                  <div style="display:flex;gap:6px">
+                    <sc-for list="{{ obChambers }}" as="c" hint-placeholder-count="4">
+                      <span style="width:26px;height:10px;border-radius:2px;border:1px solid {{ c.border }};background:{{ c.fill }};display:block"></span>
+                    </sc-for>
+                  </div>
+                  <span class="cc-micro">STEP {{ obStepLabel }} / 4</span>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:6px">
+                  <h1 style="margin:0;font-family:var(--font-display);font-size:26px;line-height:32px;font-weight:600;color:var(--text-primary)">{{ obTitle }}</h1>
+                  <p style="margin:0;font-size:14px;line-height:20px;color:var(--text-secondary)">{{ obNote }}</p>
+                </div>
+
+                <sc-if value="{{ obIsLevel }}" hint-placeholder-val="{{ true }}">
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                    <sc-for list="{{ obLevels }}" as="lv" hint-placeholder-count="4">
+                      <button class="cc-tap" onClick="{{ lv.pick }}" style="text-align:left;padding:16px;border-radius:16px;border:1px solid {{ lv.border }};background:{{ lv.bg }};box-shadow:var(--shadow-card);min-height:112px;display:flex;flex-direction:column;justify-content:space-between;gap:10px">
+                        <span style="width:2px;height:22px;background:{{ lv.seam }};display:block"></span>
+                        <span>
+                          <span style="display:block;font-family:var(--font-display);font-size:17px;font-weight:600;color:var(--text-primary)">{{ lv.label }}</span>
+                          <span style="display:block;font-family:var(--font-mono);font-size:10px;letter-spacing:.04em;color:var(--text-tertiary);margin-top:4px">{{ lv.note }}</span>
+                        </span>
+                      </button>
+                    </sc-for>
+                  </div>
+                </sc-if>
+
+                <sc-if value="{{ obIsChips }}" hint-placeholder-val="{{ false }}">
+                  <div style="display:flex;flex-wrap:wrap;gap:8px">
+                    <sc-for list="{{ obChips }}" as="ch" hint-placeholder-count="8">
+                      <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.StatusChip" selected="{{ ch.selected }}" onClick="{{ ch.toggle }}" hint-size="auto,32px">{{ ch.label }}</x-import>
+                    </sc-for>
+                  </div>
+                </sc-if>
+
+                <sc-if value="{{ obIsAction }}" hint-placeholder-val="{{ false }}">
+                  <div style="display:flex;flex-direction:column;gap:12px">
+                    <sc-for list="{{ obActions }}" as="a" hint-placeholder-count="3">
+                      <button class="cc-tap" onClick="{{ a.pick }}" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 16px;border-radius:16px;border:1px solid var(--line-divider);background:var(--surface-raised);box-shadow:var(--shadow-card);min-height:64px;text-align:left">
+                        <span>
+                          <span style="display:block;font-family:var(--font-display);font-size:16px;font-weight:600;color:var(--text-primary)">{{ a.label }}</span>
+                          <span style="display:block;font-family:var(--font-mono);font-size:10px;letter-spacing:.04em;color:var(--text-tertiary);margin-top:3px">{{ a.note }}</span>
+                        </span>
+                        <span style="font-family:var(--font-mono);font-size:14px;color:var(--text-metal)">&#8594;</span>
+                      </button>
+                    </sc-for>
+                  </div>
+                </sc-if>
+
+                <div style="margin-top:auto;display:flex;gap:10px">
+                  <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.Button" variant="quiet" onClick="{{ obBack }}" hint-size="auto,48px">Back</x-import>
+                  <div style="flex:1">
+                    <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.Button" full="{{ true }}" onClick="{{ obNext }}" hint-size="100%,48px">{{ obNextLabel }}</x-import>
+                  </div>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isDiscover }}" hint-placeholder-val="{{ true }}">
+              <div style="animation:cc-fade 360ms var(--ease-material) both">
+                <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.TopBar" title="Discover" eyebrow="{{ dateLine }}" actions="{{ discoverActions }}" hint-size="100%,56px"></x-import>
+
+                <section style="padding:16px 20px 0">
+                  <div style="position:relative;max-height:{{ heroCap }};overflow:hidden;border-radius:18px;display:flex;box-shadow:0 30px 70px -40px #000,inset 0 1px 0 color-mix(in oklab,var(--text-primary) 8%,transparent);border:1px solid var(--line-metal)">
+                    <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.BottlePortrait" src="{{ hero.image }}" name="{{ hero.name }}" ratio="hero" overlay="{{ heroOverlay }}" hint-size="100%,300px"></x-import>
+                    <span style="position:absolute;inset:0;overflow:hidden;pointer-events:none">
+                      <span style="position:absolute;top:0;bottom:0;width:26%;background:linear-gradient(90deg,transparent,color-mix(in oklab,var(--text-primary) 11%,transparent),transparent);animation:cc-sheen 6.5s var(--ease-in-out) 1.4s infinite"></span>
+                    </span>
+                    <span class="cc-grain"></span>
+                  </div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;padding-top:12px">
+                    <button class="cc-tap" onClick="{{ heroPrev }}" style="font-family:var(--font-mono);font-size:12px;color:var(--text-tertiary);min-height:44px;padding-right:14px">&#8592;</button>
+                    <span class="cc-micro">{{ heroCounter }}</span>
+                    <button class="cc-tap" onClick="{{ heroNext }}" style="font-family:var(--font-mono);font-size:12px;color:var(--text-tertiary);min-height:44px;padding-left:14px">&#8594;</button>
+                  </div>
+                </section>
+
+                <sc-for list="{{ discoverSections }}" as="sec" hint-placeholder-count="4">
+                  <section style="margin-top:32px">
+                    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding:0 20px;margin-bottom:14px">
+                      <div style="display:flex;flex-direction:column;gap:7px">
+                        <span style="width:26px;height:1px;background:var(--rose-alloy);opacity:.7;display:block"></span>
+                        <h2 style="margin:0;font-family:var(--font-display);font-size:19px;line-height:23px;font-weight:300;letter-spacing:-.012em;color:var(--text-primary)">{{ sec.title }}</h2>
+                        <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-tertiary)">{{ sec.note }}</div>
+                      </div>
+                      <span style="font-family:var(--font-ui);font-size:9px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--text-metal);white-space:nowrap">{{ sec.action }}</span>
+                    </div>
+
+                    <sc-if value="{{ sec.isRow }}" hint-placeholder-val="{{ true }}">
+                      <div class="cc-hrow">
+                        <sc-for list="{{ sec.items }}" as="it" hint-placeholder-count="3">
+                          <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.FragranceCard" fragrance="{{ it.frag }}" variant="object" status="{{ it.status }}" onClick="{{ it.open }}" hint-size="168px,240px"></x-import>
+                        </sc-for>
+                      </div>
+                    </sc-if>
+
+                    <sc-if value="{{ sec.isRanked }}" hint-placeholder-val="{{ false }}">
+                      <div style="padding:0 20px;display:flex;flex-direction:column">
+                        <sc-for list="{{ sec.items }}" as="it" hint-placeholder-count="4">
+                          <div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--line-divider)">
+                            <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:.04em;color:var(--text-tertiary);width:18px">{{ it.rank }}</span>
+                            <div style="flex:1;min-width:0">
+                              <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.FragranceCard" fragrance="{{ it.frag }}" variant="compact" status="{{ it.status }}" onClick="{{ it.open }}" hint-size="100%,64px"></x-import>
+                            </div>
+                            <span class="cc-micro" style="color:var(--text-signal);white-space:nowrap">{{ it.signal }}</span>
+                          </div>
+                        </sc-for>
+                      </div>
+                    </sc-if>
+
+                    <sc-if value="{{ sec.isLineage }}" hint-placeholder-val="{{ false }}">
+                      <div style="padding:0 20px;display:flex;flex-direction:column;gap:12px">
+                        <sc-for list="{{ sec.items }}" as="it" hint-placeholder-count="3">
+                          <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.FragranceCard" fragrance="{{ it.frag }}" variant="lineage" onClick="{{ it.open }}" hint-size="100%,96px"></x-import>
+                        </sc-for>
+                      </div>
+                    </sc-if>
+
+                    <sc-if value="{{ sec.isGrid }}" hint-placeholder-val="{{ false }}">
+                      <div style="padding:0 20px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                        <sc-for list="{{ sec.items }}" as="it" hint-placeholder-count="4">
+                          <button class="cc-tap" onClick="{{ it.open }}" style="text-align:left;background:var(--surface-raised);border:1px solid var(--line-divider);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-card);padding:0">
+                            <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.BottlePortrait" src="{{ it.frag.image }}" name="{{ it.frag.name }}" ratio="square" radius="0" inset="{{ false }}" hint-size="100%,150px"></x-import>
+                            <span style="display:block;padding:12px">
+                              <span class="cc-label" style="color:var(--text-metal)">{{ it.frag.house }}</span>
+                              <span style="display:block;font-family:var(--font-display);font-size:13px;font-weight:600;color:var(--text-primary);margin-top:2px">{{ it.frag.name }}</span>
+                              <span class="cc-micro" style="display:block;margin-top:6px">{{ it.sub }}</span>
+                            </span>
+                          </button>
+                        </sc-for>
+                      </div>
+                    </sc-if>
+
+                    <sc-if value="{{ sec.isFollow }}" hint-placeholder-val="{{ false }}">
+                      <div style="padding:0 20px;display:flex;flex-direction:column;gap:14px">
+                        <sc-for list="{{ sec.items }}" as="it" hint-placeholder-count="3">
+                          <div style="display:flex;gap:12px;align-items:flex-start">
+                            <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.CollectorAvatar" name="{{ it.collector.name }}" level="{{ it.collector.level }}" verified="{{ it.collector.verified }}" size="{{ 40 }}" hint-size="40px,40px"></x-import>
+                            <div style="flex:1;min-width:0">
+                              <div style="font-size:13px;font-weight:600;color:var(--text-primary)">{{ it.line }}</div>
+                              <div class="cc-micro" style="margin-top:3px">{{ it.sub }}</div>
+                              <div style="margin-top:10px">
+                                <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.FragranceCard" fragrance="{{ it.frag }}" variant="compact" onClick="{{ it.open }}" hint-size="100%,64px"></x-import>
+                              </div>
+                            </div>
+                          </div>
+                        </sc-for>
+                      </div>
+                    </sc-if>
+                  </section>
+                </sc-for>
+
+                <div style="padding:36px 20px 28px;display:flex;flex-direction:column;gap:8px;align-items:center">
+                  <span class="cc-micro">DISCOVER. COLLECT. CONNECT.</span>
+                  <span class="cc-micro" style="color:var(--text-metal)">CC / 08427</span>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isDetail }}" hint-placeholder-val="{{ false }}">
+              <div style="animation:cc-open 440ms cubic-bezier(.22,1,.36,1) both,cc-fade 320ms cubic-bezier(.22,1,.36,1) both">
+                <div style="position:relative;max-height:{{ heroCap }};overflow:hidden;box-shadow:inset 0 -80px 90px -60px color-mix(in oklab,var(--shadow-ground) 90%,transparent)">
+                  <span class="cc-grain"></span>
+                  <span style="position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1"><span style="position:absolute;top:0;bottom:0;width:22%;background:linear-gradient(90deg,transparent,color-mix(in oklab,var(--text-primary) 10%,transparent),transparent);animation:cc-sheen 7s var(--ease-in-out) 1.2s infinite"></span></span>
+                  <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.BottlePortrait" src="{{ frag.image }}" name="{{ frag.name }}" ratio="hero" radius="0" inset="{{ false }}" hint-size="100%,340px"></x-import>
+                  <div style="position:absolute;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:6px 12px;background:var(--grad-protect-top)">
+                    <button class="cc-tap" onClick="{{ back }}" aria-label="Back" style="width:44px;height:44px;font-family:var(--font-mono);font-size:16px;color:var(--porcelain)">&#8592;</button>
+                    <div style="display:flex">
+                      <button class="cc-tap" onClick="{{ shareFrag }}" aria-label="Share" style="width:44px;height:44px;font-family:var(--font-mono);font-size:14px;color:var(--porcelain)">&#8599;</button>
+                      <button class="cc-tap" onClick="{{ moreFrag }}" aria-label="More" style="width:44px;height:44px;font-family:var(--font-mono);font-size:16px;color:var(--porcelain)">&#8943;</button>
+                    </div>
+                  </div>
+                  <div style="position:absolute;left:0;right:0;bottom:0;padding:20px;background:var(--grad-protect-bottom)">
+                    <div style="font-family:var(--font-ui);font-size:9px;font-weight:500;letter-spacing:.34em;text-transform:uppercase;color:var(--rose-alloy-light)">{{ frag.house }}</div>
+                    <h1 style="margin:7px 0 0;font-family:var(--font-display);font-size:30px;line-height:33px;font-weight:300;letter-spacing:-.018em;color:var(--porcelain)">{{ frag.name }}</h1>
+                    <div class="cc-micro" style="margin-top:6px;color:var(--text-secondary)">{{ detailMeta }}</div>
+                  </div>
+                </div>
+
+                <div style="padding:16px 20px 0;display:flex;flex-direction:column;gap:12px">
+                  <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+                    <sc-if value="{{ hasStatus }}" hint-placeholder-val="{{ true }}">
+                      <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.StatusChip" tone="cabinet" hint-size="auto,26px">{{ statusLabel }}</x-import>
+                    </sc-if>
+                    <sc-if value="{{ frag.discontinued }}" hint-placeholder-val="{{ false }}">
+                      <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.StatusChip" tone="warning" hint-size="auto,26px">Discontinued</x-import>
+                    </sc-if>
+                    <span style="margin-left:auto;font-family:var(--font-mono);font-size:13px;color:var(--text-metal)">{{ detailScore }}</span>
+                  </div>
+                  <div style="display:flex;gap:8px">
+                    <div style="flex:1">
+                      <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.Button" full="{{ true }}" onClick="{{ openStatusSheet }}" hint-size="100%,48px">{{ addLabel }}</x-import>
+                    </div>
+                    <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.Button" variant="secondary" onClick="{{ markSeeking }}" hint-size="auto,48px">Seeking</x-import>
+                  </div>
+                  <button class="cc-tap" onClick="{{ openLineage }}" style="text-align:left;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-metal);min-height:44px">Worth smelling next &#8594;</button>
+                </div>
+
+                <div style="position:sticky;top:0;z-index:15;display:flex;gap:24px;padding:0 20px;margin-top:8px;background:var(--surface-nav);backdrop-filter:var(--blur-glass);-webkit-backdrop-filter:var(--blur-glass);border-bottom:1px solid var(--line-divider)">
+                  <sc-for list="{{ detailTabs }}" as="t" hint-placeholder-count="4">
+                    <button class="cc-tap" onClick="{{ t.pick }}" style="position:relative;padding:14px 0;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;color:{{ t.color }}">
+                      {{ t.label }}
+                      <span style="position:absolute;left:0;right:0;bottom:-1px;height:2px;background:{{ t.seam }};display:block"></span>
+                    </button>
+                  </sc-for>
+                </div>
+
+                <sc-if value="{{ tabOverview }}" hint-placeholder-val="{{ true }}">
+                  <div style="padding:20px 20px 32px;display:flex;flex-direction:column;gap:32px">
+                    <sc-if value="{{ hasPrimaryPair }}" hint-placeholder-val="{{ true }}">
+                      <div style="padding:16px;border-radius:16px;border:1px solid var(--line-divider);background:var(--surface-raised);box-shadow:var(--shadow-card);display:flex;flex-direction:column;gap:12px">
+                        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+                          <span class="cc-label">The clone claim</span>
+                          <span style="padding:5px 9px;border-radius:999px;border:{{ primaryPair.border }};background:{{ primaryPair.bg }};color:{{ primaryPair.fg }};font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap">{{ primaryPair.t.label }}</span>
+                        </div>
+                        <span style="font-size:14px;line-height:20px;color:var(--text-primary)">{{ pairClaimLine }}<strong style="color:var(--text-metal);font-weight:600">{{ primaryPair.frag.name }}</strong>.</span>
+                        <div style="display:flex;align-items:flex-end;gap:3px;height:30px">
+                          <sc-for list="{{ primaryPair.spark }}" as="p" hint-placeholder-count="14">
+                            <span style="flex:1;height:{{ p.h }}%;background:{{ p.tone }};border-radius:1px;display:block"></span>
+                          </sc-for>
+                        </div>
+                        <div style="display:flex;align-items:baseline;justify-content:space-between">
+                          <span style="font-family:var(--font-mono);font-size:11px;color:var(--text-secondary)">{{ primaryPair.t.countLine }}</span>
+                          <span class="cc-micro" style="color:var(--text-signal)">{{ primaryPair.t.pct }}% AGREE</span>
+                        </div>
+                        <div style="display:flex;gap:8px">
+                          <button class="cc-tap" onClick="{{ votePairConfirm }}" style="flex:1;min-height:44px;border-radius:8px;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;color:var(--text-primary);background:var(--surface-glass);border:1px solid var(--line-divider)">Confirms this</button>
+                          <button class="cc-tap" onClick="{{ votePairDispute }}" style="flex:1;min-height:44px;border:1px solid var(--line-divider);border-radius:8px;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;color:var(--text-secondary)">Doesn't match</button>
+                        </div>
+                        <span class="cc-micro">CONFIDENCE IS A LIVE COMMUNITY VOTE · SEPARATE FROM THE {{ detailScore }} SCENT SCORE</span>
+                      </div>
+                    </sc-if>
+                    <div style="display:flex;align-items:center;gap:20px">
+                      <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.MetricDial" value="{{ scorePct }}" label="Community score" caption="{{ reviewCount }}" tone="alloy" size="{{ 116 }}" hint-size="116px,140px"></x-import>
+                      <div style="flex:1;display:flex;flex-direction:column;gap:8px">
+                        <p style="margin:0;font-family:var(--font-editorial);font-size:19px;line-height:26px;color:var(--text-primary)">{{ frag.thesis }}</p>
+                        <span class="cc-micro">{{ ownersLine }}</span>
+                      </div>
+                    </div>
+
+                    <div style="display:flex;flex-direction:column;gap:10px">
+                      <div class="cc-label">Scent profile</div>
+                      <sc-for list="{{ accordRows }}" as="a" hint-placeholder-count="3">
+                        <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.AccordBar" label="{{ a.label }}" value="{{ a.value }}" hint-size="100%,32px"></x-import>
+                      </sc-for>
+                    </div>
+
+                    <div style="display:flex;flex-direction:column;gap:10px">
+                      <div class="cc-label">Performance</div>
+                      <sc-for list="{{ perfRows }}" as="p" hint-placeholder-count="4">
+                        <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.AccordBar" label="{{ p.label }}" value="{{ p.value }}" hint-size="100%,32px"></x-import>
+                      </sc-for>
+                    </div>
+
+                    <div style="display:flex;flex-direction:column;gap:12px">
+                      <div style="display:flex;align-items:baseline;justify-content:space-between">
+                        <div>
+                          <h2 style="margin:0;font-family:var(--font-display);font-size:17px;font-weight:600;color:var(--text-primary)">Scent Lineage</h2>
+                          <div class="cc-micro" style="margin-top:3px">{{ lineageNote }}</div>
+                        </div>
+                        <button class="cc-tap" onClick="{{ openLineage }}" style="font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;color:var(--text-metal)">Open map</button>
+                      </div>
+                      <div class="cc-hrow" style="padding:0">
+                        <sc-for list="{{ lineagePreview }}" as="n" hint-placeholder-count="3">
+                          <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.LineageNode" fragrance="{{ n.frag }}" relation="{{ n.relation }}" verified="{{ n.verified }}" confidence="{{ n.confidence }}" onClick="{{ n.open }}" hint-size="128px,190px"></x-import>
+                        </sc-for>
+                      </div>
+                    </div>
+
+                    <div style="display:flex;flex-direction:column;gap:12px">
+                      <div class="cc-label">Similar and alternative</div>
+                      <sc-for list="{{ similarRows }}" as="s" hint-placeholder-count="2">
+                        <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.FragranceCard" fragrance="{{ s.frag }}" variant="lineage" onClick="{{ s.open }}" hint-size="100%,96px"></x-import>
+                      </sc-for>
+                    </div>
+                  </div>
+                </sc-if>
+
+                <sc-if value="{{ tabLineage }}" hint-placeholder-val="{{ false }}">
+                  <div style="padding:20px 20px 32px;display:flex;flex-direction:column;gap:16px">
+                    <p style="margin:0;font-size:14px;line-height:21px;color:var(--text-secondary)">{{ lineageBlurb }}</p>
+                    <sc-for list="{{ lineageRows }}" as="n" hint-placeholder-count="4">
+                      <div style="display:flex;align-items:center;gap:12px;padding:12px;border:1px solid {{ n.border }};border-radius:16px;background:var(--surface-raised)">
+                        <div style="flex:1;min-width:0">
+                          <div style="font-size:13px;font-weight:600;color:var(--text-primary)">{{ n.frag.name }}</div>
+                          <div class="cc-micro" style="margin-top:3px">{{ n.relLine }}</div>
+                        </div>
+                        <span style="font-family:var(--font-mono);font-size:12px;color:{{ n.confColor }}">{{ n.confLabel }}</span>
+                        <button class="cc-tap" onClick="{{ n.open }}" aria-label="Open" style="width:44px;height:44px;font-family:var(--font-mono);color:var(--text-metal)">&#8594;</button>
+                      </div>
+                    </sc-for>
+                    <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.Button" variant="secondary" full="{{ true }}" onClick="{{ openLineage }}" hint-size="100%,48px">Open the full map</x-import>
+                  </div>
+                </sc-if>
+
+                <sc-if value="{{ tabReviews }}" hint-placeholder-val="{{ false }}">
+                  <div style="padding:20px 20px 32px;display:flex;flex-direction:column;gap:14px">
+                    <div style="display:flex;align-items:center;justify-content:space-between">
+                      <span class="cc-label">{{ reviewCount }}</span>
+                      <button class="cc-tap" onClick="{{ writeReview }}" style="font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;color:var(--text-metal);min-height:44px">Write a review</button>
+                    </div>
+                    <sc-for list="{{ reviewRows }}" as="r" hint-placeholder-count="3">
+                      <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.ReviewCard" author="{{ r.author }}" level="{{ r.level }}" score="{{ r.score }}" body="{{ r.body }}" context="{{ r.context }}" date="{{ r.date }}" verified="{{ r.verified }}" reactions="{{ r.reactions }}" hint-size="100%,180px"></x-import>
+                    </sc-for>
+                  </div>
+                </sc-if>
+
+                <sc-if value="{{ tabMarket }}" hint-placeholder-val="{{ false }}">
+                  <div style="padding:20px 20px 32px;display:flex;flex-direction:column;gap:24px">
+                    <div style="display:flex;flex-direction:column;gap:12px">
+                      <div class="cc-label">Who would trade it</div>
+                      <sc-for list="{{ marketListings }}" as="l" hint-placeholder-count="2">
+                        <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.TradeCard" listing="{{ l.listing }}" onClick="{{ l.open }}" hint-size="100%,150px"></x-import>
+                      </sc-for>
+                    </div>
+                    <div style="display:flex;flex-direction:column;gap:8px;padding:14px;border:1px dashed var(--line-strong);border-radius:16px">
+                      <span class="cc-label">Retailer links</span>
+                      <span style="font-size:13px;line-height:19px;color:var(--text-secondary)">Where a retailer carries this, the link is an affiliate link. It is labelled as one every time it appears, it never gates the pairing data, and it never appears on peer-to-peer listings.</span>
+                    </div>
+                  </div>
+                </sc-if>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isCabinet }}" hint-placeholder-val="{{ false }}">
+              <div style="animation:cc-fade 360ms var(--ease-material) both">
+                <div style="position:sticky;top:0;z-index:18;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding:10px 20px 12px;background:var(--surface-nav);backdrop-filter:var(--blur-glass);-webkit-backdrop-filter:var(--blur-glass);border-bottom:1px solid var(--line-divider)">
+                  <div>
+                    <div class="cc-label" style="white-space:nowrap">{{ cabEyebrow }}</div>
+                    <h1 style="margin:2px 0 0;font-family:var(--font-display);font-size:22px;line-height:28px;font-weight:600;color:var(--text-primary)">My Cabinet</h1>
+                  </div>
+                  <div style="display:flex;gap:4px">
+                    <button class="cc-tap" onClick="{{ addToCabinet }}" style="min-height:44px;padding:0 8px;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;color:var(--text-metal)">Add</button>
+                    <button class="cc-tap" onClick="{{ shareCabinet }}" style="min-height:44px;padding:0 8px;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;color:var(--text-tertiary)">Share</button>
+                  </div>
+                </div>
+
+                <div class="cc-hrow" style="padding:14px 20px 4px">
+                  <sc-for list="{{ cabViews }}" as="v" hint-placeholder-count="7">
+                    <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.StatusChip" selected="{{ v.selected }}" onClick="{{ v.pick }}" hint-size="auto,32px">{{ v.label }}</x-import>
+                  </sc-for>
+                </div>
+
+                <sc-if value="{{ cabIsShelf }}" hint-placeholder-val="{{ true }}">
+                  <div style="padding:16px 20px 32px;display:flex;flex-direction:column;gap:20px">
+                    <div style="display:flex;align-items:center;justify-content:space-between">
+                      <span class="cc-micro">CABINET GRID · THREE PER SHELF</span>
+                      <button class="cc-tap" onClick="{{ toggleEdit }}" style="min-height:44px;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;color:var(--text-metal)">{{ editLabel }}</button>
+                    </div>
+                    <sc-for list="{{ shelves }}" as="sh" hint-placeholder-count="3">
+                      <div style="padding:14px 14px 16px;border-radius:10px;border:1px solid var(--line-divider);background-color:var(--surface-shelf);background-image:url('assets/material-smoked-glass.png');background-size:cover;background-position:center;background-blend-mode:overlay;box-shadow:var(--shadow-inset-tray),inset 0 1px 0 color-mix(in oklab,var(--text-primary) 6%,transparent);position:relative">
+                        <span style="position:absolute;left:14px;right:14px;bottom:6px;height:1px;background:linear-gradient(90deg,transparent,color-mix(in oklab,var(--rose-alloy) 50%,transparent),transparent);display:block"></span>
+                        <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.CabinetShelf" columns="{{ 3 }}" label="{{ sh.label }}" tray="{{ false }}" hint-size="100%,200px">
+                        <sc-for list="{{ sh.cells }}" as="cell" hint-placeholder-count="3">
+                          <div style="display:flex;flex-direction:column;gap:6px">
+                            <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.FragranceCard" fragrance="{{ cell.frag }}" variant="shelf" status="{{ cell.status }}" onClick="{{ cell.open }}" hint-size="100%,140px"></x-import>
+                            <span style="font-size:11px;font-weight:600;color:var(--text-primary);line-height:14px">{{ cell.frag.name }}</span>
+                            <span class="cc-micro">{{ cell.fillLine }}</span>
+                            <sc-if value="{{ editShelf }}" hint-placeholder-val="{{ false }}">
+                              <span style="display:flex;gap:4px">
+                                <button class="cc-tap" onClick="{{ cell.moveLeft }}" aria-label="Move left" style="flex:1;height:28px;border:1px solid var(--line-divider);border-radius:6px;font-family:var(--font-mono);font-size:11px;color:var(--text-secondary)">&#8592;</button>
+                                <button class="cc-tap" onClick="{{ cell.moveRight }}" aria-label="Move right" style="flex:1;height:28px;border:1px solid var(--line-divider);border-radius:6px;font-family:var(--font-mono);font-size:11px;color:var(--text-secondary)">&#8594;</button>
+                              </span>
+                            </sc-if>
+                          </div>
+                        </sc-for>
+                        <sc-if value="{{ sh.isLast }}" hint-placeholder-val="{{ false }}">
+                          <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.OpenChamber" onClick="{{ openChamber }}" hint-size="100%,140px"></x-import>
+                        </sc-if>
+                      </x-import>
+                      </div>
+                    </sc-for>
+                  </div>
+                </sc-if>
+
+                <sc-if value="{{ cabIsArchive }}" hint-placeholder-val="{{ false }}">
+                  <div style="padding:14px 0 32px">
+                    <div class="cc-hrow" style="padding:0 20px 12px">
+                      <sc-for list="{{ cabSorts }}" as="k" hint-placeholder-count="4">
+                        <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.StatusChip" selected="{{ k.selected }}" onClick="{{ k.pick }}" hint-size="auto,32px">{{ k.label }}</x-import>
+                      </sc-for>
+                    </div>
+                    <div style="padding:0 20px">
+                      <sc-for list="{{ archiveRows }}" as="r" hint-placeholder-count="6">
+                        <button class="cc-tap" onClick="{{ r.open }}" style="display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:10px 0;border-bottom:1px solid var(--line-divider)">
+                          <span style="width:40px;flex:0 0 40px">
+                            <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.BottlePortrait" src="{{ r.frag.image }}" name="{{ r.frag.name }}" ratio="square" radius="4px" hint-size="40px,40px"></x-import>
+                          </span>
+                          <span style="flex:1;min-width:0">
+                            <span style="display:block;font-size:13px;font-weight:600;color:var(--text-primary)">{{ r.frag.name }}</span>
+                            <span class="cc-micro" style="display:block;margin-top:3px">{{ r.metaLine }}</span>
+                          </span>
+                          <span style="text-align:right">
+                            <span class="cc-micro" style="display:block;color:var(--text-secondary)">{{ r.status }}</span>
+                            <span style="display:block;font-family:var(--font-mono);font-size:11px;color:var(--text-metal);margin-top:3px">{{ r.valueShown }}</span>
+                          </span>
+                        </button>
+                      </sc-for>
+                    </div>
+                  </div>
+                </sc-if>
+
+                <sc-if value="{{ cabIsChrono }}" hint-placeholder-val="{{ false }}">
+                  <div style="padding:18px 20px 32px;display:flex;flex-direction:column;gap:24px">
+                    <sc-for list="{{ chronology }}" as="g" hint-placeholder-count="4">
+                      <div style="display:flex;gap:14px">
+                        <div style="width:52px;flex:0 0 52px;display:flex;flex-direction:column;gap:6px">
+                          <span style="font-family:var(--font-mono);font-size:13px;color:var(--text-metal)">{{ g.year }}</span>
+                          <span class="cc-micro">{{ g.count }}</span>
+                        </div>
+                        <div style="flex:1;min-width:0;border-left:1px solid var(--line-divider);padding-left:14px;display:flex;flex-direction:column;gap:10px">
+                          <sc-for list="{{ g.items }}" as="r" hint-placeholder-count="2">
+                            <button class="cc-tap" onClick="{{ r.open }}" style="text-align:left">
+                              <span style="display:block;font-size:13px;font-weight:600;color:var(--text-primary)">{{ r.frag.name }}</span>
+                              <span class="cc-micro" style="display:block;margin-top:3px">{{ r.metaLine }}</span>
+                            </button>
+                          </sc-for>
+                        </div>
+                      </div>
+                    </sc-for>
+                  </div>
+                </sc-if>
+
+                <sc-if value="{{ cabIsRotation }}" hint-placeholder-val="{{ false }}">
+                  <div style="padding:18px 20px 32px;display:flex;flex-direction:column;gap:28px">
+                    <div style="display:flex;flex-direction:column;gap:12px">
+                      <div class="cc-label">Most worn this month</div>
+                      <sc-for list="{{ rotationMost }}" as="r" hint-placeholder-count="4">
+                        <div style="display:flex;align-items:center;gap:12px">
+                          <div style="flex:1;min-width:0">
+                            <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.AccordBar" label="{{ r.frag.name }}" value="{{ r.fill }}" hint-size="100%,32px"></x-import>
+                          </div>
+                          <span class="cc-micro" style="white-space:nowrap">{{ r.wornLine }}</span>
+                        </div>
+                      </sc-for>
+                    </div>
+                    <div style="display:flex;flex-direction:column;gap:10px">
+                      <div class="cc-label">Seasonal rotation</div>
+                      <sc-for list="{{ rotationSeasonal }}" as="sn" hint-placeholder-count="3">
+                        <div style="display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--line-divider)">
+                          <span class="cc-micro" style="width:70px;flex:0 0 70px;color:var(--text-metal)">{{ sn.season }}</span>
+                          <span style="flex:1;font-size:13px;color:var(--text-secondary)">{{ sn.items }}</span>
+                        </div>
+                      </sc-for>
+                    </div>
+                    <div style="display:flex;flex-direction:column;gap:10px">
+                      <div class="cc-label">Neglected</div>
+                      <sc-for list="{{ rotationNeglected }}" as="r" hint-placeholder-count="2">
+                        <button class="cc-tap" onClick="{{ r.open }}" style="display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;text-align:left;padding:12px;border:1px solid var(--line-divider);border-radius:16px;background:var(--surface-raised)">
+                          <span>
+                            <span style="display:block;font-size:13px;font-weight:600;color:var(--text-primary)">{{ r.frag.name }}</span>
+                            <span class="cc-micro" style="display:block;margin-top:3px">{{ r.wornLine }}</span>
+                          </span>
+                          <span class="cc-micro" style="color:var(--text-metal)">{{ r.fillLine }}</span>
+                        </button>
+                      </sc-for>
+                    </div>
+                  </div>
+                </sc-if>
+
+                <sc-if value="{{ cabIsMap }}" hint-placeholder-val="{{ false }}">
+                  <div style="padding:18px 20px 32px;display:flex;flex-direction:column;gap:12px">
+                    <div class="cc-label">Family composition</div>
+                    <span class="cc-micro">{{ mapNote }}</span>
+                    <sc-for list="{{ mapRows }}" as="m" hint-placeholder-count="5">
+                      <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.AccordBar" label="{{ m.label }}" value="{{ m.value }}" hint-size="100%,32px"></x-import>
+                    </sc-for>
+                    <span class="cc-micro" style="margin-top:6px">Every share is labelled; nothing here relies on colour alone.</span>
+                  </div>
+                </sc-if>
+
+                <sc-if value="{{ cabIsValue }}" hint-placeholder-val="{{ false }}">
+                  <div style="padding:18px 20px 32px;display:flex;flex-direction:column;gap:24px">
+                    <div style="padding:18px;border:1px solid var(--line-divider);border-radius:16px;background:var(--surface-raised);box-shadow:var(--shadow-card);display:flex;flex-direction:column;gap:12px">
+                      <div style="display:flex;align-items:center;justify-content:space-between">
+                        <span class="cc-label">Estimated total</span>
+                        <button class="cc-tap" onClick="{{ toggleValue }}" style="min-height:44px;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;color:var(--text-metal)">{{ valueToggleLabel }}</button>
+                      </div>
+                      <span style="font-family:var(--font-mono);font-size:32px;color:var(--text-primary)">{{ valueTotal }}</span>
+                      <span class="cc-micro" style="color:var(--text-metal)">{{ valueChange }}</span>
+                      <div style="display:flex;align-items:flex-end;gap:5px;height:64px;margin-top:6px">
+                        <sc-for list="{{ valueSeries }}" as="p" hint-placeholder-count="12">
+                          <span style="flex:1;height:{{ p.h }}%;background:{{ p.tone }};border-radius:2px;display:block"></span>
+                        </sc-for>
+                      </div>
+                      <span class="cc-micro">PRIVACY ON BY DEFAULT · NOTHING SHARED WITH OTHER COLLECTORS</span>
+                    </div>
+                    <div style="display:flex;flex-direction:column;gap:10px">
+                      <div class="cc-label">By category</div>
+                      <sc-for list="{{ valueBars }}" as="b" hint-placeholder-count="5">
+                        <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.AccordBar" label="{{ b.label }}" value="{{ b.value }}" hint-size="100%,32px"></x-import>
+                      </sc-for>
+                    </div>
+                  </div>
+                </sc-if>
+
+                <sc-if value="{{ cabIsTrade }}" hint-placeholder-val="{{ false }}">
+                  <div style="padding:18px 20px 32px;display:flex;flex-direction:column;gap:24px">
+                    <div style="display:flex;flex-direction:column;gap:12px">
+                      <div class="cc-label">Listed for trade</div>
+                      <sc-for list="{{ cabTradeRows }}" as="r" hint-placeholder-count="2">
+                        <button class="cc-tap" onClick="{{ r.open }}" style="display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:12px;border:1px solid var(--line-metal);border-radius:16px;background:var(--surface-raised)">
+                          <span style="flex:1;min-width:0">
+                            <span style="display:block;font-size:13px;font-weight:600;color:var(--text-primary)">{{ r.frag.name }}</span>
+                            <span class="cc-micro" style="display:block;margin-top:3px">{{ r.metaLine }}</span>
+                          </span>
+                          <span class="cc-micro" style="color:var(--text-metal)">{{ r.fillLine }}</span>
+                        </button>
+                      </sc-for>
+                    </div>
+                    <div style="display:flex;flex-direction:column;gap:12px">
+                      <div class="cc-label">Seeking</div>
+                      <sc-for list="{{ cabSeeking }}" as="r" hint-placeholder-count="2">
+                        <button class="cc-tap" onClick="{{ r.open }}" style="display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:12px;border:1px dashed var(--line-strong);border-radius:16px">
+                          <span style="flex:1;min-width:0">
+                            <span style="display:block;font-size:13px;font-weight:600;color:var(--text-primary)">{{ r.frag.name }}</span>
+                            <span class="cc-micro" style="display:block;margin-top:3px">{{ r.metaLine }}</span>
+                          </span>
+                          <span class="cc-micro" style="color:var(--text-signal)">WATCHING</span>
+                        </button>
+                      </sc-for>
+                    </div>
+                  </div>
+                </sc-if>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isLineage }}" hint-placeholder-val="{{ false }}">
+              <div style="animation:cc-fade 360ms var(--ease-material) both">
+                <div style="position:sticky;top:0;z-index:18;padding:10px 20px 12px;background:var(--surface-nav);backdrop-filter:var(--blur-glass);-webkit-backdrop-filter:var(--blur-glass);border-bottom:1px solid var(--line-divider)">
+                  <div class="cc-label">{{ lineEyebrow }}</div>
+                  <h1 style="margin:2px 0 0;font-family:var(--font-display);font-size:22px;line-height:28px;font-weight:600;color:var(--text-primary)">Scent Lineage</h1>
+                  <div class="cc-micro" style="margin-top:4px">{{ lineCount }}</div>
+                </div>
+
+                <div style="padding:16px 20px 0;display:flex;flex-direction:column;gap:14px">
+                  <p style="margin:0;font-size:14px;line-height:21px;color:var(--text-secondary)">{{ lineExplain }}</p>
+                  <div class="cc-hrow" style="padding:0">
+                    <sc-for list="{{ lineRoots }}" as="r" hint-placeholder-count="4">
+                      <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.StatusChip" selected="{{ r.selected }}" onClick="{{ r.pick }}" hint-size="auto,32px">{{ r.label }}</x-import>
+                    </sc-for>
+                  </div>
+                  <div style="display:flex;gap:8px">
+                    <sc-for list="{{ lineModes }}" as="m" hint-placeholder-count="2">
+                      <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.StatusChip" selected="{{ m.selected }}" onClick="{{ m.pick }}" hint-size="auto,32px">{{ m.label }}</x-import>
+                    </sc-for>
+                    <span style="flex:1"></span>
+                  </div>
+                  <div class="cc-hrow" style="padding:0">
+                    <sc-for list="{{ lineRelChips }}" as="c" hint-placeholder-count="7">
+                      <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.StatusChip" selected="{{ c.selected }}" onClick="{{ c.pick }}" hint-size="auto,32px">{{ c.label }}</x-import>
+                    </sc-for>
+                  </div>
+                </div>
+
+                <sc-if value="{{ lineIsVotes }}" hint-placeholder-val="{{ true }}">
+                  <div style="padding:18px 20px 32px;display:flex;flex-direction:column;gap:14px">
+                    <sc-for list="{{ lineNodes }}" as="n" hint-placeholder-count="4">
+                      <div style="padding:16px;border-radius:16px;border:1px solid var(--line-divider);background:var(--surface-raised);box-shadow:var(--shadow-card);display:flex;flex-direction:column;gap:14px">
+                        <div style="display:flex;gap:12px;align-items:flex-start">
+                          <div style="width:52px;flex:0 0 52px">
+                            <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.BottlePortrait" src="{{ n.frag.image }}" name="{{ n.frag.name }}" ratio="square" radius="4px" hint-size="52px,52px"></x-import>
+                          </div>
+                          <div style="flex:1;min-width:0">
+                            <div style="font-size:14px;font-weight:600;color:var(--text-primary)">{{ n.frag.name }}</div>
+                            <div class="cc-micro" style="margin-top:3px">{{ n.houseLine }}</div>
+                            <div class="cc-micro" style="margin-top:4px;color:var(--text-metal)">{{ n.relLabel }}</div>
+                          </div>
+                          <span style="padding:5px 9px;border-radius:999px;border:{{ n.border }};background:{{ n.bg }};color:{{ n.fg }};font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap">{{ n.stateLabel }}</span>
+                        </div>
+
+                        <div style="display:flex;align-items:flex-end;gap:3px;height:34px">
+                          <sc-for list="{{ n.spark }}" as="p" hint-placeholder-count="14">
+                            <span style="flex:1;height:{{ p.h }}%;background:{{ p.tone }};border-radius:1px;display:block"></span>
+                          </sc-for>
+                        </div>
+                        <div style="display:flex;align-items:baseline;justify-content:space-between">
+                          <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.04em;color:var(--text-secondary)">{{ n.countLine }}</span>
+                          <span class="cc-micro" style="color:var(--text-signal)">{{ n.pctLine }}</span>
+                        </div>
+
+                        <div style="display:flex;gap:8px">
+                          <button class="cc-tap" onClick="{{ n.voteConfirm }}" style="flex:1;min-height:44px;border:{{ n.confirmBorder }};border-radius:8px;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;color:var(--text-primary);background:var(--surface-glass)">Confirms this</button>
+                          <button class="cc-tap" onClick="{{ n.voteDispute }}" style="flex:1;min-height:44px;border:{{ n.disputeBorder }};border-radius:8px;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;color:var(--text-secondary)">Doesn't match</button>
+                        </div>
+                        <div style="display:flex;gap:16px">
+                          <button class="cc-tap" onClick="{{ n.open }}" style="min-height:36px;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;color:var(--text-metal)">Open entry</button>
+                          <button class="cc-tap" onClick="{{ n.compare }}" style="min-height:36px;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;color:var(--text-tertiary)">Compare</button>
+                        </div>
+                      </div>
+                    </sc-for>
+                    <span class="cc-micro">ONE VOTE PER COLLECTOR, CHANGEABLE · AGGREGATES ONLY, NEVER A LIST OF VOTERS</span>
+                  </div>
+                </sc-if>
+
+                <sc-if value="{{ lineIsMap }}" hint-placeholder-val="{{ false }}">
+                  <div style="padding:20px 20px 32px;display:flex;flex-direction:column;align-items:center;gap:0">
+                    <div style="width:100%;max-width:300px;padding:14px;border:1px solid var(--line-metal);border-radius:16px;background:var(--surface-glass);display:flex;gap:12px;align-items:center">
+                      <div style="width:56px;flex:0 0 56px">
+                        <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.BottlePortrait" src="{{ lineRootFrag.image }}" name="{{ lineRootFrag.name }}" ratio="square" radius="4px" hint-size="56px,56px"></x-import>
+                      </div>
+                      <div style="flex:1;min-width:0">
+                        <div class="cc-label" style="color:var(--text-metal)">This entry</div>
+                        <div style="font-family:var(--font-display);font-size:16px;font-weight:600;color:var(--text-primary)">{{ lineTitle }}</div>
+                      </div>
+                    </div>
+                    <span style="width:2px;height:26px;background:var(--grad-iris-seam);display:block"></span>
+                    <sc-for list="{{ lineNodes }}" as="n" hint-placeholder-count="4">
+                      <div style="width:100%;display:flex;align-items:center;gap:0">
+                        <span style="width:calc(50% - 64px);height:1px;background:var(--line-divider);display:block"></span>
+                        <div style="flex:0 0 auto">
+                          <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.LineageNode" fragrance="{{ n.frag }}" relation="{{ n.relation }}" verified="{{ false }}" active="{{ n.active }}" confidence="{{ n.t.pct }}" onClick="{{ n.openDrawer }}" hint-size="128px,190px"></x-import>
+                        </div>
+                        <span style="flex:1;height:1px;background:var(--line-divider);display:block"></span>
+                      </div>
+                      <span style="width:2px;height:18px;background:var(--line-strong);display:block"></span>
+                    </sc-for>
+                    <span class="cc-micro" style="margin-top:10px">TAP A CHAMBER FOR THE VOTE RECORD</span>
+                  </div>
+                </sc-if>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isTrade }}" hint-placeholder-val="{{ false }}">
+              <div style="animation:cc-fade 360ms var(--ease-material) both">
+                <div style="position:sticky;top:0;z-index:18;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding:10px 20px 12px;background:var(--surface-nav);backdrop-filter:var(--blur-glass);-webkit-backdrop-filter:var(--blur-glass);border-bottom:1px solid var(--line-divider)">
+                  <div>
+                    <div class="cc-label" style="white-space:nowrap">CLASSIFIEDS · NO FUNDS HELD</div>
+                    <h1 style="margin:2px 0 0;font-family:var(--font-display);font-size:22px;line-height:28px;font-weight:600;color:var(--text-primary)">Trade</h1>
+                  </div>
+                  <button class="cc-tap" onClick="{{ openTradeFilter }}" style="min-height:44px;padding:0 8px;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;color:var(--text-metal)">Filter</button>
+                </div>
+
+                <div class="cc-hrow" style="padding:14px 20px 0">
+                  <sc-for list="{{ tradeKindChips }}" as="k" hint-placeholder-count="4">
+                    <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.StatusChip" selected="{{ k.selected }}" onClick="{{ k.pick }}" hint-size="auto,32px">{{ k.label }}</x-import>
+                  </sc-for>
+                </div>
+
+                <sc-for list="{{ tradeGroups }}" as="g" hint-placeholder-count="4">
+                  <section style="margin-top:28px">
+                    <div style="padding:0 20px;margin-bottom:12px">
+                      <h2 style="margin:0;font-family:var(--font-display);font-size:17px;line-height:22px;font-weight:600;color:var(--text-primary)">{{ g.title }}</h2>
+                      <div class="cc-micro" style="margin-top:3px">{{ g.note }}</div>
+                    </div>
+                    <div style="padding:0 20px;display:flex;flex-direction:column;gap:12px">
+                      <sc-for list="{{ g.items }}" as="l" hint-placeholder-count="2">
+                        <div style="display:flex;flex-direction:column;gap:8px">
+                          <div style="display:flex;align-items:center;gap:8px">
+                            <span style="padding:4px 8px;border-radius:4px;border:1px solid {{ l.kindBorder }};color:{{ l.kindFg }};white-space:nowrap;flex:0 0 auto;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase">{{ l.kind }}</span>
+                            <span class="cc-micro">{{ l.postedLine }}</span>
+                          </div>
+                          <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.TradeCard" listing="{{ l.listing }}" onClick="{{ l.open }}" hint-size="100%,150px"></x-import>
+                        </div>
+                      </sc-for>
+                    </div>
+                  </section>
+                </sc-for>
+
+                <div style="padding:32px 20px 28px;display:flex;flex-direction:column;gap:8px;align-items:center">
+                  <span class="cc-micro">CLONE CABINET CONNECTS COLLECTORS. MONEY AND SHIPPING HAPPEN BETWEEN YOU.</span>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isTradeDetail }}" hint-placeholder-val="{{ false }}">
+              <div style="animation:cc-fade 360ms var(--ease-material) both">
+                <div style="position:relative;max-height:{{ heroCap }};overflow:hidden">
+                  <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.BottlePortrait" src="{{ listing.frag.image }}" name="{{ listing.frag.name }}" ratio="square" radius="0" inset="{{ false }}" hint-size="100%,300px"></x-import>
+                  <div style="position:absolute;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:6px 12px;background:var(--grad-protect-top)">
+                    <button class="cc-tap" onClick="{{ backToTrade }}" aria-label="Back" style="width:44px;height:44px;font-family:var(--font-mono);font-size:16px;color:var(--porcelain)">&#8592;</button>
+                    <button class="cc-tap" onClick="{{ saveListing }}" style="min-height:44px;padding:0 10px;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;color:var(--porcelain)">Save</button>
+                  </div>
+                  <div style="position:absolute;left:0;right:0;bottom:0;padding:16px 20px;background:var(--grad-protect-bottom);display:flex;align-items:flex-end;justify-content:space-between;gap:12px">
+                    <div>
+                      <span style="padding:4px 8px;border-radius:4px;border:1px solid {{ listing.kindBorder }};color:{{ listing.kindFg }};white-space:nowrap;display:inline-block;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase">{{ listing.kind }}</span>
+                      <h1 style="margin:8px 0 0;font-family:var(--font-display);font-size:24px;line-height:28px;font-weight:600;color:var(--porcelain)">{{ listing.frag.name }}</h1>
+                      <div class="cc-micro" style="margin-top:4px;color:var(--text-secondary)">{{ listing.line }}</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div style="padding:18px 20px 32px;display:flex;flex-direction:column;gap:24px">
+                  <div style="display:flex;flex-direction:column;gap:10px">
+                    <div class="cc-label">Condition</div>
+                    <div style="display:flex;flex-wrap:wrap;gap:8px">
+                      <sc-for list="{{ conditionVocab }}" as="c" hint-placeholder-count="6">
+                        <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.StatusChip" selected="{{ c.selected }}" hint-size="auto,30px">{{ c.label }}</x-import>
+                      </sc-for>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px;margin-top:6px">
+                      <div style="flex:1">
+                        <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.AccordBar" label="Fill level" value="{{ listing.fill }}" hint-size="100%,32px"></x-import>
+                      </div>
+                    </div>
+                    <span class="cc-micro">{{ listing.presentation }} · BATCH {{ listing.batch }} · PHOTOS ARE OF THIS BOTTLE</span>
+                  </div>
+
+                  <div style="display:flex;flex-direction:column;gap:12px">
+                    <div class="cc-label">The collector</div>
+                    <div style="display:flex;align-items:center;gap:12px">
+                      <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.CollectorAvatar" name="{{ listing.collector.name }}" level="{{ listing.collector.level }}" verified="{{ listing.collector.verified }}" size="{{ 44 }}" hint-size="44px,44px"></x-import>
+                      <div style="flex:1;min-width:0">
+                        <button class="cc-tap" onClick="{{ openCollector }}" style="text-align:left">
+                          <span style="display:block;font-size:14px;font-weight:600;color:var(--text-primary)">{{ listing.collector.name }}</span>
+                          <span class="cc-micro" style="display:block;margin-top:3px">{{ listing.tradesLine }}</span>
+                        </button>
+                      </div>
+                      <button class="cc-tap" onClick="{{ openCollector }}" style="min-height:44px;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;color:var(--text-metal)">Trust</button>
+                    </div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                      <sc-for list="{{ listingTrust }}" as="t" hint-placeholder-count="4">
+                        <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.TrustMetric" label="{{ t.label }}" value="{{ t.value }}" detail="{{ t.detail }}" tone="{{ t.tone }}" hint-size="100%,74px"></x-import>
+                      </sc-for>
+                    </div>
+                  </div>
+
+                  <div style="display:flex;flex-direction:column;gap:6px;padding:14px;border:1px solid var(--line-divider);border-radius:16px;background:var(--surface-raised)">
+                    <span class="cc-label">Wants in return</span>
+                    <span style="font-size:14px;line-height:20px;color:var(--text-primary)">{{ listing.wants }}</span>
+                  </div>
+
+                  <div style="display:flex;flex-direction:column;gap:10px">
+                    <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.Button" full="{{ true }}" onClick="{{ startProposal }}" hint-size="100%,48px">Propose a trade</x-import>
+                    <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.Button" variant="secondary" full="{{ true }}" onClick="{{ askQuestion }}" hint-size="100%,48px">Message seller</x-import>
+                    <div style="display:flex;gap:16px;justify-content:center;padding-top:4px">
+                      <button class="cc-tap" onClick="{{ saveListing }}" style="min-height:44px;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;color:var(--text-tertiary)">Save</button>
+                      <button class="cc-tap" onClick="{{ reportListing }}" style="min-height:44px;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;color:var(--rose-alloy-light)">Report</button>
+                    </div>
+                    <span class="cc-micro" style="text-align:center">PEER-TO-PEER · NO AFFILIATE LINKS ON TRADE LISTINGS</span>
+                  </div>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isProposal }}" hint-placeholder-val="{{ false }}">
+              <div style="min-height:{{ innerH }}px;display:flex;flex-direction:column">
+                <div style="display:flex;align-items:center;gap:12px;padding:8px 12px;border-bottom:1px solid var(--line-divider)">
+                  <button class="cc-tap" onClick="{{ propBack }}" aria-label="Back" style="width:44px;height:44px;font-family:var(--font-mono);font-size:16px;color:var(--text-primary)">&#8592;</button>
+                  <div style="flex:1">
+                    <div class="cc-label">PROPOSE A TRADE</div>
+                    <div style="font-family:var(--font-display);font-size:15px;font-weight:600;color:var(--text-primary)">{{ listing.frag.name }}</div>
+                  </div>
+                  <span class="cc-micro">{{ propStepLabel }}</span>
+                </div>
+
+                <div style="display:flex;gap:6px;padding:14px 20px 0">
+                  <sc-for list="{{ propSteps }}" as="p" hint-placeholder-count="3">
+                    <span style="flex:1;height:10px;border-radius:2px;border:1px solid {{ p.border }};background:{{ p.fill }};display:block"></span>
+                  </sc-for>
+                </div>
+
+                <div style="padding:18px 20px 0;display:flex;flex-direction:column;gap:6px">
+                  <h1 style="margin:0;font-family:var(--font-display);font-size:22px;line-height:28px;font-weight:600;color:var(--text-primary)">{{ propTitle }}</h1>
+                  <p style="margin:0;font-size:14px;line-height:20px;color:var(--text-secondary)">{{ propNote }}</p>
+                </div>
+
+                <sc-if value="{{ propIs0 }}" hint-placeholder-val="{{ true }}">
+                  <div style="padding:18px 20px 0;display:flex;flex-direction:column;gap:10px">
+                    <sc-for list="{{ propMine }}" as="m" hint-placeholder-count="5">
+                      <button class="cc-tap" onClick="{{ m.toggle }}" style="display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:12px;border:1px solid {{ m.border }};background:{{ m.bg }};border-radius:16px;min-height:64px">
+                        <span style="width:40px;flex:0 0 40px">
+                          <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.BottlePortrait" src="{{ m.frag.image }}" name="{{ m.frag.name }}" ratio="square" radius="4px" hint-size="40px,40px"></x-import>
+                        </span>
+                        <span style="flex:1;min-width:0">
+                          <span style="display:block;font-size:13px;font-weight:600;color:var(--text-primary)">{{ m.label }}</span>
+                          <span class="cc-micro" style="display:block;margin-top:3px">{{ m.note }}</span>
+                        </span>
+                        <sc-if value="{{ m.selected }}" hint-placeholder-val="{{ false }}">
+                          <span style="width:2px;height:20px;background:var(--grad-iris-seam);display:block"></span>
+                        </sc-if>
+                      </button>
+                    </sc-for>
+                  </div>
+                </sc-if>
+
+                <sc-if value="{{ propIs1 }}" hint-placeholder-val="{{ false }}">
+                  <div style="padding:18px 20px 0;display:flex;flex-direction:column;gap:18px">
+                    <div style="padding:16px;border:1px solid var(--line-divider);border-radius:16px;background:var(--surface-raised);display:flex;flex-direction:column;gap:12px">
+                      <span class="cc-label">Cash difference</span>
+                      <div style="display:flex;align-items:center;gap:14px">
+                        <button class="cc-tap" onClick="{{ cashDown }}" aria-label="Less" style="width:44px;height:44px;border:1px solid var(--line-divider);border-radius:8px;font-family:var(--font-mono);color:var(--text-primary)">&#8722;</button>
+                        <span style="flex:1;text-align:center;font-family:var(--font-mono);font-size:18px;color:var(--text-primary)">{{ propCashLabel }}</span>
+                        <button class="cc-tap" onClick="{{ cashUp }}" aria-label="More" style="width:44px;height:44px;border:1px solid var(--line-divider);border-radius:8px;font-family:var(--font-mono);color:var(--text-primary)">+</button>
+                      </div>
+                      <span class="cc-micro">SETTLED DIRECTLY BETWEEN COLLECTORS</span>
+                    </div>
+                    <div style="display:flex;flex-direction:column;gap:10px">
+                      <span class="cc-label">Confirm before sending</span>
+                      <div style="display:flex;gap:10px;padding:12px;border:1px solid var(--line-metal);border-radius:16px;background:var(--surface-glass)">
+                        <span style="width:2px;background:var(--rose-alloy);display:block"></span>
+                        <span style="flex:1;font-size:13px;line-height:19px;color:var(--text-primary)">I have described my bottles honestly, including fill level and missing presentation.</span>
+                      </div>
+                      <div style="display:flex;gap:10px;padding:12px;border:1px solid var(--line-divider);border-radius:16px">
+                        <span style="flex:1;font-size:13px;line-height:19px;color:var(--text-secondary)">Tracked shipping both ways · {{ listing.collector.region }}</span>
+                      </div>
+                    </div>
+                  </div>
+                </sc-if>
+
+                <sc-if value="{{ propIs2 }}" hint-placeholder-val="{{ false }}">
+                  <div style="padding:18px 20px 0;display:flex;flex-direction:column;gap:2px">
+                    <sc-for list="{{ propSummary }}" as="r" hint-placeholder-count="5">
+                      <div style="display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--line-divider)">
+                        <span class="cc-label" style="width:120px;flex:0 0 120px">{{ r.label }}</span>
+                        <span style="flex:1;font-size:13px;line-height:19px;color:var(--text-primary)">{{ r.value }}</span>
+                      </div>
+                    </sc-for>
+                  </div>
+                </sc-if>
+
+                <div style="margin-top:auto;padding:20px;display:flex;flex-direction:column;gap:10px">
+                  <span class="cc-micro">{{ propPickedLine }}</span>
+                  <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.Button" full="{{ true }}" disabled="{{ propNextDisabled }}" onClick="{{ propNext }}" hint-size="100%,48px">{{ propNextLabel }}</x-import>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isYou }}" hint-placeholder-val="{{ false }}">
+              <div style="animation:cc-fade 360ms var(--ease-material) both">
+                <div style="padding:16px 20px 0;display:flex;align-items:center;justify-content:space-between">
+                  <span class="cc-label">CC / 08427</span>
+                  <div style="display:flex;gap:4px">
+                    <button class="cc-tap" onClick="{{ openNotifications }}" style="min-height:44px;padding:0 8px;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;color:var(--text-tertiary)">Alerts</button>
+                    <button class="cc-tap" onClick="{{ openSettings }}" style="min-height:44px;padding:0 8px;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;color:var(--text-metal)">Settings</button>
+                  </div>
+                </div>
+
+                <div style="padding:12px 20px 0;display:flex;gap:14px;align-items:flex-start">
+                  <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.CollectorAvatar" name="{{ me.name }}" level="{{ me.level }}" verified="{{ me.verified }}" size="{{ 64 }}" hint-size="64px,64px"></x-import>
+                  <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:4px">
+                    <span style="font-family:var(--font-display);font-size:20px;font-weight:600;color:var(--text-primary)">{{ me.name }}</span>
+                    <span class="cc-micro">{{ meEyebrow }}</span>
+                    <span class="cc-micro">{{ meStats }}</span>
+                  </div>
+                  <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.VerifiedBadge" size="sm" hint-size="auto,20px"></x-import>
+                </div>
+                <p style="margin:12px 20px 0;font-family:var(--font-editorial);font-size:18px;line-height:25px;color:var(--text-secondary)">{{ me.statement }}</p>
+
+                <div style="padding:18px 20px 0;display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                  <sc-for list="{{ meTrust }}" as="t" hint-placeholder-count="5">
+                    <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.TrustMetric" label="{{ t.label }}" value="{{ t.value }}" detail="{{ t.detail }}" tone="{{ t.tone }}" hint-size="100%,74px"></x-import>
+                  </sc-for>
+                </div>
+
+                <div style="position:sticky;top:0;z-index:15;display:flex;gap:20px;padding:0 20px;margin-top:20px;overflow-x:auto;background:var(--surface-nav);backdrop-filter:var(--blur-glass);-webkit-backdrop-filter:var(--blur-glass);border-bottom:1px solid var(--line-divider)">
+                  <sc-for list="{{ profileTabs }}" as="t" hint-placeholder-count="5">
+                    <button class="cc-tap" onClick="{{ t.pick }}" style="position:relative;padding:14px 0;white-space:nowrap;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;color:{{ t.color }}">
+                      {{ t.label }}
+                      <span style="position:absolute;left:0;right:0;bottom:-1px;height:2px;background:{{ t.seam }};display:block"></span>
+                    </button>
+                  </sc-for>
+                </div>
+
+                <sc-if value="{{ pTabCabinet }}" hint-placeholder-val="{{ true }}">
+                  <div style="padding:18px 20px 32px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+                    <sc-for list="{{ meCabinet }}" as="c" hint-placeholder-count="6">
+                      <div style="display:flex;flex-direction:column;gap:6px">
+                        <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.FragranceCard" fragrance="{{ c.frag }}" variant="shelf" status="{{ c.status }}" onClick="{{ c.open }}" hint-size="100%,140px"></x-import>
+                        <span style="font-size:11px;font-weight:600;color:var(--text-primary);line-height:14px">{{ c.frag.name }}</span>
+                      </div>
+                    </sc-for>
+                  </div>
+                </sc-if>
+
+                <sc-if value="{{ pTabReviews }}" hint-placeholder-val="{{ false }}">
+                  <div style="padding:18px 20px 32px;display:flex;flex-direction:column;gap:14px">
+                    <sc-for list="{{ meReviews }}" as="r" hint-placeholder-count="3">
+                      <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.ReviewCard" author="{{ r.author }}" level="{{ r.level }}" score="{{ r.score }}" body="{{ r.body }}" context="{{ r.context }}" date="{{ r.date }}" verified="{{ r.verified }}" reactions="{{ r.reactions }}" hint-size="100%,180px"></x-import>
+                    </sc-for>
+                  </div>
+                </sc-if>
+
+                <sc-if value="{{ pTabContribute }}" hint-placeholder-val="{{ false }}">
+                  <div style="padding:18px 20px 32px;display:flex;flex-direction:column;gap:28px">
+                    <div style="display:flex;flex-direction:column;gap:12px">
+                      <div>
+                        <h2 style="margin:0;font-family:var(--font-display);font-size:17px;font-weight:600;color:var(--text-primary)">Suggest a clone</h2>
+                        <div class="cc-micro" style="margin-top:3px">FOUR FIELDS · OPENS AT UNCONFIRMED UNTIL COLLECTORS VOTE</div>
+                      </div>
+                      <input value="{{ cForm.clone }}" onChange="{{ setClone }}" placeholder="Clone — house and name" aria-label="Clone name" style="height:48px;padding:0 12px;background:var(--surface-glass);border:1px solid var(--line-divider);border-radius:8px;color:var(--text-primary);font-family:var(--font-ui);font-size:15px;outline:none">
+                      <input value="{{ cForm.original }}" onChange="{{ setOriginal }}" placeholder="Original it references" aria-label="Original" style="height:48px;padding:0 12px;background:var(--surface-glass);border:1px solid var(--line-divider);border-radius:8px;color:var(--text-primary);font-family:var(--font-ui);font-size:15px;outline:none">
+                      <input value="{{ cForm.house }}" onChange="{{ setHouse }}" placeholder="House or retailer" aria-label="House" style="height:48px;padding:0 12px;background:var(--surface-glass);border:1px solid var(--line-divider);border-radius:8px;color:var(--text-primary);font-family:var(--font-ui);font-size:15px;outline:none">
+                      <textarea value="{{ cForm.note }}" onChange="{{ setNote }}" placeholder="What matches, and what doesn't" aria-label="Note" rows="3" style="padding:12px;background:var(--surface-glass);border:1px solid var(--line-divider);border-radius:8px;color:var(--text-primary);font-family:var(--font-ui);font-size:15px;outline:none;resize:none"></textarea>
+                      <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.Button" full="{{ true }}" disabled="{{ cloneDisabled }}" onClick="{{ submitClone }}" hint-size="100%,48px">Submit pairing</x-import>
+                    </div>
+
+                    <div style="display:flex;flex-direction:column;gap:12px">
+                      <div>
+                        <h2 style="margin:0;font-family:var(--font-display);font-size:17px;font-weight:600;color:var(--text-primary)">Rate a fragrance</h2>
+                        <div class="cc-micro" style="margin-top:3px">SCENT QUALITY ONLY · SEPARATE FROM PAIRING CONFIDENCE</div>
+                      </div>
+                      <div class="cc-hrow" style="padding:0">
+                        <sc-for list="{{ rateOptions }}" as="o" hint-placeholder-count="8">
+                          <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.StatusChip" selected="{{ o.selected }}" onClick="{{ o.pick }}" hint-size="auto,32px">{{ o.label }}</x-import>
+                        </sc-for>
+                      </div>
+                      <div style="display:flex;align-items:center;gap:10px">
+                        <sc-for list="{{ rateStars }}" as="st" hint-placeholder-count="5">
+                          <button class="cc-tap" onClick="{{ st.pick }}" aria-label="Rate" style="width:44px;height:44px;font-size:22px;line-height:1;color:{{ st.fg }}">&#9733;</button>
+                        </sc-for>
+                        <span class="cc-micro" style="margin-left:auto">{{ rateTarget }}</span>
+                      </div>
+                      <input value="{{ rateLine }}" onChange="{{ setRateLine }}" placeholder="One line, optional" aria-label="Comment" style="height:48px;padding:0 12px;background:var(--surface-glass);border:1px solid var(--line-divider);border-radius:8px;color:var(--text-primary);font-family:var(--font-ui);font-size:15px;outline:none">
+                      <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.Button" variant="secondary" full="{{ true }}" onClick="{{ submitRate }}" hint-size="100%,48px">Leave rating</x-import>
+                    </div>
+
+                    <div style="display:flex;flex-direction:column;gap:10px">
+                      <div class="cc-label">My contributions</div>
+                      <sc-for list="{{ contribRows }}" as="c" hint-placeholder-count="3">
+                        <div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line-divider)">
+                          <div style="flex:1;min-width:0">
+                            <div style="font-size:13px;font-weight:600;color:var(--text-primary)">{{ c.label }}</div>
+                            <div class="cc-micro" style="margin-top:3px">{{ c.note }}</div>
+                          </div>
+                          <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.StatusChip" tone="{{ c.tone }}" hint-size="auto,26px">{{ c.chip }}</x-import>
+                        </div>
+                      </sc-for>
+                    </div>
+                  </div>
+                </sc-if>
+
+                <sc-if value="{{ pTabMessages }}" hint-placeholder-val="{{ false }}">
+                  <div style="padding:18px 20px 32px">
+                    <sc-if value="{{ hasThread }}" hint-placeholder-val="{{ false }}">
+                      <div style="display:flex;flex-direction:column;gap:14px">
+                        <div style="display:flex;align-items:center;gap:12px;padding:12px;border:1px solid var(--line-divider);border-radius:16px;background:var(--surface-raised)">
+                          <button class="cc-tap" onClick="{{ closeThread }}" aria-label="Back" style="width:32px;height:32px;font-family:var(--font-mono);color:var(--text-primary)">&#8592;</button>
+                          <div style="width:36px;flex:0 0 36px">
+                            <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.BottlePortrait" src="{{ thread.frag.image }}" name="{{ thread.frag.name }}" ratio="square" radius="4px" hint-size="36px,36px"></x-import>
+                          </div>
+                          <div style="flex:1;min-width:0">
+                            <div style="font-size:13px;font-weight:600;color:var(--text-primary)">{{ thread.title }}</div>
+                            <div class="cc-micro" style="margin-top:3px">{{ thread.preview }}</div>
+                          </div>
+                        </div>
+                        <sc-for list="{{ thread.messages }}" as="m" hint-placeholder-count="3">
+                          <div style="display:flex;flex-direction:column;gap:4px;padding:12px;border:1px solid var(--line-divider);border-radius:16px;background:var(--surface-glass);max-width:86%">
+                            <span class="cc-micro" style="color:var(--text-metal)">{{ m.from }} · {{ m.time }}</span>
+                            <span style="font-size:14px;line-height:20px;color:var(--text-primary)">{{ m.body }}</span>
+                          </div>
+                        </sc-for>
+                        <div style="display:flex;gap:8px">
+                          <input value="{{ msgDraft }}" onChange="{{ setDraft }}" placeholder="Message about this listing" aria-label="Message" style="flex:1;min-width:0;height:48px;padding:0 12px;background:var(--surface-glass);border:1px solid var(--line-divider);border-radius:8px;color:var(--text-primary);font-family:var(--font-ui);font-size:15px;outline:none">
+                          <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.Button" onClick="{{ sendMsg }}" hint-size="auto,48px">Send</x-import>
+                        </div>
+                        <span class="cc-micro">THREADS ONLY OPEN FROM A LISTING · NO OPEN-ENDED MESSAGING</span>
+                      </div>
+                    </sc-if>
+                    <sc-if value="{{ noThread }}" hint-placeholder-val="{{ true }}">
+                      <div style="display:flex;flex-direction:column;gap:2px">
+                        <sc-for list="{{ threads }}" as="t" hint-placeholder-count="3">
+                          <button class="cc-tap" onClick="{{ t.open }}" style="display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:14px 0;border-bottom:1px solid var(--line-divider)">
+                            <span style="width:40px;flex:0 0 40px">
+                              <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.BottlePortrait" src="{{ t.frag.image }}" name="{{ t.frag.name }}" ratio="square" radius="4px" hint-size="40px,40px"></x-import>
+                            </span>
+                            <span style="flex:1;min-width:0">
+                              <span style="display:block;font-size:13px;font-weight:600;color:var(--text-primary)">{{ t.title }}</span>
+                              <span class="cc-micro" style="display:block;margin-top:3px">{{ t.preview }}</span>
+                              <span style="display:block;font-size:12px;color:var(--text-secondary);margin-top:5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ t.last }}</span>
+                            </span>
+                            <sc-if value="{{ t.unread }}" hint-placeholder-val="{{ false }}">
+                              <span style="width:2px;height:22px;background:var(--grad-iris-seam);display:block"></span>
+                            </sc-if>
+                          </button>
+                        </sc-for>
+                      </div>
+                    </sc-if>
+                  </div>
+                </sc-if>
+
+                <sc-if value="{{ pTabTrades }}" hint-placeholder-val="{{ false }}">
+                  <div style="padding:18px 20px 32px;display:flex;flex-direction:column;gap:10px">
+                    <div class="cc-label">My listings</div>
+                    <sc-for list="{{ meTrades }}" as="t" hint-placeholder-count="3">
+                      <div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line-divider)">
+                        <div style="flex:1;min-width:0">
+                          <div style="font-size:13px;font-weight:600;color:var(--text-primary)">{{ t.label }}</div>
+                          <div class="cc-micro" style="margin-top:3px">{{ t.note }}</div>
+                        </div>
+                        <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.StatusChip" tone="{{ t.tone }}" hint-size="auto,26px">{{ t.chip }}</x-import>
+                      </div>
+                    </sc-for>
+                  </div>
+                </sc-if>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isCollector }}" hint-placeholder-val="{{ false }}">
+              <div style="animation:cc-fade 360ms var(--ease-material) both">
+                <div style="display:flex;align-items:center;gap:12px;padding:8px 12px;border-bottom:1px solid var(--line-divider)">
+                  <button class="cc-tap" onClick="{{ backToTrade }}" aria-label="Back" style="width:44px;height:44px;font-family:var(--font-mono);font-size:16px;color:var(--text-primary)">&#8592;</button>
+                  <span class="cc-label" style="flex:1;text-align:center">COLLECTOR</span>
+                  <span style="width:44px"></span>
+                </div>
+                <div style="padding:18px 20px 0;display:flex;gap:14px;align-items:flex-start">
+                  <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.CollectorAvatar" name="{{ other.name }}" level="{{ other.level }}" verified="{{ other.verified }}" size="{{ 64 }}" hint-size="64px,64px"></x-import>
+                  <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:4px">
+                    <span style="font-family:var(--font-display);font-size:20px;font-weight:600;color:var(--text-primary)">{{ other.name }}</span>
+                    <span class="cc-micro">{{ other.handle }} · {{ otherEyebrow }}</span>
+                    <span class="cc-micro">{{ otherStats }}</span>
+                  </div>
+                </div>
+                <p style="margin:12px 20px 0;font-family:var(--font-editorial);font-size:18px;line-height:25px;color:var(--text-secondary)">{{ other.statement }}</p>
+                <div style="padding:18px 20px 0;display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                  <sc-for list="{{ otherTrust }}" as="t" hint-placeholder-count="4">
+                    <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.TrustMetric" label="{{ t.label }}" value="{{ t.value }}" detail="{{ t.detail }}" tone="{{ t.tone }}" hint-size="100%,74px"></x-import>
+                  </sc-for>
+                </div>
+                <div style="padding:20px;display:flex;gap:10px">
+                  <div style="flex:1">
+                    <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.Button" full="{{ true }}" onClick="{{ messageOther }}" hint-size="100%,48px">Message</x-import>
+                  </div>
+                  <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.Button" variant="secondary" onClick="{{ followOther }}" hint-size="auto,48px">Follow</x-import>
+                </div>
+                <div style="padding:0 20px 32px;display:flex;flex-direction:column;gap:12px">
+                  <div class="cc-label">Their cabinet</div>
+                  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+                    <sc-for list="{{ otherCabinet }}" as="c" hint-placeholder-count="6">
+                      <div style="display:flex;flex-direction:column;gap:6px">
+                        <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.FragranceCard" fragrance="{{ c.frag }}" variant="shelf" onClick="{{ c.open }}" hint-size="100%,140px"></x-import>
+                        <span style="font-size:11px;font-weight:600;color:var(--text-primary);line-height:14px">{{ c.frag.name }}</span>
+                      </div>
+                    </sc-for>
+                  </div>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isNotif }}" hint-placeholder-val="{{ false }}">
+              <div style="animation:cc-fade 360ms var(--ease-material) both">
+                <div style="display:flex;align-items:center;gap:12px;padding:8px 12px;border-bottom:1px solid var(--line-divider)">
+                  <button class="cc-tap" onClick="{{ backToYou }}" aria-label="Back" style="width:44px;height:44px;font-family:var(--font-mono);font-size:16px;color:var(--text-primary)">&#8592;</button>
+                  <span class="cc-label" style="flex:1;text-align:center">UPDATES</span>
+                  <span style="width:44px"></span>
+                </div>
+                <sc-for list="{{ notifGroups }}" as="g" hint-placeholder-count="3">
+                  <section style="padding:18px 20px 0">
+                    <div class="cc-label" style="margin-bottom:10px">{{ g.group }}</div>
+                    <div style="display:flex;flex-direction:column;gap:2px">
+                      <sc-for list="{{ g.items }}" as="i" hint-placeholder-count="3">
+                        <button class="cc-tap" onClick="{{ i.open }}" style="display:flex;gap:12px;width:100%;text-align:left;padding:14px 0;border-bottom:1px solid var(--line-divider)">
+                          <span style="width:2px;background:{{ i.seam }};display:block;border-radius:1px"></span>
+                          <span style="flex:1;min-width:0">
+                            <span style="display:block;font-size:13px;font-weight:600;color:var(--text-primary)">{{ i.title }}</span>
+                            <span class="cc-micro" style="display:block;margin-top:4px">{{ i.detail }}</span>
+                          </span>
+                          <span class="cc-micro">{{ i.time }}</span>
+                        </button>
+                      </sc-for>
+                    </div>
+                  </section>
+                </sc-for>
+                <div style="padding:28px 20px"><span class="cc-micro">ONE INBOX · TRADE AND UPDATES</span></div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isSettings }}" hint-placeholder-val="{{ false }}">
+              <div style="animation:cc-fade 360ms var(--ease-material) both">
+                <div style="display:flex;align-items:center;gap:12px;padding:8px 12px;border-bottom:1px solid var(--line-divider)">
+                  <button class="cc-tap" onClick="{{ backToYou }}" aria-label="Back" style="width:44px;height:44px;font-family:var(--font-mono);font-size:16px;color:var(--text-primary)">&#8592;</button>
+                  <span class="cc-label" style="flex:1;text-align:center">SETTINGS</span>
+                  <span style="width:44px"></span>
+                </div>
+                <div style="padding:20px 20px 0;display:flex;flex-direction:column;gap:10px">
+                  <div class="cc-label">Display mode</div>
+                  <div style="display:flex;gap:8px">
+                    <sc-for list="{{ displayModes }}" as="m" hint-placeholder-count="3">
+                      <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.StatusChip" selected="{{ m.selected }}" onClick="{{ m.pick }}" hint-size="auto,32px">{{ m.label }}</x-import>
+                    </sc-for>
+                  </div>
+                </div>
+                <div style="padding:26px 20px 0;display:flex;flex-direction:column;gap:12px">
+                  <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px">
+                    <div class="cc-label" style="white-space:nowrap">Cabinet finish</div>
+                    <span style="font-family:var(--font-mono);font-size:11px;color:var(--text-tertiary);white-space:nowrap">{{ finishCount }}</span>
+                  </div>
+                  <p style="margin:0;font-size:13px;line-height:19px;color:var(--text-secondary);max-width:38ch">Published colorways. The finish changes the cabinet, not the collection.</p>
+                  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px">
+                    <sc-for list="{{ finishes }}" as="t" hint-placeholder-count="13">
+                      <button class="cc-tap" onClick="{{ t.pick }}" aria-pressed="{{ t.on }}" data-colorway="{{ t.id }}" style="position:relative;display:flex;flex-direction:column;gap:10px;padding:12px;border-radius:10px;text-align:left;border:1px solid {{ t.edge }};background:var(--surface-canvas);box-shadow:{{ t.lift }};min-height:96px;overflow:hidden">
+                        <span style="position:absolute;inset:0;background:var(--grad-depth);opacity:.9;pointer-events:none"></span>
+                        <span style="position:relative;display:flex;align-items:center;gap:5px">
+                          <span style="width:26px;height:26px;border-radius:6px;background:var(--surface-raised);border:1px solid var(--line-divider)"></span>
+                          <span style="width:26px;height:26px;border-radius:6px;background:var(--text-metal)"></span>
+                          <span style="position:relative;width:26px;height:26px;border-radius:6px;background:var(--surface-inset);border:1px solid var(--line-signal);display:grid;place-items:center">
+                            <span style="width:1px;height:16px;background:var(--grad-iris-seam);box-shadow:var(--glow-iris-sm)"></span>
+                          </span>
+                        </span>
+                        <span style="position:relative;display:flex;flex-direction:column;gap:3px">
+                          <span style="font-size:12px;font-weight:600;letter-spacing:.02em;color:var(--text-primary);text-wrap:pretty">{{ t.label }}</span>
+                          <span style="font-family:var(--font-mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-tertiary)">{{ t.signal }}</span>
+                        </span>
+                        <sc-if value="{{ t.on }}" hint-placeholder-val="{{ false }}">
+                          <span style="position:absolute;top:10px;right:10px;width:16px;height:16px;border-radius:50%;border:1px solid var(--line-metal);display:grid;place-items:center;background:var(--surface-raised)">
+                            <span style="width:5px;height:5px;border-radius:50%;background:var(--text-metal)"></span>
+                          </span>
+                        </sc-if>
+                      </button>
+                    </sc-for>
+                  </div>
+                  <sc-if value="{{ finishDayLocked }}" hint-placeholder-val="{{ false }}">
+                    <span class="cc-micro" style="color:var(--text-tertiary)">THIS FINISH IS PUBLISHED DARK ONLY. DISPLAY MODE STAYS NIGHT.</span>
+                  </sc-if>
+                </div>
+
+                <div style="padding:24px 20px 0;display:flex;flex-direction:column;gap:2px">
+                  <sc-for list="{{ settingsRows }}" as="r" hint-placeholder-count="4">
+                    <button class="cc-tap" onClick="{{ r.toggle }}" style="display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;text-align:left;padding:16px 0;border-bottom:1px solid var(--line-divider);min-height:56px">
+                      <span style="font-size:14px;color:var(--text-primary)">{{ r.label }}</span>
+                      <span class="cc-micro" style="color:var(--text-metal)">{{ r.value }}</span>
+                    </button>
+                  </sc-for>
+                </div>
+                <div style="padding:24px 20px 32px;display:flex;flex-direction:column;gap:2px">
+                  <sc-for list="{{ settingsLinks }}" as="l" hint-placeholder-count="7">
+                    <button class="cc-tap" onClick="{{ l.open }}" style="display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;text-align:left;padding:16px 0;border-bottom:1px solid var(--line-divider);min-height:56px">
+                      <span style="font-size:14px;color:var(--text-primary)">{{ l.label }}</span>
+                      <span style="font-family:var(--font-mono);font-size:12px;color:var(--text-tertiary)">&#8594;</span>
+                    </button>
+                  </sc-for>
+                  <span class="cc-micro" style="margin-top:16px">SHOP LINKS ELSEWHERE IN THE APP ARE AFFILIATE LINKS. DISCLOSED WHEREVER THEY APPEAR.</span>
+                </div>
+              </div>
+            </sc-if>
+
+          </div>
+        </div>
+
+        <sc-if value="{{ showNav }}" hint-placeholder-val="{{ true }}">
+          <dc-import name="CabinetNav" active="{{ navActive }}" onChange="{{ navChange }}" mode="{{ glyphMode }}" hint-size="100%,76px"></dc-import>
+        </sc-if>
+      </div>
+
+      <sc-if value="{{ toast }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;left:20px;right:20px;bottom:92px;z-index:80">
+          <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.Toast" tone="{{ toastTone }}" hint-size="100%,48px">{{ toast }}</x-import>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ searchOpen }}" hint-placeholder-val="{{ false }}">
+        <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.SearchOverlay" value="{{ q }}" onChange="{{ setQuery }}" tab="{{ searchTab }}" onTabChange="{{ setSearchTab }}" recent="{{ recentSearches }}" filters="{{ searchFilters }}" selectedFilters="{{ filters }}" onFilterToggle="{{ toggleFilter }}" onClose="{{ closeSearch }}" hint-size="100%,100%">
+          <sc-if value="{{ searchHasQuery }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;flex-direction:column;gap:2px">
+              <sc-if value="{{ searchEmpty }}" hint-placeholder-val="{{ false }}">
+                <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.EmptyState" title="Nothing under that name" body="Try a house, an accord, or a collector handle." hint-size="100%,180px"></x-import>
+              </sc-if>
+              <sc-for list="{{ searchResults }}" as="r" hint-placeholder-count="4">
+                <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.FragranceCard" fragrance="{{ r.frag }}" variant="compact" status="{{ r.status }}" onClick="{{ r.open }}" hint-size="100%,64px"></x-import>
+              </sc-for>
+              <sc-for list="{{ searchOther }}" as="o" hint-placeholder-count="0">
+                <div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line-divider)">
+                  <div style="flex:1;min-width:0">
+                    <div style="font-size:14px;font-weight:600;color:var(--text-primary)">{{ o.title }}</div>
+                    <div class="cc-micro" style="margin-top:3px">{{ o.sub }}</div>
+                  </div>
+                  <button class="cc-tap" onClick="{{ o.open }}" aria-label="Open" style="width:44px;height:44px;font-family:var(--font-mono);color:var(--text-metal)">&#8594;</button>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+        </x-import>
+      </sc-if>
+
+      <sc-if value="{{ ceremonyLock }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;inset:0;z-index:90;display:grid;place-items:center;pointer-events:none;background:color-mix(in oklab,var(--shadow-ground) 42%,transparent)">
+          <div style="position:relative;width:132px;height:186px;border:1px solid var(--line-metal);border-radius:10px;background:var(--surface-glass);animation:cc-fade 260ms cubic-bezier(.22,1,.36,1) both;box-shadow:inset 0 1px 0 color-mix(in oklab,var(--text-primary) 10%,transparent)">
+            <span style="position:absolute;left:-1px;right:-1px;bottom:26px;height:1px;background:linear-gradient(90deg,transparent,var(--rose-alloy-light),transparent);display:block"></span>
+            <span style="position:absolute;left:50%;top:22px;bottom:52px;width:2px;transform:translateX(-50%);background:linear-gradient(180deg,transparent,var(--iris-core),transparent);display:block"></span>
+            <span style="position:absolute;left:0;right:0;bottom:8px;text-align:center;font-family:var(--font-ui);font-size:9px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--rose-alloy-light)">In cabinet</span>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ ceremonyTrade }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;inset:0;z-index:90;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;pointer-events:none;background:color-mix(in oklab,var(--shadow-ground) 62%,transparent)">
+          <div style="position:relative;display:flex;align-items:center;justify-content:center;width:220px;height:96px">
+            <span style="position:absolute;left:14px;width:88px;height:88px;border:1px solid var(--line-metal);border-radius:10px;background:var(--surface-glass);animation:cc-shift-r 620ms cubic-bezier(.22,1,.36,1) both"></span>
+            <span style="position:absolute;right:14px;width:88px;height:88px;border:1px solid var(--line-metal);border-radius:10px;background:var(--surface-glass);animation:cc-shift-l 620ms cubic-bezier(.22,1,.36,1) both"></span>
+            <span style="position:absolute;left:50%;top:6px;bottom:6px;width:1px;transform:translateX(-50%);background:linear-gradient(180deg,transparent,var(--rose-alloy-light),transparent);animation:cc-seam 420ms cubic-bezier(.22,1,.36,1) 480ms both"></span>
+            <span style="position:absolute;left:50%;top:20px;bottom:20px;width:2px;transform:translateX(-50%);background:linear-gradient(180deg,transparent,var(--iris-core),transparent);animation:cc-fade 300ms ease 640ms both"></span>
+          </div>
+          <span style="font-family:var(--font-ui);font-size:10px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--porcelain);animation:cc-fade 300ms ease 620ms both">Proposal sent</span>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ propConfirm }}" hint-placeholder-val="{{ false }}">
+        <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.ActionSheet" eyebrow="SECOND CONFIRMATION" title="Send this proposal?" onClose="{{ propCancel }}" hint-size="100%,40%">
+          <div style="display:flex;flex-direction:column;gap:14px;padding-bottom:8px">
+            <span style="font-size:14px;line-height:20px;color:var(--text-secondary)">{{ propPickedLine }} — for {{ listing.frag.name }}. {{ propCashLabel }}.</span>
+            <div style="display:flex;gap:10px">
+              <div style="flex:1">
+                <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.Button" full="{{ true }}" onClick="{{ propConfirmSend }}" hint-size="100%,48px">Confirm and send</x-import>
+              </div>
+              <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.Button" variant="quiet" onClick="{{ propCancel }}" hint-size="auto,48px">Not yet</x-import>
+            </div>
+          </div>
+        </x-import>
+      </sc-if>
+
+      <sc-if value="{{ hasDrawer }}" hint-placeholder-val="{{ false }}">
+        <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.ActionSheet" eyebrow="{{ lineDrawer.relLabel }}" title="{{ lineDrawer.frag.name }}" onClose="{{ clearLine }}" hint-size="100%,50%">
+          <div style="display:flex;flex-direction:column;gap:14px;padding-bottom:8px">
+            <div style="display:flex;align-items:center;gap:12px">
+              <span style="padding:5px 9px;border-radius:999px;border:{{ lineDrawer.border }};background:{{ lineDrawer.bg }};color:{{ lineDrawer.fg }};font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase">{{ lineDrawer.stateLabel }}</span>
+              <span style="font-family:var(--font-mono);font-size:11px;color:var(--text-secondary)">{{ lineDrawer.countLine }}</span>
+            </div>
+            <div style="display:flex;align-items:flex-end;gap:3px;height:32px">
+              <sc-for list="{{ lineDrawer.spark }}" as="p" hint-placeholder-count="14">
+                <span style="flex:1;height:{{ p.h }}%;background:{{ p.tone }};border-radius:1px;display:block"></span>
+              </sc-for>
+            </div>
+            <div style="display:flex;gap:8px">
+              <button class="cc-tap" onClick="{{ lineDrawer.voteConfirm }}" style="flex:1;min-height:44px;border:{{ lineDrawer.confirmBorder }};border-radius:8px;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;color:var(--text-primary);background:var(--surface-glass)">Confirms this</button>
+              <button class="cc-tap" onClick="{{ lineDrawer.voteDispute }}" style="flex:1;min-height:44px;border:{{ lineDrawer.disputeBorder }};border-radius:8px;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;color:var(--text-secondary)">Doesn't match</button>
+            </div>
+            <div style="display:flex;gap:10px">
+              <div style="flex:1">
+                <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.Button" full="{{ true }}" onClick="{{ lineDrawer.open }}" hint-size="100%,48px">Open entry</x-import>
+              </div>
+              <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.Button" variant="secondary" onClick="{{ lineDrawer.compare }}" hint-size="auto,48px">Compare</x-import>
+            </div>
+          </div>
+        </x-import>
+      </sc-if>
+
+      <sc-if value="{{ hasCompare }}" hint-placeholder-val="{{ false }}">
+        <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.ActionSheet" eyebrow="SIDE BY SIDE" title="{{ compareTitle }}" onClose="{{ clearLine }}" hint-size="100%,70%">
+          <div style="display:flex;flex-direction:column;gap:2px;padding-bottom:8px">
+            <sc-for list="{{ compareRows }}" as="r" hint-placeholder-count="8">
+              <div style="display:flex;align-items:baseline;gap:10px;padding:11px 0;border-bottom:1px solid var(--line-divider)">
+                <span class="cc-label" style="flex:1">{{ r.label }}</span>
+                <span style="font-family:var(--font-mono);font-size:12px;color:var(--text-primary);min-width:56px;text-align:right">{{ r.a }}</span>
+                <span style="font-family:var(--font-mono);font-size:12px;color:var(--text-signal);min-width:56px;text-align:right">{{ r.b }}</span>
+              </div>
+            </sc-for>
+            <span class="cc-micro" style="margin-top:10px">SIMILARITY IS A COMMUNITY SIGNAL, NOT A CLAIM OF EQUIVALENCE.</span>
+          </div>
+        </x-import>
+      </sc-if>
+
+      <sc-if value="{{ statusSheet }}" hint-placeholder-val="{{ false }}">
+        <x-import component-from-global-scope="CloneCabinetDesignSystem_9042f5.ActionSheet" eyebrow="{{ frag.name }}" title="Set a status" options="{{ statusOptions }}" value="{{ statusLabel }}" onSelect="{{ setStatus }}" onClose="{{ closeSheets }}" hint-size="100%,60%"></x-import>
+      </sc-if>
+
+    </div>
+  </div>
+
+  <sc-if value="{{ showChrome }}" hint-placeholder-val="{{ true }}">
+  <div style="max-width:1180px;width:100%;display:flex;flex-wrap:wrap;gap:10px 18px;justify-content:center">
+    <sc-for list="{{ jumpLinks }}" as="j" hint-placeholder-count="6">
+      <button class="cc-tap" onClick="{{ j.go }}" style="font-family:var(--font-mono);font-size:10px;letter-spacing:.04em;text-transform:uppercase;color:{{ j.color }};min-height:28px">{{ j.label }}</button>
+    </sc-for>
+  </div>
+  </sc-if>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:924,&quot;height&quot;:600},&quot;startScreen&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Launch&quot;,&quot;Welcome&quot;,&quot;Onboarding&quot;,&quot;Discover&quot;,&quot;Detail&quot;,&quot;Cabinet&quot;,&quot;Lineage&quot;,&quot;Trade&quot;,&quot;Listing&quot;,&quot;Proposal&quot;,&quot;You&quot;,&quot;Collector&quot;,&quot;Notifications&quot;,&quot;Settings&quot;],&quot;default&quot;:&quot;Launch&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Prototype&quot;},&quot;defaultMode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Night Cabinet&quot;,&quot;Day Cabinet&quot;],&quot;default&quot;:&quot;Night Cabinet&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Prototype&quot;},&quot;startWide&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Prototype&quot;},&quot;stageChrome&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Prototype&quot;},&quot;colorway&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;riviera-cobalt&quot;,&quot;obsidian-signal&quot;,&quot;obsidian-rose&quot;,&quot;porcelain-aqua&quot;,&quot;deep-teal-atelier&quot;,&quot;concentric-atelier&quot;,&quot;oxblood-nocturne&quot;,&quot;copper-signal&quot;,&quot;verdant-pulse&quot;,&quot;citrine-gold&quot;,&quot;ember-copper&quot;,&quot;orchid-voltage&quot;,&quot;emerald-vault&quot;],&quot;default&quot;:&quot;riviera-cobalt&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Cabinet finish&quot;}}">
+class Component extends DCLogic {
+  // The published colorways. `light` marks the two that carry a daylight ground;
+  // every other board publishes a dark skin only, so Day Cabinet is withheld.
+  static DEFAULT_FINISH = "riviera-cobalt";
+  static FINISHES = [
+    { id: "riviera-cobalt",     label: "Riviera Cobalt",      signal: "Electric blue", light: false },
+    { id: "obsidian-signal",    label: "Obsidian Signal",     signal: "Electric blue", light: false },
+    { id: "obsidian-rose",      label: "Obsidian Rose",       signal: "Crimson",       light: false },
+    { id: "porcelain-aqua",     label: "Soft Tech Porcelain", signal: "Turquoise",     light: true },
+    { id: "deep-teal-atelier",  label: "Deep Teal Atelier",   signal: "Liquid cyan",   light: false },
+    { id: "concentric-atelier", label: "Concentric Atelier",  signal: "Arctic glow",   light: false },
+    { id: "oxblood-nocturne",   label: "Oxblood Nocturne",    signal: "Oxblood",       light: false },
+    { id: "copper-signal",      label: "Copper Signal",       signal: "Amber glow",    light: false },
+    { id: "verdant-pulse",      label: "Verdant Pulse",       signal: "Lilac",         light: false },
+    { id: "citrine-gold",       label: "Citrine Gold",        signal: "Citrine",       light: false },
+    { id: "ember-copper",       label: "Ember Copper",        signal: "Terracotta",    light: false },
+    { id: "orchid-voltage",     label: "Orchid Voltage",      signal: "Orchid",        light: false },
+    { id: "emerald-vault",      label: "Emerald Vault",       signal: "Acid lime",     light: false }
+  ];
+  state = {
+    screen: "launch", mode: "night", wide: false, colorway: "riviera-cobalt",
+    obStep: 0, obLevel: "Collector", obInterests: ["Niche", "Alternatives"], obFamilies: ["Woody", "Amber"],
+    heroIndex: 0,
+    searchOpen: false, q: "", searchTab: "Fragrances", filters: [],
+    fragId: "cc-01", detailTab: "Overview",
+    statusSheet: false,
+    statuses: { "cc-01": "In Cabinet", "cc-03": "In Cabinet", "cc-05": "For Trade", "cc-06": "In Cabinet", "cc-08": "Archived", "cc-04": "Sampled", "cc-10": "In Cabinet", "cc-16": "In Cabinet", "cc-20": "For Trade", "cc-07": "Seeking", "cc-12": "Seeking" },
+    lineRoot: "cc-01", lineMode: "Votes", relFilter: "All", drawerId: null, compareId: null,
+    votes: {}, contribute: null, cForm: { clone: "", original: "", house: "", note: "" }, rateForm: { id: "cc-05", stars: 0, line: "" },
+    threadId: null, msgDraft: "", messages: {}, ceremony: null,
+    cabView: "Shelf", cabSort: "Acquired", valueVisible: false, editShelf: false, order: null,
+    listingId: "t-01", propStep: 0, propItems: [], propCash: 0, propConfirm: false,
+    handle: "@nrahman", profileTab: "Cabinet",
+    toast: null, toastTone: "neutral",
+    settings: { trade: true, reduce: false, valuePrivate: true, notify: true, display: "Night Cabinet" },
+  };
+
+  componentDidMount() {
+    const p = this.props || {};
+    const map = { Launch: "launch", Welcome: "welcome", Onboarding: "onboard", Discover: "discover", Detail: "detail", Cabinet: "cabinet", Lineage: "lineage", Trade: "trade", You: "you" };
+    const start = map[p.startScreen || "Launch"] || "launch";
+    if (start !== "launch") this.setState({ screen: start });
+    if (p.defaultMode === "Day Cabinet") this.setState({ mode: "day", settings: Object.assign({}, this.state.settings, { display: "Day Cabinet" }) });
+    if (p.startWide) this.setState({ wide: true });
+    let saved_cw = null;
+    try {
+      const saved = localStorage.getItem("cc-proto-mode");
+      if (saved === "day" || saved === "night") this.setState({ mode: saved });
+      const cw = localStorage.getItem("cc-proto-colorway");
+      if (cw && Component.FINISHES.some((f) => f.id === cw)) saved_cw = cw;
+    } catch (e) {}
+    // A finish the user actually chose outranks the Tweaks default; an explicitly
+    // changed Tweaks prop outranks the saved value.
+    const propCw = p.colorway && p.colorway !== Component.DEFAULT_FINISH ? p.colorway : null;
+    const pick = propCw || saved_cw;
+    if (pick && Component.FINISHES.some((f) => f.id === pick)) this.setState({ colorway: pick });
+    this.fixAssetPaths();
+    this._t = setTimeout(() => {
+      if (this.state.screen === "launch") this.setState({ screen: "welcome" });
+    }, 1500);
+  }
+
+  // The Tweaks panel drives the finish too, so a change there re-skins live.
+  componentDidUpdate(prevProps) {
+    if (prevProps.colorway !== this.props.colorway && this.props.colorway
+        && Component.FINISHES.some((f) => f.id === this.props.colorway)) {
+      this.setState({ colorway: this.props.colorway });
+    }
+  }
+
+  fixAssetPaths() {
+    // The design-system components hard-code root-absolute /assets/ paths; this page is served
+    // from a sub-path, so rewrite image sources to the served base as nodes appear.
+    const base = new URL(".", document.baseURI).pathname;
+    if (base !== "/") {
+      const fix = (img) => {
+        const src = img.getAttribute("src");
+        if (src && src.charAt(0) === "/" && src.indexOf(base) !== 0) img.setAttribute("src", base + src.slice(1));
+      };
+      const scan = (node) => {
+        if (!node || node.nodeType !== 1) return;
+        if (node.tagName === "IMG") fix(node);
+        if (node.querySelectorAll) node.querySelectorAll("img").forEach(fix);
+      };
+      scan(document.body);
+      this._obs = new MutationObserver((muts) => muts.forEach((m) => {
+        if (m.type === "attributes") fix(m.target);
+        else m.addedNodes.forEach(scan);
+      }));
+      this._obs.observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ["src"] });
+    }
+  }
+  componentWillUnmount() { clearTimeout(this._t); clearTimeout(this._toast); if (this._obs) this._obs.disconnect(); }
+
+  db() { return window.CC || { fragrances: [], cabinet: [], listings: [], collectors: [], lineage: {}, notifications: [], purchaseLinks: [], houses: [], me: {} }; }
+  set(p) { this.setState(p); }
+  flash(msg, tone) {
+    clearTimeout(this._toast);
+    this.setState({ toast: msg, toastTone: tone || "neutral" });
+    this._toast = setTimeout(() => this.setState({ toast: null }), 2800);
+  }
+  go(screen, extra) { this.setState(Object.assign({ screen: screen, searchOpen: false, statusSheet: false, drawerId: null, compareId: null }, extra || {})); }
+  navFor(s) {
+    if (s === "detail" || s === "discover") return "discover";
+    if (s === "lineage") return "lineage";
+    if (s === "cabinet") return "cabinet";
+    if (s === "trade" || s === "tradeDetail" || s === "proposal") return "trade";
+    return "you";
+  }
+  statusOf(id) { return this.state.statuses[id] || null; }
+  owned() {
+    const d = this.db();
+    return d.cabinet.filter((c) => ["In Cabinet", "For Trade", "Archived", "Sampled"].indexOf(this.statusOf(c.id) || c.status) >= 0);
+  }
+  shelfOrder() {
+    const ids = this.owned().map((c) => c.id);
+    const o = this.state.order;
+    if (!o) return ids;
+    return o.filter((id) => ids.indexOf(id) >= 0).concat(ids.filter((id) => o.indexOf(id) < 0));
+  }
+  enrichListing(l) {
+    const d = this.db();
+    const c = d.byHandle(l.handle);
+    return {
+      id: l.id, fragrance: d.byId(l.fragranceId), condition: l.condition, fill: l.fill,
+      presentation: l.presentation, collector: { name: c.name }, trades: c.trades, region: c.region,
+      wants: l.wants, verified: c.verified,
+    };
+  }
+
+  profVals() {
+    const d = this.db(), s = this.state;
+    const me = d.me;
+    const other = d.byHandle(s.handle);
+    const openFrag = (id) => () => this.go("detail", { fragId: id, detailTab: "Overview" });
+    const threads = d.listings.slice(0, 3).map((l) => {
+      const c = d.byHandle(l.handle), f = d.byId(l.fragranceId);
+      const extra = s.messages[l.id] || [];
+      const base = [
+        { from: c.name, mine: false, body: "Condition is honest — one test spray, box included. Where would this ship to?", time: "09:12" },
+        { from: "You", mine: true, body: "New York. Happy to cover tracked shipping both ways.", time: "09:31" },
+      ];
+      return { id: l.id, frag: f, collector: c, title: c.name, handle: c.handle,
+        preview: (f.name + " · " + l.condition + " · " + l.fill + "% fill").toUpperCase(),
+        last: extra.length ? extra[extra.length - 1].body : base[base.length - 1].body,
+        time: "09:31", unread: l.id === "t-01",
+        messages: base.concat(extra),
+        open: () => this.setState({ threadId: l.id, profileTab: "Messages" }) };
+    });
+    const thread = threads.find((t) => t.id === s.threadId) || null;
+    const contribRows = [
+      { label: "Editions No. 1 → Luminous Capsule", note: "INTERPRETATION · SUBMITTED 12 AUG", chip: "Confirmed", tone: "cabinet" },
+      { label: "Kaur Bay → Cabinet Craft", note: "SIMILAR PROFILE · SUBMITTED 28 AUG", chip: "Pending 2/3", tone: "signal" },
+      { label: "Studio Rice → Porcelain Study", note: "ALTERNATIVE · SUBMITTED 30 AUG", chip: "Disputed", tone: "warning" },
+    ];
+    return {
+      me: me, meEyebrow: (me.level + " · " + me.region).toUpperCase(),
+      meStats: me.followers + " FOLLOWERS · " + me.following + " FOLLOWING",
+      profileTabs: ["Cabinet", "Reviews", "Contribute", "Messages", "Trades"].map((t) => ({
+        label: t, pick: () => this.setState({ profileTab: t, threadId: null }),
+        color: s.profileTab === t ? "var(--text-metal)" : "var(--text-tertiary)",
+        seam: s.profileTab === t ? "var(--grad-iris-seam-h)" : "transparent" })),
+      pTabCabinet: s.profileTab === "Cabinet", pTabReviews: s.profileTab === "Reviews",
+      pTabContribute: s.profileTab === "Contribute", pTabMessages: s.profileTab === "Messages", pTabTrades: s.profileTab === "Trades",
+      meTrust: [
+        { label: "Successful trades", value: String(me.trades), detail: "BOTH PARTIES CONFIRMED", tone: "good" },
+        { label: "Condition accuracy", value: me.accuracy, detail: "LAST 12 MONTHS", tone: "good" },
+        { label: "Ships in", value: me.shipping, detail: "AVERAGE", tone: "neutral" },
+        { label: "Response", value: me.response, detail: "WITHIN 48 HOURS", tone: "neutral" },
+        { label: "Contribution", value: me.contribution, detail: "PAIRINGS AND REVIEWS", tone: "neutral" },
+      ],
+      meCabinet: this.shelfOrder().slice(0, 6).map((id) => ({ frag: d.byId(id), status: this.statusOf(id), open: openFrag(id) })),
+      meReviews: d.reviews.slice(0, 3),
+      contribRows: contribRows,
+      cForm: s.cForm,
+      setClone: (e) => this.setState({ cForm: Object.assign({}, s.cForm, { clone: e.target.value }) }),
+      setOriginal: (e) => this.setState({ cForm: Object.assign({}, s.cForm, { original: e.target.value }) }),
+      setHouse: (e) => this.setState({ cForm: Object.assign({}, s.cForm, { house: e.target.value }) }),
+      setNote: (e) => this.setState({ cForm: Object.assign({}, s.cForm, { note: e.target.value }) }),
+      submitClone: () => { this.setState({ cForm: { clone: "", original: "", house: "", note: "" } }); this.flash("Pairing submitted. It opens at Unconfirmed.", "signal"); },
+      cloneDisabled: !(s.cForm.clone && s.cForm.original),
+      rateOptions: d.fragrances.slice(0, 8).map((f) => ({ label: f.name, selected: s.rateForm.id === f.id, pick: () => this.setState({ rateForm: Object.assign({}, s.rateForm, { id: f.id }) }) })),
+      rateStars: [1, 2, 3, 4, 5].map((n) => ({ n: n, fg: n <= s.rateForm.stars ? "var(--rose-alloy)" : "var(--graphite)", pick: () => this.setState({ rateForm: Object.assign({}, s.rateForm, { stars: n }) }) })),
+      rateLine: s.rateForm.line,
+      setRateLine: (e) => this.setState({ rateForm: Object.assign({}, s.rateForm, { line: e.target.value }) }),
+      rateTarget: d.byId(s.rateForm.id).name,
+      submitRate: () => { this.setState({ rateForm: { id: s.rateForm.id, stars: 0, line: "" } }); this.flash("Rating recorded. Separate from pairing confidence.", "success"); },
+      canRate: s.rateForm.stars > 0,
+      threads: threads, thread: thread, hasThread: !!thread, noThread: !thread,
+      backToYou: () => this.go("you"),
+      closeThread: () => this.setState({ threadId: null }),
+      msgDraft: s.msgDraft,
+      setDraft: (e) => this.setState({ msgDraft: e.target.value }),
+      sendMsg: () => {
+        if (!s.msgDraft.trim() || !thread) return;
+        const list = (s.messages[thread.id] || []).concat([{ from: "You", mine: true, body: s.msgDraft.trim(), time: "now" }]);
+        this.setState({ messages: Object.assign({}, s.messages, { [thread.id]: list }), msgDraft: "" });
+      },
+      meTrades: d.listings.slice(0, 3).map((l) => ({ frag: d.byId(l.fragranceId), label: d.byId(l.fragranceId).name,
+        note: (l.condition + " · " + l.fill + "% FILL · " + l.posted).toUpperCase(),
+        chip: l.id === "t-01" ? "Pending" : l.id === "t-02" ? "Active" : "Completed",
+        tone: l.id === "t-01" ? "signal" : l.id === "t-02" ? "cabinet" : "success" })),
+      openSettings: () => this.go("settings"),
+      openNotifications: () => this.go("notifications"),
+      // collector profile
+      other: other, otherEyebrow: (other.level + " · " + other.region).toUpperCase(),
+      otherStats: other.followers + " FOLLOWERS · " + other.trades + " TRADES",
+      otherTrust: [
+        { label: "Successful trades", value: String(other.trades), detail: "SELF-REPORTED, BOTH PARTIES", tone: "good" },
+        { label: "Condition accuracy", value: other.accuracy, detail: "LAST 12 MONTHS", tone: "good" },
+        { label: "Ships in", value: other.shipping, detail: "AVERAGE", tone: "neutral" },
+        { label: "Response", value: other.response, detail: "WITHIN 48 HOURS", tone: "neutral" },
+      ],
+      otherCabinet: other.cabinet.map((id) => ({ frag: d.byId(id), open: openFrag(id) })),
+      followOther: () => this.flash("Following " + other.name + "."),
+      messageOther: () => { this.go("you", { profileTab: "Messages", threadId: "t-01" }); },
+      // settings
+      settingsRows: [
+        { label: "Collection value visibility", value: s.settings.valuePrivate ? "Private" : "Visible", on: !s.settings.valuePrivate, toggle: () => this.setState({ settings: Object.assign({}, s.settings, { valuePrivate: !s.settings.valuePrivate }), valueVisible: s.settings.valuePrivate }) },
+        { label: "Available for trade", value: s.settings.trade ? "On" : "Off", on: s.settings.trade, toggle: () => this.setState({ settings: Object.assign({}, s.settings, { trade: !s.settings.trade }) }) },
+        { label: "Trade notifications", value: s.settings.notify ? "On" : "Off", on: s.settings.notify, toggle: () => this.setState({ settings: Object.assign({}, s.settings, { notify: !s.settings.notify }) }) },
+        { label: "Reduced motion", value: s.settings.reduce ? "On" : "Off", on: s.settings.reduce, toggle: () => this.setState({ settings: Object.assign({}, s.settings, { reduce: !s.settings.reduce }) }) },
+      ],
+      displayModes: ["System", "Day Cabinet", "Night Cabinet"].map((m) => ({ label: m, selected: s.settings.display === m,
+        pick: () => { const mode = m === "Day Cabinet" ? "day" : "night"; try { localStorage.setItem("cc-proto-mode", mode); } catch (e) {} this.setState({ settings: Object.assign({}, s.settings, { display: m }), mode: mode }); } })),
+      settingsLinks: ["Account and privacy", "Shipping regions", "Blocked members", "Data export", "Accessibility", "Help and legal", "About Clone Cabinet"].map((l) => ({ label: l, open: () => this.flash(l + " lives here.") })),
+      notifGroups: d.notifications.map((g) => ({ group: g.group.toUpperCase(), items: g.items.map((i) => Object.assign({}, i, {
+        seam: i.signal ? "var(--grad-iris-seam)" : "var(--line-strong)",
+        open: () => (i.kind === "trade" ? this.go("tradeDetail", { listingId: "t-01" }) : i.kind === "lineage" ? this.go("lineage", { lineRoot: "cc-01" }) : this.go("discover")) })) })),
+    };
+  }
+
+  tradeVals() {
+    const d = this.db(), s = this.state;
+    const kindOf = (l) => (l.group === "seeking" ? "Wanted" : l.condition === "Decant" ? "For Trade" : l.fill === 100 ? "For Sale" : "For Trade");
+    const paintKind = { "For Sale": { fg: "var(--text-metal)", border: "var(--line-metal)" }, "For Trade": { fg: "var(--text-signal)", border: "var(--line-signal)" }, "Wanted": { fg: "var(--rose-alloy-light)", border: "var(--oxblood)" } };
+    const enrich = (l) => {
+      const c = d.byHandle(l.handle), f = d.byId(l.fragranceId), k = kindOf(l);
+      return { id: l.id, listing: this.enrichListing(l), frag: f, collector: c, kind: k,
+        kindFg: paintKind[k].fg, kindBorder: paintKind[k].border,
+        line: (l.condition + " · " + l.fill + "% FILL · " + l.size).toUpperCase(),
+        postedLine: (l.posted + " · " + c.region).toUpperCase(),
+        tradesLine: c.trades + " SUCCESSFUL TRADES",
+        wants: l.wants, presentation: l.presentation, batch: l.batch, condition: l.condition, fill: l.fill, size: l.size,
+        open: () => this.go("tradeDetail", { listingId: l.id }) };
+    };
+    const rows = d.listings.map(enrich);
+    const groups = [
+      { title: "From collectors you follow", note: "TWO LISTINGS", items: rows.filter((r) => ["@vasari", "@yadeyemi"].indexOf(r.collector.handle) >= 0) },
+      { title: "Recently verified", note: "CONDITION CONFIRMED BY BOTH PARTIES", items: rows.filter((r) => r.collector.verified).slice(0, 3) },
+      { title: "Matches for your Seeking list", note: "DETAIL NO. 4 · QAMAR OUD 12", items: rows.filter((r) => ["cc-07", "cc-12"].indexOf(r.frag.id) >= 0) },
+      { title: "Available from your Cabinet network", note: "SECOND-DEGREE COLLECTORS", items: rows.filter((r) => ["@hsato", "@ebraun", "@pnair"].indexOf(r.collector.handle) >= 0) },
+    ];
+    const cur = rows.find((r) => r.id === s.listingId) || rows[0];
+    const mine = d.cabinet.filter((c) => (this.statusOf(c.id) || c.status) !== "Seeking").map((c) => {
+      const f = d.byId(c.id);
+      return { id: c.id, frag: f, label: f.name, note: (f.house + " · " + c.size + " · " + c.fill + "% FILL").toUpperCase(),
+        selected: s.propItems.indexOf(c.id) >= 0,
+        border: s.propItems.indexOf(c.id) >= 0 ? "var(--line-metal)" : "var(--line-divider)",
+        bg: s.propItems.indexOf(c.id) >= 0 ? "var(--surface-glass)" : "var(--surface-raised)",
+        toggle: () => this.setState({ propItems: s.propItems.indexOf(c.id) >= 0 ? s.propItems.filter((x) => x !== c.id) : s.propItems.concat([c.id]) }) };
+    });
+    const picked = mine.filter((m) => m.selected);
+    return {
+      tradeGroups: groups,
+      backToTrade: () => this.go("trade"),
+      openCollector: () => this.go("collector", { handle: cur.collector.handle, profileTab: "Cabinet" }),
+      tradeKindChips: ["All", "For Sale", "For Trade", "Wanted"].map((k) => ({ label: k, selected: k === "All", pick: () => this.flash("Filter sheet: type, house, region, fill.") })),
+      openTradeFilter: () => this.flash("Filter: type · house · reference · shipping region."),
+      listing: cur,
+      listingTrust: [
+        { label: "Successful trades", value: String(cur.collector.trades), detail: "SELF-REPORTED BY BOTH PARTIES", tone: "good" },
+        { label: "Condition accuracy", value: cur.collector.accuracy, detail: "LAST 12 MONTHS", tone: "good" },
+        { label: "Ships in", value: cur.collector.shipping, detail: "AVERAGE", tone: "neutral" },
+        { label: "Response", value: cur.collector.response, detail: "WITHIN 48 HOURS", tone: "neutral" },
+      ],
+      conditionVocab: ["Sealed", "Full Presentation", "Bottle Only", "Test Sprays Missing", "Partial", "Decant"].map((c) => ({ label: c, selected: c === cur.condition })),
+      startProposal: () => this.go("proposal", { propStep: 0, propItems: [], propCash: 0, propConfirm: false }),
+      askQuestion: () => this.go("you", { profileTab: "Messages", threadId: cur.id }),
+      saveListing: () => this.flash("Saved to your watch list."),
+      reportListing: () => this.flash("Reported. Our team reviews condition claims.", "error"),
+      propSteps: [0, 1, 2].map((i) => ({ fill: i <= s.propStep ? "var(--rose-alloy)" : "transparent", border: i <= s.propStep ? "var(--line-metal)" : "var(--line-divider)" })),
+      propStepLabel: "STEP 0" + (s.propStep + 1) + " / 03",
+      propIs0: s.propStep === 0, propIs1: s.propStep === 1, propIs2: s.propStep === 2,
+      propTitle: ["Choose from your Cabinet", "Terms and condition", "Review the proposal"][s.propStep],
+      propNote: ["Pick what you would send. Nadia is looking for: " + cur.wants + ".", "Money and shipping happen between the two of you. Clone Cabinet does not hold funds.", "Nothing is sent until you confirm twice."][s.propStep],
+      propMine: mine, propPicked: picked,
+      propPickedLine: picked.length ? picked.map((p) => p.label).join(" · ") : "Nothing selected yet",
+      propCash: s.propCash, propCashLabel: s.propCash === 0 ? "No cash difference" : "$" + s.propCash + " from you",
+      cashUp: () => this.setState({ propCash: s.propCash + 25 }),
+      cashDown: () => this.setState({ propCash: Math.max(0, s.propCash - 25) }),
+      propNext: () => (s.propStep < 2 ? this.setState({ propStep: s.propStep + 1 }) : this.setState({ propConfirm: true })),
+      propBack: () => (s.propStep === 0 ? this.go("tradeDetail") : this.setState({ propStep: s.propStep - 1 })),
+      propNextLabel: ["Continue", "Review proposal", "Send proposal"][s.propStep],
+      propNextDisabled: s.propStep === 0 && picked.length === 0,
+      propConfirm: s.propConfirm,
+      propConfirmSend: () => {
+        this.setState({ propConfirm: false, ceremony: "trade" });
+        clearTimeout(this._cer);
+        this._cer = setTimeout(() => {
+          this.setState({ ceremony: null });
+          this.go("you", { profileTab: "Messages", threadId: cur.id });
+          this.flash("Proposal sent. Thread opened with " + cur.collector.name + ".", "success");
+        }, 880);
+      },
+      propCancel: () => this.setState({ propConfirm: false }),
+      propSummary: [
+        { label: "You send", value: picked.length ? picked.map((p) => p.label).join(", ") : "—" },
+        { label: "You receive", value: cur.frag.name + " · " + cur.size },
+        { label: "Cash difference", value: s.propCash === 0 ? "None" : "$" + s.propCash + " from you" },
+        { label: "Condition confirmed", value: cur.condition + " · " + cur.fill + "% fill" },
+        { label: "Shipping", value: cur.collector.region + " · tracked, both ways" },
+      ],
+    };
+  }
+
+  lineVals() {
+    const d = this.db(), s = this.state;
+    const rel = { original: "Original", inspiration: "Inspiration", interpretation: "Interpretation", alternative: "Alternative", flanker: "Flanker", similar: "Similar profile" };
+    const root = d.byId(s.lineRoot);
+    const raw = d.lineage[s.lineRoot] || [];
+    const nodes = raw.map((n) => {
+      const t = this.tally(s.lineRoot, n);
+      const f = d.byId(n.id);
+      return {
+        id: n.id, frag: f, relation: n.relation, relLabel: rel[n.relation], confidence: n.confidence,
+        pairLine: (f.name + " · " + rel[n.relation]).toUpperCase(),
+        houseLine: (f.house + " · " + f.concentration + " · " + f.year).toUpperCase(),
+        t: t, stateLabel: t.label, countLine: t.countLine, pctLine: t.pct + "% AGREE",
+        border: t.border, bg: t.bg, fg: t.fg, spark: t.spark,
+        active: s.drawerId === n.id,
+        confirmBorder: t.confirmOn ? "1px solid var(--line-metal)" : "1px solid var(--line-divider)",
+        disputeBorder: t.disputeOn ? "1px solid var(--warning)" : "1px solid var(--line-divider)",
+        voteConfirm: () => this.vote(t.key, "confirm"),
+        voteDispute: () => this.vote(t.key, "dispute"),
+        openDrawer: () => this.setState({ drawerId: n.id }),
+        open: () => this.go("detail", { fragId: n.id, detailTab: "Overview" }),
+        compare: () => this.setState({ compareId: n.id, drawerId: null }),
+      };
+    });
+    const filtered = s.relFilter === "All" ? nodes : nodes.filter((n) => n.relLabel === s.relFilter);
+    const drawer = nodes.find((n) => n.id === s.drawerId) || null;
+    const cmp = nodes.find((n) => n.id === s.compareId) || null;
+    const cmpRows = cmp ? [
+      { label: "Shared accords", a: root.accords.filter((x) => cmp.frag.accords.indexOf(x) >= 0).join(" / ") || "None", b: "" },
+      { label: "Longevity", a: root.longevity + "%", b: cmp.frag.longevity + "%" },
+      { label: "Projection", a: root.projection + "%", b: cmp.frag.projection + "%" },
+      { label: "Sillage", a: root.sillage + "%", b: cmp.frag.sillage + "%" },
+      { label: "Price band", a: root.price, b: cmp.frag.price },
+      { label: "Collector score", a: root.score.toFixed(1), b: cmp.frag.score.toFixed(1) },
+      { label: "In cabinets", a: String(root.owners), b: String(cmp.frag.owners) },
+      { label: "Would trade", a: String(root.traders), b: String(cmp.frag.traders) },
+    ] : [];
+    return {
+      lineRootFrag: root,
+      lineEyebrow: (root.house + " · " + root.year).toUpperCase(),
+      lineTitle: root.name,
+      lineNodes: filtered,
+      lineCount: nodes.length + " CLONE PAIRINGS · " + nodes.filter((n) => n.t.tone === "confirmed").length + " COMMUNITY CONFIRMED",
+      lineRelChips: ["All", "Original", "Inspiration", "Interpretation", "Alternative", "Flanker", "Similar profile"].map((r) => ({ label: r, selected: s.relFilter === r, pick: () => this.setState({ relFilter: r }) })),
+      lineModes: ["Votes", "Map"].map((m) => ({ label: m, selected: s.lineMode === m, pick: () => this.setState({ lineMode: m }) })),
+      lineIsMap: s.lineMode === "Map", lineIsVotes: s.lineMode === "Votes",
+      lineDrawer: drawer, hasDrawer: !!drawer,
+      compareNode: cmp, hasCompare: !!cmp, compareRows: cmpRows,
+      compareTitle: cmp ? root.name + " / " + cmp.frag.name : "",
+      lineExplain: "Every pairing is a live claim. Collectors vote confirms or doesn't match; the research only sets the opening position.",
+      clearLine: () => this.setState({ drawerId: null, compareId: null }),
+      lineRoots: ["cc-01", "cc-05", "cc-03", "cc-02"].map((id) => ({ label: d.byId(id).name, selected: s.lineRoot === id, pick: () => this.setState({ lineRoot: id, drawerId: null, compareId: null }) })),
+    };
+  }
+
+  cabVals() {
+    const d = this.db(), s = this.state;
+    const open = (id) => () => this.go("detail", { fragId: id, detailTab: "Overview" });
+    const row = (c) => {
+      const f = d.byId(c.id);
+      return Object.assign({}, c, { frag: f, status: this.statusOf(c.id) || c.status,
+        metaLine: (f.house + " · " + c.size + " · " + c.acquired).toUpperCase(),
+        fillLine: c.fill + "% FILL", valueLabel: c.value ? "$" + c.value : "—",
+        valueShown: s.valueVisible ? (c.value ? "$" + c.value : "—") : "•••",
+        open: open(c.id) });
+    };
+    const all = d.cabinet.map(row);
+    const ownedIds = this.shelfOrder();
+    const owned = ownedIds.map((id) => all.find((r) => r.id === id)).filter(Boolean);
+    const shelves = [];
+    for (let i = 0; i < owned.length; i += 3) {
+      const cells = owned.slice(i, i + 3).map((r, j) => Object.assign({}, r, {
+        idx: i + j,
+        moveLeft: () => this.moveCell(i + j, -1), moveRight: () => this.moveCell(i + j, 1),
+      }));
+      shelves.push({ label: "SHELF 0" + (shelves.length + 1) + " · " + cells.map((c) => c.frag.family.toUpperCase()).join(" / "), cells: cells, isLast: false });
+    }
+    if (shelves.length) shelves[shelves.length - 1].isLast = true;
+    const sortKey = { Acquired: (a, b) => (b.year || 0) - (a.year || 0), House: (a, b) => a.frag.house.localeCompare(b.frag.house), Fill: (a, b) => b.fill - a.fill, Value: (a, b) => b.value - a.value };
+    const archive = all.slice().sort(sortKey[s.cabSort] || sortKey.Acquired);
+    const years = {};
+    all.filter((r) => r.year).forEach((r) => { (years[r.year] = years[r.year] || []).push(r); });
+    const chronology = Object.keys(years).sort((a, b) => b - a).map((y) => ({ year: y, count: years[y].length + " ADDED", items: years[y] }));
+    const worn = all.filter((r) => r.worn > 0).slice().sort((a, b) => b.worn - a.worn);
+    const fams = {};
+    all.forEach((r) => { fams[r.frag.family] = (fams[r.frag.family] || 0) + 1; });
+    const famTotal = all.length;
+    const total = all.reduce((n, r) => n + r.value, 0);
+    const valueBars = Object.keys(fams).map((k) => ({ label: k, value: Math.round((fams[k] / famTotal) * 100) }));
+    return {
+      cabViews: ["Shelf", "Archive", "Chronology", "Rotation", "Scent Map", "Value", "Trade"].map((v) => ({ label: v, selected: s.cabView === v, pick: () => this.setState({ cabView: v }) })),
+      cabIsShelf: s.cabView === "Shelf", cabIsArchive: s.cabView === "Archive", cabIsChrono: s.cabView === "Chronology",
+      cabIsRotation: s.cabView === "Rotation", cabIsMap: s.cabView === "Scent Map", cabIsValue: s.cabView === "Value", cabIsTrade: s.cabView === "Trade",
+      cabEyebrow: owned.length + " SCENTS · " + (s.valueVisible ? "$" + total.toLocaleString() : "VALUE HIDDEN"),
+      cabActions: null,
+      shelves: shelves, editShelf: s.editShelf,
+      toggleEdit: () => this.setState({ editShelf: !s.editShelf }),
+      editLabel: s.editShelf ? "Done" : "Edit shelf",
+      openChamber: () => { this.setState({ searchOpen: true, screen: "discover" }); },
+      archiveRows: archive,
+      cabSorts: ["Acquired", "House", "Fill", "Value"].map((k) => ({ label: k, selected: s.cabSort === k, pick: () => this.setState({ cabSort: k }) })),
+      chronology: chronology,
+      rotationMost: worn.slice(0, 4).map((r) => Object.assign({}, r, { wornLine: r.worn + " WEARS THIS MONTH" })),
+      rotationNeglected: all.filter((r) => r.worn <= 1 && r.value > 0).map((r) => Object.assign({}, r, { wornLine: "LAST WORN " + r.last.toUpperCase() })),
+      rotationSeasonal: ["Autumn", "Winter", "Summer"].map((sn) => ({ season: sn.toUpperCase(), items: all.filter((r) => r.season === sn).map((r) => r.frag.name).join(" · ") || "—" })),
+      mapRows: valueBars,
+      mapNote: famTotal + " OBJECTS ACROSS " + valueBars.length + " FAMILIES",
+      valueTotal: s.valueVisible ? "$" + total.toLocaleString() : "•••••",
+      valueVisible: s.valueVisible,
+      toggleValue: () => this.setState({ valueVisible: !s.valueVisible }),
+      valueToggleLabel: s.valueVisible ? "Hide value" : "Show value",
+      valueChange: "+ $310 IN 12 MONTHS",
+      valueSeries: [42, 48, 45, 57, 61, 58, 66, 72, 69, 78, 84, 92].map((h, i) => ({ h: h, tone: i === 11 ? "var(--rose-alloy)" : "var(--graphite-soft)" })),
+      valueBars: valueBars,
+      cabTradeRows: all.filter((r) => r.status === "For Trade"),
+      cabSeeking: all.filter((r) => r.status === "Seeking"),
+      addToCabinet: () => this.setState({ searchOpen: true, screen: "discover" }),
+      shareCabinet: () => this.flash("Cabinet link copied. Values stay private."),
+    };
+  }
+  moveCell(i, dir) {
+    const ids = this.shelfOrder().slice();
+    const j = i + dir;
+    if (j < 0 || j >= ids.length) return;
+    const t = ids[i]; ids[i] = ids[j]; ids[j] = t;
+    this.setState({ order: ids });
+  }
+
+  // ---- community confidence: seeded tally, live votes, badge state ----
+  tally(rootId, n) {
+    const key = rootId + ">" + n.id;
+    const pctSeed = n.verified ? Math.min(0.97, 0.86 + (n.confidence / 100) * 0.11) : Math.max(0.34, Math.min(0.9, n.confidence / 100));
+    const base = 12 + Math.round(n.confidence * 3.4);
+    let confirm = Math.round(base * pctSeed);
+    let dispute = base - confirm;
+    const v = this.state.votes[key];
+    if (v === "confirm") confirm += 1;
+    if (v === "dispute") dispute += 1;
+    const total = confirm + dispute;
+    const pct = Math.round((confirm / total) * 100);
+    let label, tone, fill;
+    if (total < 10) { label = "Unconfirmed"; tone = "neutral"; fill = 0; }
+    else if (100 - pct >= 70) { label = "Community disputes this"; tone = "alert"; fill = 100 - pct; }
+    else if (pct >= 80) { label = "Community confirmed"; tone = "confirmed"; fill = pct; }
+    else if (pct >= 60) { label = "Emerging"; tone = "emerging"; fill = pct; }
+    else { label = "Disputed"; tone = "disputed"; fill = pct; }
+    const paint = {
+      neutral: { border: "1px dashed var(--line-strong)", bg: "transparent", fg: "var(--text-tertiary)" },
+      confirmed: { border: "1px solid var(--line-metal)", bg: "color-mix(in oklab,var(--rose-alloy) 16%,transparent)", fg: "var(--text-metal)" },
+      emerging: { border: "1px solid var(--line-signal)", bg: "color-mix(in oklab,var(--electric-iris) 12%,transparent)", fg: "var(--text-signal)" },
+      disputed: { border: "1px solid var(--warning)", bg: "transparent", fg: "var(--warning)" },
+      alert: { border: "1px solid var(--oxblood)", bg: "color-mix(in oklab,var(--shadow-ground) 34%,transparent)", fg: "var(--rose-alloy-light)" },
+    }[tone];
+    return { key: key, confirm: confirm, dispute: dispute, total: total, pct: pct, label: label, tone: tone, fill: fill,
+      countLine: confirm + " confirm · " + dispute + " dispute", border: paint.border, bg: paint.bg, fg: paint.fg,
+      myVote: v || null, confirmOn: v === "confirm", disputeOn: v === "dispute",
+      spark: this.spark(n, pct) };
+  }
+  spark(n, pct) {
+    const seed = (n.id.charCodeAt(3) || 5) + (n.id.charCodeAt(4) || 7);
+    const start = n.verified ? 88 : Math.max(30, Math.min(90, n.confidence - 14));
+    const pts = [];
+    for (let i = 0; i < 14; i++) {
+      const t = i / 13;
+      const wobble = Math.sin((i + seed) * 1.7) * 4.5;
+      pts.push(Math.max(6, Math.min(98, Math.round(start + (pct - start) * t + wobble))));
+    }
+    const lo = Math.min.apply(null, pts), hi = Math.max.apply(null, pts);
+    const span = Math.max(6, hi - lo);
+    return pts.map((v, i) => ({ h: Math.round(22 + ((v - lo) / span) * 78), tone: i === 13 ? "var(--electric-iris)" : "var(--graphite)" }));
+  }
+  vote(key, kind) {
+    const cur = this.state.votes[key];
+    const next = Object.assign({}, this.state.votes);
+    if (cur === kind) delete next[key]; else next[key] = kind;
+    this.setState({ votes: next });
+    this.flash(cur === kind ? "Vote withdrawn." : kind === "confirm" ? "Recorded: confirms this pairing." : "Recorded: doesn't match.", kind === "confirm" ? "signal" : "neutral");
+  }
+
+  // Screen planes: incoming advances 12px and fades in; going back it recedes instead.
+  // Alternating keyframe names restart the animation on every screen change without a remount.
+  planeAnim(screen) {
+    const depth = { launch: 0, welcome: 0, onboard: 0, discover: 1, cabinet: 1, lineage: 1, trade: 1, you: 1 };
+    const d = depth[screen] === undefined ? 2 : depth[screen];
+    if (this._planeScreen !== screen) {
+      this._planeBack = this._planeDepth !== undefined && d < this._planeDepth;
+      this._planeScreen = screen;
+      this._planeDepth = d;
+      this._planeSeq = (this._planeSeq || 0) + 1;
+    }
+    const flip = this._planeSeq % 2 ? "a" : "b";
+    const name = this._planeBack ? "cc-plane-back-" + flip : "cc-plane-" + flip;
+    const ms = this._planeBack ? 300 : 420;
+    return "animation:" + name + " " + ms + "ms cubic-bezier(.22,1,.36,1) both";
+  }
+
+  finishOf(id) {
+    return Component.FINISHES.filter((f) => f.id === id)[0] || Component.FINISHES[0];
+  }
+
+  // Selecting a dark-only finish also returns Display mode to Night, since the
+  // board publishes no daylight ground for it.
+  pickFinish(t) {
+    const next = { colorway: t.id };
+    if (!t.light && this.state.mode === "day") {
+      next.mode = "night";
+      next.settings = Object.assign({}, this.state.settings, { display: "Night Cabinet" });
+      try { localStorage.setItem("cc-proto-mode", "night"); } catch (e) {}
+    }
+    try { localStorage.setItem("cc-proto-colorway", t.id); } catch (e) {}
+    this.setState(next);
+    this.flash(t.label + " finish applied.");
+  }
+
+  renderVals() {
+    const d = this.db();
+    const s = this.state;
+    const S = s.screen;
+    const frag = d.byId(s.fragId);
+    const night = s.mode === "night";
+    const rel = { original: "Original", inspiration: "Inspiration", interpretation: "Interpretation", alternative: "Alternative", flanker: "Flanker", similar: "Similar profile" };
+    const open = (id) => () => this.go("detail", { fragId: id, detailTab: "Overview" });
+    const chromeless = S === "launch" || S === "welcome" || S === "onboard";
+
+    // ---------- discover ----------
+    const heroIds = ["cc-01", "cc-12", "cc-07", "cc-20", "cc-16"];
+    const hero = d.byId(heroIds[s.heroIndex % heroIds.length]);
+    const item = (f, extra) => Object.assign({ frag: f, status: this.statusOf(f.id), open: open(f.id) }, extra || {});
+    const sections = [
+      { title: "New to the Cabinet", note: "ADDED THIS WEEK", action: "All", kind: "row", items: d.pick("cc-18", "cc-19", "cc-09", "cc-17").map((f) => item(f)) },
+      { title: "Collectors are watching", note: "BY CABINET ADDITIONS", action: "Ranked", kind: "ranked", items: d.pick("cc-12", "cc-03", "cc-05", "cc-01").map((f, i) => item(f, { rank: "0" + (i + 1), signal: f.owners + " cabinets" })) },
+      { title: "Exceptional alternatives", note: "COMMUNITY AND EDITORIAL", action: "Lineage", kind: "lineage", items: d.pick("cc-18", "cc-06").map((f) => item(Object.assign({}, f, { lineage: f.id === "cc-18" ? "Interpretation of Luminous Capsule · 84% overlap" : "Similar profile · 71% overlap" }))) },
+      { title: "From the Middle East", note: "DAR AL QAMAR AND OTHERS", action: "House", kind: "row", items: d.pick("cc-05", "cc-12", "cc-13").map((f) => item(f)) },
+      { title: "Under the radar", note: "UNDER 60 CABINETS", action: "Grid", kind: "grid", items: d.pick("cc-07", "cc-16", "cc-17", "cc-09").map((f) => item(f, { sub: f.owners + " CABINETS · " + f.price })) },
+      { title: "Recently traded", note: "CONDITION VERIFIED", action: "Trade", kind: "ranked", items: d.pick("cc-08", "cc-03", "cc-20").map((f, i) => item(f, { rank: "0" + (i + 1), signal: f.traders + " would trade" })) },
+      { title: "From people you follow", note: "THREE COLLECTORS", action: "Following", kind: "follow", items: [
+        { collector: d.byHandle("@tlind"), frag: d.byId("cc-16"), line: "Theo Lindqvist added a bottle", sub: "PRIVÉ SALT · IN CABINET · 2 DAYS AGO", open: open("cc-16") },
+        { collector: d.byHandle("@hsato"), frag: d.byId("cc-20"), line: "Hana Sato reviewed a fragrance", sub: "9.0 · \"GREY IRIS, ASH, NO POWDER.\"", open: open("cc-20") },
+        { collector: d.byHandle("@vasari"), frag: d.byId("cc-09"), line: "Imre Vasari is seeking", sub: "CHAMBER 09 · WILL TRADE ARCHIVE LOCKUP", open: open("cc-09") },
+      ] },
+    ].map((sec) => Object.assign(sec, {
+      isRow: sec.kind === "row", isRanked: sec.kind === "ranked", isLineage: sec.kind === "lineage",
+      isGrid: sec.kind === "grid", isFollow: sec.kind === "follow",
+    }));
+
+    const heroOverlay = React.createElement("div", { style: { display: "flex", flexDirection: "column", gap: 9 } },
+      React.createElement("span", { style: { width: 40, height: 1, background: "var(--grad-iris-seam-h)", boxShadow: "var(--glow-iris-sm)" } }),
+      React.createElement("span", { style: { fontFamily: "var(--font-ui)", fontSize: 9, fontWeight: 500, letterSpacing: ".34em", textTransform: "uppercase", color: "var(--rose-alloy-light)" } }, "Worth knowing"),
+      React.createElement("span", { style: { fontFamily: "var(--font-display)", fontSize: 27, lineHeight: "30px", fontWeight: 300, letterSpacing: "-.015em", color: "var(--porcelain)" } }, hero.name),
+      React.createElement("span", { className: "cc-micro", style: { color: "var(--text-secondary)" } }, hero.house.toUpperCase() + " · " + hero.concentration.toUpperCase() + " · " + hero.year),
+      React.createElement("span", { style: { fontFamily: "var(--font-editorial)", fontSize: 18, fontStyle: "italic", lineHeight: "24px", color: "var(--text-primary)", maxWidth: "30ch" } }, hero.thesis),
+      React.createElement("button", {
+        onClick: open(hero.id),
+        style: { alignSelf: "flex-start", marginTop: 6, minHeight: 44, background: "none", border: 0, padding: 0, cursor: "pointer", fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: ".08em", textTransform: "uppercase", color: "var(--rose-alloy-light)" },
+      }, "View fragrance \u2192"));
+
+    const discoverActions = React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 2 } },
+      React.createElement("button", {
+        onClick: () => this.setState({ searchOpen: true }), "aria-label": "Search",
+        style: { width: 44, height: 44, display: "grid", placeItems: "center", background: "none", border: 0, cursor: "pointer" },
+      }, React.createElement("img", { src: "/assets/icons/" + (night ? "light" : "ink") + "/discover.png", alt: "", "aria-hidden": true, style: { width: 20, height: 20, opacity: .75 } })),
+      React.createElement("button", {
+        onClick: () => this.go("notifications"), "aria-label": "Notifications",
+        style: { position: "relative", width: 44, height: 44, display: "grid", placeItems: "center", background: "none", border: 0, cursor: "pointer" },
+      },
+        React.createElement("span", { style: { width: 14, height: 18, border: "1px solid var(--text-tertiary)", borderRadius: 3, display: "block" } }),
+        React.createElement("span", { style: { position: "absolute", top: 11, right: 11, width: 5, height: 5, borderRadius: "50%", background: "var(--electric-iris)", boxShadow: "var(--glow-iris-sm)" } })));
+
+    // ---------- detail ----------
+    const detailTabs = ["Overview", "Lineage", "Reviews", "Market"].map((t) => ({
+      label: t, pick: () => this.setState({ detailTab: t }),
+      color: t === s.detailTab ? "var(--text-metal)" : "var(--text-tertiary)",
+      seam: t === s.detailTab ? "var(--grad-iris-seam-h)" : "transparent",
+    }));
+    const lin = (d.lineage[s.fragId] || []).map((n) => {
+      const t = this.tally(s.fragId, n);
+      return {
+        frag: d.byId(n.id), relation: n.relation, verified: false, confidence: t.pct,
+        open: open(n.id), t: t,
+        relLine: rel[n.relation].toUpperCase() + " · " + t.label.toUpperCase() + " · " + t.countLine.toUpperCase(),
+        border: t.border, confLabel: t.pct + "%", confColor: t.fg,
+      };
+    });
+    const linkedListings = d.listings.filter((l) => l.fragranceId === s.fragId);
+    const marketListings = (linkedListings.length ? linkedListings : d.listings.slice(0, 2)).map((l) => ({
+      listing: this.enrichListing(l), open: () => this.go("tradeDetail", { listingId: l.id }),
+    }));
+
+    // ---------- search ----------
+    const q = s.q.trim().toLowerCase();
+    const matches = q ? d.fragrances.filter((f) => (f.name + " " + f.house + " " + f.accords.join(" ") + " " + f.family).toLowerCase().indexOf(q) >= 0) : [];
+    let searchResults = [];
+    let searchOther = [];
+    if (s.searchTab === "Fragrances") searchResults = matches.map((f) => item(f));
+    else if (s.searchTab === "Houses") searchOther = d.houses.filter((h) => h.name.toLowerCase().indexOf(q) >= 0).map((h) => ({ title: h.name, sub: (h.region + " · FOUNDED " + h.founded + " · " + h.count + " IN SYSTEM").toUpperCase(), open: () => this.flash("House pages open in the next build.") }));
+    else if (s.searchTab === "Collectors") searchOther = d.collectors.filter((c) => (c.name + c.handle).toLowerCase().indexOf(q) >= 0).map((c) => ({ title: c.name + " " + c.handle, sub: (c.level + " · " + c.region + " · " + c.trades + " TRADES").toUpperCase(), open: () => this.go("collector", { handle: c.handle, profileTab: "Cabinet" }) }));
+    else searchOther = d.listings.filter((l) => d.byId(l.fragranceId).name.toLowerCase().indexOf(q) >= 0).map((l) => ({ title: d.byId(l.fragranceId).name, sub: (l.condition + " · " + l.fill + "% FILL · " + l.handle).toUpperCase(), open: () => this.go("tradeDetail", { listingId: l.id }) }));
+
+    // ---------- jump links ----------
+    const jumps = [["welcome", "Welcome"], ["onboard", "Onboarding"], ["discover", "Discover"], ["detail", "Detail"], ["cabinet", "Cabinet"], ["lineage", "Lineage"], ["trade", "Trade"], ["tradeDetail", "Listing"], ["proposal", "Proposal"], ["collector", "Collector"], ["you", "You"], ["notifications", "Notifications"], ["settings", "Settings"]];
+
+    return Object.assign({
+      // shell
+      mode: s.mode, wide: s.wide, glyphMode: night ? "light" : "ink",
+      colorway: s.colorway,
+      finishCount: Component.FINISHES.length + " PUBLISHED",
+      finishDayLocked: !this.finishOf(s.colorway).light && s.settings.display === "Day Cabinet",
+      finishes: Component.FINISHES.map((t) => {
+        const on = t.id === s.colorway;
+        return {
+          id: t.id, label: t.label, signal: t.signal, on: on,
+          edge: on ? "var(--line-metal)" : "var(--line-divider)",
+          lift: on ? "var(--shadow-card), var(--glow-iris-sm)" : "var(--shadow-card)",
+          pick: () => this.pickFinish(t)
+        };
+      }),
+      modeLabel: night ? "Night cabinet" : "Day cabinet",
+      wideLabel: s.wide ? "Desktop 1180" : "Mobile 390",
+      shellDir: s.wide ? "row" : "column",
+      deviceW: s.wide ? 1180 : 390, deviceH: s.wide ? 760 : 844, deviceRadius: s.wide ? 18 : 34, innerRadius: s.wide ? 17 : 33,
+      innerH: s.wide ? 740 : 800, contentMax: s.wide ? "680px" : "none",
+      heroCap: s.wide ? "380px" : "none",
+      screenCode: S.toUpperCase(),
+      showChrome: (this.props || {}).stageChrome !== false,
+      toggleMode: () => { const m = night ? "day" : "night"; try { localStorage.setItem("cc-proto-mode", m); } catch (e) {} this.setState({ mode: m, settings: Object.assign({}, s.settings, { display: m === "night" ? "Night Cabinet" : "Day Cabinet" }) }); },
+      toggleWide: () => this.setState({ wide: !s.wide }),
+      restart: () => this.go("launch", { heroIndex: 0, obStep: 0, propStep: 0, propItems: [], detailTab: "Overview", cabView: "Shelf", toast: null }),
+      showStatusBar: !s.wide, showNav: !chromeless && !s.wide,
+      screenAnim: this.planeAnim(s.screen),
+      navActive: this.navFor(S),
+      navChange: (id) => this.go(id === "lineage" ? "lineage" : id, id === "lineage" ? { lineRoot: "cc-01", lineMode: "Map" } : null),
+      back: () => this.go("discover"),
+      toast: s.toast, toastTone: s.toastTone,
+      jumpLinks: jumps.map((j) => ({ label: j[1], go: () => this.go(j[0]), color: this.navFor(S) && S === j[0] ? "var(--rose-alloy-light)" : "var(--iris-smoke)" })),
+
+      isLaunch: S === "launch", isWelcome: S === "welcome", isOnboard: S === "onboard",
+      isDiscover: S === "discover", isDetail: S === "detail", isLineage: S === "lineage",
+      isCabinet: S === "cabinet", isTrade: S === "trade", isTradeDetail: S === "tradeDetail",
+      isProposal: S === "proposal", isYou: S === "you", isCollector: S === "collector",
+      isSettings: S === "settings", isNotif: S === "notifications",
+
+      // onboarding
+      startOnboarding: () => this.go("onboard", { obStep: 0 }),
+      obChambers: [0, 1, 2, 3].map((i) => ({
+        border: i <= s.obStep ? "var(--line-metal)" : "var(--line-divider)",
+        fill: i < s.obStep ? "var(--rose-alloy)" : i === s.obStep ? "var(--grad-iris-seam-h)" : "transparent",
+      })),
+      obStepLabel: "0" + (s.obStep + 1),
+      obTitle: ["How do you collect?", "What are you drawn to?", "Which families do you wear?", "Open your Cabinet"][s.obStep],
+      obNote: ["This sets how much detail the app shows you.", "Pick as many as apply. You can change these later.", "We use these to rank lineage and alternatives.", "You can add bottles now or let the Cabinet stay empty."][s.obStep],
+      obIsLevel: s.obStep === 0, obIsChips: s.obStep === 1 || s.obStep === 2, obIsAction: s.obStep === 3,
+      obLevels: [["Explorer", "NEW TO NICHE"], ["Enthusiast", "5–20 BOTTLES"], ["Collector", "20–80 BOTTLES"], ["Curator", "80+ AND ARCHIVING"]].map((l) => {
+        const on = s.obLevel === l[0];
+        return { label: l[0], note: l[1], pick: () => this.setState({ obLevel: l[0] }),
+          border: on ? "var(--line-metal)" : "var(--line-divider)", bg: on ? "var(--surface-glass)" : "var(--surface-raised)",
+          seam: on ? "var(--grad-iris-seam)" : "var(--line-strong)" };
+      }),
+      obChips: (s.obStep === 1
+        ? ["Niche", "Designer", "Middle Eastern", "Independent", "Alternatives", "Vintage", "Discontinued"]
+        : ["Woody", "Amber", "Fresh", "Aromatic", "Floral", "Gourmand", "Leather", "Musk"]
+      ).map((label) => {
+        const key = s.obStep === 1 ? "obInterests" : "obFamilies";
+        const list = s[key];
+        return { label: label, selected: list.indexOf(label) >= 0, toggle: () => {
+          const next = list.indexOf(label) >= 0 ? list.filter((x) => x !== label) : list.concat([label]);
+          this.setState({ [key]: next });
+        } };
+      }),
+      obActions: [
+        { label: "Add bottles manually", note: "TYPE HOUSE AND NAME", pick: () => { this.go("cabinet"); this.flash("Cabinet ready. Add when you like."); } },
+        { label: "Search the archive", note: "20 000 RECORDS", pick: () => this.go("discover", { searchOpen: true }) },
+        { label: "Skip for now", note: "START WITH DISCOVER", pick: () => this.go("discover") },
+      ],
+      obBack: () => (s.obStep === 0 ? this.go("welcome") : this.setState({ obStep: s.obStep - 1 })),
+      obNext: () => (s.obStep === 3 ? this.go("discover") : this.setState({ obStep: s.obStep + 1 })),
+      obNextLabel: s.obStep === 3 ? "Enter the Cabinet" : "Continue",
+
+      // discover
+      dateLine: "TUESDAY · 02 SEPTEMBER",
+      hero: hero, heroOverlay: heroOverlay, discoverActions: discoverActions,
+      heroCounter: "0" + ((s.heroIndex % heroIds.length) + 1) + " / 0" + heroIds.length,
+      heroNext: () => this.setState({ heroIndex: (s.heroIndex + 1) % heroIds.length }),
+      heroPrev: () => this.setState({ heroIndex: (s.heroIndex + heroIds.length - 1) % heroIds.length }),
+      discoverSections: sections,
+
+      // detail
+      frag: frag,
+      detailMeta: (frag.year + " · " + frag.concentration + " · " + frag.accordLine).toUpperCase(),
+      detailScore: frag.score.toFixed(1) + " / 10",
+      scorePct: Math.round(frag.score * 10), reviewCount: frag.reviews + " REVIEWS",
+      ownersLine: frag.owners + " collectors have this in their Cabinet. " + frag.traders + " would trade it.",
+      hasStatus: !!this.statusOf(s.fragId), statusLabel: this.statusOf(s.fragId) || "",
+      addLabel: this.statusOf(s.fragId) ? "Change status" : "Add to Cabinet",
+      detailTabs: detailTabs,
+      tabOverview: s.detailTab === "Overview", tabLineage: s.detailTab === "Lineage",
+      tabReviews: s.detailTab === "Reviews", tabMarket: s.detailTab === "Market",
+      accordRows: frag.accords.map((a, i) => ({ label: a, value: [82, 64, 47][i] || 40 })),
+      perfRows: [{ label: "Longevity", value: frag.longevity }, { label: "Projection", value: frag.projection }, { label: "Sillage", value: frag.sillage }, { label: "Value", value: frag.valueScore }],
+      primaryPair: lin.find((n) => n.relation === "original" || n.relation === "inspiration") || lin[0] || null,
+      hasPrimaryPair: lin.length > 0,
+      pairClaimLine: lin.length ? (lin[0].relation === "original" ? frag.name + " is logged as a clone of " : frag.name + " is logged against ") : "",
+      votePairConfirm: () => { const n = lin.find((x) => x.relation === "original" || x.relation === "inspiration") || lin[0]; if (n) this.vote(n.t.key, "confirm"); },
+      votePairDispute: () => { const n = lin.find((x) => x.relation === "original" || x.relation === "inspiration") || lin[0]; if (n) this.vote(n.t.key, "dispute"); },
+      lineagePreview: lin.slice(0, 4), lineageRows: lin, similarRows: lin.filter((n) => n.relation === "alternative" || n.relation === "similar"),
+      lineageNote: lin.length ? lin.length + " RELATED RECORDS · " + lin.filter((n) => n.verified).length + " EDITORIALLY VERIFIED" : "NO RELATIONSHIPS LOGGED",
+      lineageBlurb: "Editorially verified relationships carry a rose-alloy border. Community-reported ones are labelled with the number of collectors who reported them.",
+      reviewRows: d.reviewsFor(s.fragId).length ? d.reviewsFor(s.fragId) : d.reviews.slice(0, 3),
+      marketListings: marketListings, purchaseRows: d.purchaseLinks,
+      openLineage: () => this.go("lineage", { lineRoot: s.fragId, lineMode: "Map" }),
+      shareFrag: () => this.flash("Link copied. Nothing shared publicly."),
+      moreFrag: () => this.flash("Report, batch details and notes live here."),
+      writeReview: () => this.flash("Review composer opens in the next build."),
+      markSeeking: () => { this.setState({ statuses: Object.assign({}, s.statuses, { [s.fragId]: "Seeking" }) }); this.flash("Added to your Seeking list.", "signal"); },
+      openStatusSheet: () => this.setState({ statusSheet: true }),
+      statusSheet: s.statusSheet,
+      closeSheets: () => this.setState({ statusSheet: false, drawerId: null, compareId: null }),
+      statusOptions: [
+        { label: "In Cabinet", detail: "OWNED" }, { label: "Seeking", detail: "WANTED" },
+        { label: "Curious", detail: "TO SMELL" }, { label: "For Trade", detail: "AVAILABLE" },
+        { label: "Archived", detail: "KEPT, NOT WORN" }, { label: "Sampled", detail: "DECANT OR VIAL" },
+        { label: "Decanted", detail: "SPLIT" }, { label: "Emptied", detail: "FINISHED" },
+      ],
+      setStatus: (label) => {
+        this.setState({ statuses: Object.assign({}, s.statuses, { [s.fragId]: label }), statusSheet: false });
+        if (label === "In Cabinet") {
+          this.setState({ ceremony: "lock" });
+          clearTimeout(this._cer);
+          this._cer = setTimeout(() => this.setState({ ceremony: null }), 700);
+        }
+        this.flash(label === "In Cabinet" ? "Added to your Cabinet." : label === "Emptied" ? "Moved to emptied." : "Marked " + label.toLowerCase() + ".", label === "In Cabinet" ? "success" : "neutral");
+      },
+      ceremonyLock: s.ceremony === "lock", ceremonyTrade: s.ceremony === "trade",
+
+      // search
+      searchOpen: s.searchOpen, q: s.q, searchTab: s.searchTab, filters: s.filters,
+      setQuery: (v) => this.setState({ q: v }),
+      setSearchTab: (t) => this.setState({ searchTab: t }),
+      closeSearch: () => this.setState({ searchOpen: false }),
+      recentSearches: ["LUMINOUS CAPSULE", "DAR AL QAMAR", "TAIF ROSE EXTRAIT", "@TLIND", "DISCONTINUED VERRIER"],
+      searchFilters: ["Extrait", "EDP", "Pre-2015", "Amber", "Leather", "Middle East", "Interpretation", "For trade"],
+      toggleFilter: (x) => this.setState({ filters: s.filters.indexOf(x) >= 0 ? s.filters.filter((f) => f !== x) : s.filters.concat([x]) }),
+      searchHasQuery: s.q.trim().length > 0,
+      searchResults: searchResults, searchOther: searchOther,
+      searchEmpty: s.q.trim().length > 0 && searchResults.length === 0 && searchOther.length === 0,
+    }, this.cabVals(), this.lineVals(), this.tradeVals(), this.profVals());
+  }
+}
+
+</script>
+</body>
+</html>

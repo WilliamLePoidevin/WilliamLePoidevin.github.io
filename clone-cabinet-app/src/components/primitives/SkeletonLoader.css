@@ -1,0 +1,18 @@
+.cc-skeleton {
+  display: block;
+  background: linear-gradient(
+    90deg,
+    var(--tint-06) 0%,
+    var(--tint-14) 50%,
+    var(--tint-06) 100%
+  );
+  background-size: 200% 100%;
+  animation: cc-shimmer 1.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cc-skeleton {
+    animation: none;
+    background: var(--tint-08);
+  }
+}

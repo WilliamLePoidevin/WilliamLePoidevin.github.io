@@ -1,0 +1,36 @@
+.cc-iris-seam {
+  display: inline-block;
+  border-radius: var(--radius-pill);
+  background: var(--grad-iris-seam-h);
+  box-shadow: var(--glow-iris-sm);
+  animation: cc-seam-open var(--dur-standard) var(--ease-seam) both;
+}
+
+.cc-iris-seam--v {
+  background: var(--grad-iris-seam);
+}
+
+.cc-iris-seam--pulse {
+  animation:
+    cc-seam-open var(--dur-standard) var(--ease-seam) both,
+    cc-iris-pulse var(--dur-signature) ease-in-out infinite;
+}
+
+/* One-shot selection flash: starts bright, decays to resting glow over 420ms. The nav shell
+   (Phase 3) retriggers this by remounting the element on selection. */
+.cc-iris-seam--flash {
+  animation:
+    cc-seam-open var(--dur-standard) var(--ease-seam) both,
+    cc-iris-flash-decay var(--dur-iris-decay) var(--ease-material) both;
+}
+
+@keyframes cc-iris-flash-decay {
+  from {
+    opacity: 1;
+    box-shadow: 0 0 14px color-mix(in oklab, var(--text-signal) 55%, transparent);
+  }
+  to {
+    opacity: 0.45;
+    box-shadow: 0 0 6px color-mix(in oklab, var(--text-signal) 50%, transparent);
+  }
+}

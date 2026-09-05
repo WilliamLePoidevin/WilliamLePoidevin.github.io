@@ -1,0 +1,48 @@
+/* Clone Cabinet — RIVIERA COBALT day variant.
+
+   Board 12 publishes only the dark skin. The app has a Day Cabinet mode, so a
+   daylight Riviera is derived here from the SAME six published hexes — crystal
+   white ground, midnight navy type, champagne darkened so it holds contrast on
+   a light field, signal still bright electric blue.
+
+   INTENTIONAL ADDITION, flagged: this is not on the board. Confirm with the
+   brand owner before shipping.
+
+   The night skin needs nothing here — tokens/colorway-skins.css publishes it,
+   and colorway-bridge.css maps it onto the app's brand tokens.
+
+   Published palette (board 12, verbatim):
+     deep cobalt #0A1E3F · midnight navy #071223 · sea glass blue #2DB4BF
+     bright electric blue #008CFF · champagne metal #E6D6B8 · crystal white #F9FAFC */
+
+[data-mode="day"][data-colorway="riviera-cobalt"],
+[data-mode="day"] [data-colorway="riviera-cobalt"]{
+  color-scheme:light;
+  --surface-canvas:#F9FAFC;
+  --surface-raised:#FFFFFF;
+  --surface-shelf:#EDF1F7;
+  --surface-inset:#E3E9F2;
+  --surface-nav:rgba(255,255,255,.92);
+  --surface-glass:rgba(7,18,35,.04);
+  --surface-glass-strong:rgba(7,18,35,.07);
+  --surface-scrim:rgba(7,18,35,.42);
+
+  --text-primary:#071223;
+  --text-secondary:#4A5A72;
+  --text-tertiary:#7B8CA6;
+  --text-inverse:#F9FAFC;
+  --text-metal:#8A7548;              /* champagne, darkened to hold on white */
+  --text-signal:#0072D6;
+
+  --line-divider:rgba(7,18,35,.1);
+  --line-strong:#D3DAE4;
+  --line-metal:rgba(138,117,72,.5);
+  --line-signal:rgba(0,140,255,.5);
+
+  --action-primary-bg:#0A1E3F;       /* deep cobalt carries the action on light */
+  --action-primary-fg:#F9FAFC;
+  --action-secondary-border:#D3DAE4;
+  --action-secondary-fg:#071223;
+  --focus-ring:0 0 0 1px #F9FAFC,0 0 0 3px rgba(0,140,255,.6);
+  --glow-signal:0 0 20px rgba(0,140,255,.4);
+}
