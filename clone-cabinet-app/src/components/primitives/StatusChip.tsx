@@ -4,7 +4,7 @@ import "./StatusChip.css";
 // Tone is a display fact (cabinet status, warning, confirmation), never a rating or a
 // confidence score — those are separate systems with their own shapes (Rating Stars,
 // Confidence Badge) per CLONE_CABINET_UX_SPEC.md Section 0's non-negotiable.
-type Tone = "neutral" | "cabinet" | "warning" | "signal" | "success";
+type Tone = "neutral" | "cabinet" | "warning" | "signal" | "success" | "trade";
 
 interface StatusChipProps extends Omit<ButtonHTMLAttributes<HTMLElement>, "onClick"> {
   tone?: Tone;

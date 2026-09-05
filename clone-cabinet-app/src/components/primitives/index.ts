@@ -6,4 +6,7 @@ export { SkeletonLoader } from "./SkeletonLoader";
 export { VerifiedBadge } from "./VerifiedBadge";
 export { IrisSeam } from "./IrisSeam";
 export { Icon } from "./Icon";
-export type { IconName } from "./Icon";
+export type { IconName, IconTone } from "./Icon";
+export { BrandMark } from "./BrandMark";
+export { NavGlyph } from "./NavGlyph";
+export type { NavGlyphName } from "./NavGlyph";

@@ -1,17 +1,23 @@
-import { Icon } from "./Icon";
 import "./VerifiedBadge.css";
 
+type Tone = "alloy" | "signal";
+type Size = "sm" | "md";
+
 interface VerifiedBadgeProps {
-  size?: "sm" | "md";
-  title?: string;
+  label?: string;
+  tone?: Tone;
+  size?: Size;
 }
 
-// Metal carries active indicators and primary affordances — verification is a metal signal,
-// never the electric-blue signal colour (that's reserved for live/confirmation states).
-export function VerifiedBadge({ size = "md", title = "Verified" }: VerifiedBadgeProps) {
+// A label + small dot, never the general Confidence Badge's shape — per the UX spec's
+// non-negotiable that confidence, rating, and trust signals must never share a visual
+// language. "alloy" (metal, static) reads as an account-level fact ("Cabinet Verified");
+// "signal" (electric, glowing) is reserved for a live/current state.
+export function VerifiedBadge({ label = "Cabinet Verified", tone = "alloy", size = "md" }: VerifiedBadgeProps) {
   return (
-    <span className={`cc-verified-badge cc-verified-badge--${size}`} role="img" aria-label={title}>
-      <Icon name="check" size={size === "sm" ? 12 : 14} />
+    <span className={`cc-verified-badge cc-verified-badge--${tone} cc-verified-badge--${size}`}>
+      <span className="cc-verified-badge__dot" aria-hidden="true" />
+      {label}
     </span>
   );
 }

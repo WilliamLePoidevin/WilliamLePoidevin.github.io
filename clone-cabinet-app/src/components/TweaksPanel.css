@@ -32,3 +32,33 @@
 .cc-tweaks__flag {
   color: var(--text-metal);
 }
+
+.cc-tweaks__select {
+  height: var(--control-height-sm);
+  padding: 0 var(--space-12);
+  border-radius: var(--radius-chip);
+  border: var(--hairline) solid var(--line-divider);
+  background: var(--surface-canvas);
+  color: var(--text-primary);
+  font-size: var(--text-compact-size);
+}
+
+.cc-tweaks__swatch-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.cc-tweaks__swatch {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-inset);
+  border: var(--hairline) solid var(--line-divider);
+  flex-shrink: 0;
+}
+
+.cc-tweaks__note {
+  color: var(--text-tertiary);
+}

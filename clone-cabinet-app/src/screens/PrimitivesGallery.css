@@ -101,10 +101,7 @@
   align-items: center;
 }
 
-.cc-gallery__skeleton-lines {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-8);
+.cc-gallery__skeleton-lines-slot {
   flex: 1;
 }
 

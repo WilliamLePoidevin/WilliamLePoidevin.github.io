@@ -1,3 +1,9 @@
+.cc-skeleton-lines {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
 .cc-skeleton {
   display: block;
   background: linear-gradient(

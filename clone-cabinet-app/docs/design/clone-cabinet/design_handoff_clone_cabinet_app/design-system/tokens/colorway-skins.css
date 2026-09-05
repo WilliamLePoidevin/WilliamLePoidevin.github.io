@@ -1,0 +1,410 @@
+/* Clone Cabinet — COLORWAY SKINS (boards 07–17).
+   Eleven further published colour systems. Every hex is the value PRINTED on that
+   board's colour-palette panel — never re-sampled from the artwork.
+
+   Apply as a scope:  <body data-colorway="riviera-cobalt">
+   Each scope remaps the same semantic aliases tokens/modes.css defines, so any screen
+   re-skins with no markup change. Use <Colorway name="…"> rather than the attribute.
+
+   Every skin keeps the system's structure: hairline dividers, the cabinet grid,
+   tracked uppercase labels, the `CC / 08427` code format, the 78% intensity readout.
+   Signal colours stay hairlines, seams, glyphs and figures — never area fills. */
+
+:root{
+  /* 07 Obsidian Signal (Variation 01/10) */
+  --os-midnight-signal:#0A0E14;
+  --os-obsidian:#0E1218;
+  --os-gunmetal:#2A2F38;
+  --os-electric-blue:#00B0FF;
+  --os-chrome:#E6E9EE;
+
+  /* 08 Deep Teal Atelier (Variation 02/10) */
+  --dt-deep-teal:#0D2B2E;
+  --dt-petroleum:#071A1E;
+  --dt-sea-glass:#1DE0DD;
+  --dt-liquid-cyan:#42F6FF;
+  --dt-mineral:#ECEBE8;
+  --dt-graphite:#0F1114;
+  --dt-gunmetal:#2A3136;
+  --dt-soft-gold:#C6A47A;
+
+  /* 09 Concentric Atelier (Variation 03/10) */
+  --ca-midnight-indigo:#0B1124;
+  --ca-royal-indigo:#121A3D;
+  --ca-deep-navy:#0E1530;
+  --ca-warm-gold:#D4AF7A;
+  --ca-rose-alloy:#E2B39A;
+  --ca-arctic-glow:#64E6FF;
+
+  /* 10 Oxblood Nocturne (Variation 06/10) */
+  --ox-oxblood:#591D2A;
+  --ox-black-plum:#1B131C;
+  --ox-smoked-aubergine:#2B1E2E;
+  --ox-rose-alloy:#B98579;
+  --ox-warm-highlight:#E6C7A6;
+  --ox-velvet-shadow:#0E0A0F;
+
+  /* 11 Copper Signal (Variation 08/10) */
+  --cs-black-plum:#160F1A;
+  --cs-deep-espresso:#0D080C;
+  --cs-copper-alloy:#C9875B;
+  --cs-amber-glow:#F0A64D;
+  --cs-smoked-glass:#2A2426;
+  --cs-warm-porcelain:#F3ECE6;
+
+  /* 12 Riviera Cobalt */
+  --rc-deep-cobalt:#0A1E3F;
+  --rc-midnight-navy:#071223;
+  --rc-sea-glass-blue:#2DB4BF;
+  --rc-bright-electric-blue:#008CFF;
+  --rc-champagne-metal:#E6D6B8;
+  --rc-crystal-white:#F9FAFC;
+
+  /* 13 Verdant Pulse */
+  --vp-emerald:#0D6B5A;
+  --vp-jade:#2FAE8C;
+  --vp-mineral-green:#7FCDB2;
+  --vp-pale-brass:#DCC08A;
+  --vp-smoke-charcoal:#13181A;
+  --vp-lilac-accent:#B08CFF;
+
+  /* 14 Citrine Gold */
+  --cg-citrine:#FFD23A;
+  --cg-warm-gold:#D4AF37;
+  --cg-amber-glow:#FFB347;
+  --cg-graphite-black:#080B0D;
+  --cg-smoked-glass:#1A1C1F;
+  --cg-porcelain-white:#F5F5F7;
+
+  /* 15 Ember Copper */
+  --ec-ember-copper:#B95E3C;
+  --ec-terracotta:#DB6A47;
+  --ec-rose-gold:#E1B3A0;
+  --ec-plum-dusk:#4B1F36;
+  --ec-warm-porcelain:#F4EEE6;
+  --ec-deep-noir:#130D10;
+
+  /* 16 Orchid Voltage */
+  --ov-ultraviolet:#6F00FF;
+  --ov-orchid:#B14BFF;
+  --ov-vivid-magenta:#FF1ED6;
+  --ov-neon-iris:#00F0FF;
+  --ov-silver-chrome:#E6E6EA;
+  --ov-deep-space-black:#080B0A;
+
+  /* 17 Emerald Vault */
+  --ev-emerald-depth:#0A3D2E;
+  --ev-malachite:#0F6B5B;
+  --ev-brushed-gold:#D4AF37;
+  --ev-onyx-black:#080B0D;
+  --ev-graphite-tech:#1A1C1F;
+  --ev-acid-lime:#C6FF00;
+}
+
+[data-colorway="obsidian-signal"]{
+  color-scheme:dark;
+  --surface-canvas:var(--os-midnight-signal);
+  --surface-raised:var(--os-obsidian);
+  --surface-shelf:var(--os-gunmetal);
+  --surface-inset:#05070B;
+  --surface-nav:rgba(14,18,24,.9);
+  --surface-glass:rgba(230,233,238,.05);
+  --surface-glass-strong:rgba(230,233,238,.1);
+  --surface-scrim:rgba(10,14,20,.78);
+  --text-primary:var(--os-chrome);
+  --text-secondary:#A7AEB9;
+  --text-tertiary:#6E7683;
+  --text-inverse:var(--os-midnight-signal);
+  --text-metal:var(--os-chrome);
+  --text-signal:var(--os-electric-blue);
+  --line-divider:rgba(230,233,238,.11);
+  --line-strong:var(--os-gunmetal);
+  --line-metal:rgba(230,233,238,.4);
+  --line-signal:rgba(0,176,255,.6);
+  --action-primary-bg:var(--os-electric-blue);
+  --action-primary-fg:var(--os-midnight-signal);
+  --action-secondary-border:rgba(230,233,238,.2);
+  --action-secondary-fg:var(--os-chrome);
+  --focus-ring:0 0 0 1px var(--os-midnight-signal),0 0 0 3px rgba(0,176,255,.7);
+  --glow-signal:0 0 18px rgba(0,176,255,.5);
+}
+
+[data-colorway="deep-teal-atelier"]{
+  color-scheme:dark;
+  --surface-canvas:var(--dt-deep-teal);
+  --surface-raised:var(--dt-petroleum);
+  --surface-shelf:var(--dt-gunmetal);
+  --surface-inset:var(--dt-graphite);
+  --surface-nav:rgba(7,26,30,.9);
+  --surface-glass:rgba(236,235,232,.05);
+  --surface-glass-strong:rgba(236,235,232,.1);
+  --surface-scrim:rgba(15,17,20,.78);
+  --text-primary:var(--dt-mineral);
+  --text-secondary:#A9B7B7;
+  --text-tertiary:#71817F;
+  --text-inverse:var(--dt-petroleum);
+  --text-metal:var(--dt-soft-gold);
+  --text-signal:var(--dt-sea-glass);
+  --line-divider:rgba(236,235,232,.11);
+  --line-strong:var(--dt-gunmetal);
+  --line-metal:rgba(198,164,122,.55);
+  --line-signal:rgba(29,224,221,.6);
+  --action-primary-bg:var(--dt-soft-gold);
+  --action-primary-fg:var(--dt-petroleum);
+  --action-secondary-border:rgba(236,235,232,.2);
+  --action-secondary-fg:var(--dt-mineral);
+  --focus-ring:0 0 0 1px var(--dt-petroleum),0 0 0 3px rgba(66,246,255,.6);
+  --glow-signal:0 0 18px rgba(29,224,221,.5);
+}
+
+[data-colorway="concentric-atelier"]{
+  color-scheme:dark;
+  --surface-canvas:var(--ca-midnight-indigo);
+  --surface-raised:var(--ca-deep-navy);
+  --surface-shelf:var(--ca-royal-indigo);
+  --surface-inset:#070B18;
+  --surface-nav:rgba(14,21,48,.9);
+  --surface-glass:rgba(226,179,154,.06);
+  --surface-glass-strong:rgba(226,179,154,.11);
+  --surface-scrim:rgba(11,17,36,.78);
+  --text-primary:#EFF1F7;
+  --text-secondary:#B3BAD0;
+  --text-tertiary:#7B84A0;
+  --text-inverse:var(--ca-midnight-indigo);
+  --text-metal:var(--ca-rose-alloy);
+  --text-signal:var(--ca-arctic-glow);
+  --line-divider:rgba(239,241,247,.11);
+  --line-strong:var(--ca-royal-indigo);
+  --line-metal:rgba(212,175,122,.55);
+  --line-signal:rgba(100,230,255,.55);
+  --action-primary-bg:var(--ca-warm-gold);
+  --action-primary-fg:var(--ca-midnight-indigo);
+  --action-secondary-border:rgba(239,241,247,.2);
+  --action-secondary-fg:#EFF1F7;
+  --focus-ring:0 0 0 1px var(--ca-midnight-indigo),0 0 0 3px rgba(100,230,255,.6);
+  --glow-signal:0 0 18px rgba(100,230,255,.45);
+}
+
+[data-colorway="oxblood-nocturne"]{
+  color-scheme:dark;
+  --surface-canvas:var(--ox-velvet-shadow);
+  --surface-raised:var(--ox-black-plum);
+  --surface-shelf:var(--ox-smoked-aubergine);
+  --surface-inset:#080509;
+  --surface-nav:rgba(27,19,28,.9);
+  --surface-glass:rgba(230,199,166,.05);
+  --surface-glass-strong:rgba(230,199,166,.1);
+  --surface-scrim:rgba(14,10,15,.8);
+  --text-primary:var(--ox-warm-highlight);
+  --text-secondary:#B7A08F;
+  --text-tertiary:#7E6C61;
+  --text-inverse:var(--ox-velvet-shadow);
+  --text-metal:var(--ox-rose-alloy);
+  --text-signal:#A8536A;
+  --line-divider:rgba(230,199,166,.11);
+  --line-strong:var(--ox-smoked-aubergine);
+  --line-metal:rgba(185,133,121,.6);
+  --line-signal:rgba(89,29,42,.9);
+  --action-primary-bg:var(--ox-rose-alloy);
+  --action-primary-fg:var(--ox-velvet-shadow);
+  --action-secondary-border:rgba(230,199,166,.2);
+  --action-secondary-fg:var(--ox-warm-highlight);
+  --focus-ring:0 0 0 1px var(--ox-velvet-shadow),0 0 0 3px rgba(185,133,121,.7);
+  --glow-signal:0 0 18px rgba(89,29,42,.6);
+}
+
+[data-colorway="copper-signal"]{
+  color-scheme:dark;
+  --surface-canvas:var(--cs-deep-espresso);
+  --surface-raised:var(--cs-black-plum);
+  --surface-shelf:var(--cs-smoked-glass);
+  --surface-inset:#080508;
+  --surface-nav:rgba(22,15,26,.9);
+  --surface-glass:rgba(243,236,230,.05);
+  --surface-glass-strong:rgba(243,236,230,.1);
+  --surface-scrim:rgba(13,8,12,.8);
+  --text-primary:var(--cs-warm-porcelain);
+  --text-secondary:#B5A79E;
+  --text-tertiary:#7C716A;
+  --text-inverse:var(--cs-deep-espresso);
+  --text-metal:var(--cs-copper-alloy);
+  --text-signal:var(--cs-amber-glow);
+  --line-divider:rgba(243,236,230,.11);
+  --line-strong:var(--cs-smoked-glass);
+  --line-metal:rgba(201,135,91,.6);
+  --line-signal:rgba(240,166,77,.6);
+  --action-primary-bg:var(--cs-copper-alloy);
+  --action-primary-fg:var(--cs-deep-espresso);
+  --action-secondary-border:rgba(243,236,230,.2);
+  --action-secondary-fg:var(--cs-warm-porcelain);
+  --focus-ring:0 0 0 1px var(--cs-deep-espresso),0 0 0 3px rgba(240,166,77,.7);
+  --glow-signal:0 0 20px rgba(240,166,77,.5);
+}
+
+[data-colorway="riviera-cobalt"]{
+  color-scheme:dark;
+  --surface-canvas:var(--rc-midnight-navy);
+  --surface-raised:var(--rc-deep-cobalt);
+  --surface-shelf:#0C2A54;
+  --surface-inset:#050D19;
+  --surface-nav:rgba(10,30,63,.9);
+  --surface-glass:rgba(249,250,252,.06);
+  --surface-glass-strong:rgba(249,250,252,.11);
+  --surface-scrim:rgba(7,18,35,.8);
+  --text-primary:var(--rc-crystal-white);
+  --text-secondary:#B4C2D6;
+  --text-tertiary:#7B8CA6;
+  --text-inverse:var(--rc-midnight-navy);
+  --text-metal:var(--rc-champagne-metal);
+  --text-signal:var(--rc-sea-glass-blue);
+  --line-divider:rgba(249,250,252,.12);
+  --line-strong:#123561;
+  --line-metal:rgba(230,214,184,.55);
+  --line-signal:rgba(0,140,255,.6);
+  --action-primary-bg:var(--rc-champagne-metal);
+  --action-primary-fg:var(--rc-midnight-navy);
+  --action-secondary-border:rgba(249,250,252,.22);
+  --action-secondary-fg:var(--rc-crystal-white);
+  --focus-ring:0 0 0 1px var(--rc-midnight-navy),0 0 0 3px rgba(0,140,255,.65);
+  --glow-signal:0 0 20px rgba(0,140,255,.5);
+}
+
+[data-colorway="verdant-pulse"]{
+  color-scheme:dark;
+  --surface-canvas:var(--vp-smoke-charcoal);
+  --surface-raised:#16302A;
+  --surface-shelf:var(--vp-emerald);
+  --surface-inset:#0B0F10;
+  --surface-nav:rgba(19,24,26,.9);
+  --surface-glass:rgba(220,192,138,.06);
+  --surface-glass-strong:rgba(220,192,138,.11);
+  --surface-scrim:rgba(11,15,16,.8);
+  --text-primary:#EDF3EF;
+  --text-secondary:var(--vp-mineral-green);
+  --text-tertiary:#6F8A80;
+  --text-inverse:var(--vp-smoke-charcoal);
+  --text-metal:var(--vp-pale-brass);
+  --text-signal:var(--vp-lilac-accent);
+  --line-divider:rgba(237,243,239,.11);
+  --line-strong:#1E4038;
+  --line-metal:rgba(220,192,138,.55);
+  --line-signal:rgba(176,140,255,.6);
+  --action-primary-bg:var(--vp-pale-brass);
+  --action-primary-fg:var(--vp-smoke-charcoal);
+  --action-secondary-border:rgba(237,243,239,.2);
+  --action-secondary-fg:#EDF3EF;
+  --focus-ring:0 0 0 1px var(--vp-smoke-charcoal),0 0 0 3px rgba(176,140,255,.65);
+  --glow-signal:0 0 20px rgba(176,140,255,.5);
+}
+
+[data-colorway="citrine-gold"]{
+  color-scheme:dark;
+  --surface-canvas:var(--cg-graphite-black);
+  --surface-raised:var(--cg-smoked-glass);
+  --surface-shelf:#26282C;
+  --surface-inset:#040507;
+  --surface-nav:rgba(26,28,31,.9);
+  --surface-glass:rgba(245,245,247,.05);
+  --surface-glass-strong:rgba(245,245,247,.1);
+  --surface-scrim:rgba(8,11,13,.8);
+  --text-primary:var(--cg-porcelain-white);
+  --text-secondary:#AEB0B4;
+  --text-tertiary:#74767A;
+  --text-inverse:var(--cg-graphite-black);
+  --text-metal:var(--cg-warm-gold);
+  --text-signal:var(--cg-citrine);
+  --line-divider:rgba(245,245,247,.11);
+  --line-strong:#2E3134;
+  --line-metal:rgba(212,175,55,.55);
+  --line-signal:rgba(255,210,58,.6);
+  --action-primary-bg:var(--cg-warm-gold);
+  --action-primary-fg:var(--cg-graphite-black);
+  --action-secondary-border:rgba(245,245,247,.2);
+  --action-secondary-fg:var(--cg-porcelain-white);
+  --focus-ring:0 0 0 1px var(--cg-graphite-black),0 0 0 3px rgba(255,210,58,.7);
+  --glow-signal:0 0 20px rgba(255,179,71,.55);
+}
+
+[data-colorway="ember-copper"]{
+  color-scheme:dark;
+  --surface-canvas:var(--ec-deep-noir);
+  --surface-raised:#231218;
+  --surface-shelf:var(--ec-plum-dusk);
+  --surface-inset:#0B070A;
+  --surface-nav:rgba(35,18,24,.9);
+  --surface-glass:rgba(244,238,230,.05);
+  --surface-glass-strong:rgba(244,238,230,.1);
+  --surface-scrim:rgba(19,13,16,.8);
+  --text-primary:var(--ec-warm-porcelain);
+  --text-secondary:#BCA79E;
+  --text-tertiary:#82706A;
+  --text-inverse:var(--ec-deep-noir);
+  --text-metal:var(--ec-rose-gold);
+  --text-signal:var(--ec-terracotta);
+  --line-divider:rgba(244,238,230,.11);
+  --line-strong:#3A2028;
+  --line-metal:rgba(225,179,160,.55);
+  --line-signal:rgba(219,106,71,.6);
+  --action-primary-bg:var(--ec-ember-copper);
+  --action-primary-fg:var(--ec-warm-porcelain);
+  --action-secondary-border:rgba(244,238,230,.2);
+  --action-secondary-fg:var(--ec-warm-porcelain);
+  --focus-ring:0 0 0 1px var(--ec-deep-noir),0 0 0 3px rgba(219,106,71,.7);
+  --glow-signal:0 0 20px rgba(219,106,71,.5);
+}
+
+[data-colorway="orchid-voltage"]{
+  color-scheme:dark;
+  --surface-canvas:var(--ov-deep-space-black);
+  --surface-raised:#150B24;
+  --surface-shelf:#221038;
+  --surface-inset:#040506;
+  --surface-nav:rgba(21,11,36,.9);
+  --surface-glass:rgba(230,230,234,.06);
+  --surface-glass-strong:rgba(230,230,234,.12);
+  --surface-scrim:rgba(8,11,10,.82);
+  --text-primary:var(--ov-silver-chrome);
+  --text-secondary:#B6ADC6;
+  --text-tertiary:#7C7391;
+  --text-inverse:var(--ov-deep-space-black);
+  --text-metal:var(--ov-silver-chrome);
+  --text-signal:var(--ov-orchid);
+  --line-divider:rgba(230,230,234,.12);
+  --line-strong:#2C1A45;
+  --line-metal:rgba(230,230,234,.4);
+  --line-signal:rgba(177,75,255,.65);
+  --action-primary-bg:var(--ov-ultraviolet);
+  --action-primary-fg:var(--ov-silver-chrome);
+  --action-secondary-border:rgba(230,230,234,.22);
+  --action-secondary-fg:var(--ov-silver-chrome);
+  --focus-ring:0 0 0 1px var(--ov-deep-space-black),0 0 0 3px rgba(0,240,255,.6);
+  --glow-signal:0 0 24px rgba(177,75,255,.6);
+}
+
+[data-colorway="emerald-vault"]{
+  color-scheme:dark;
+  --surface-canvas:var(--ev-onyx-black);
+  --surface-raised:#0C2A22;
+  --surface-shelf:var(--ev-emerald-depth);
+  --surface-inset:#040607;
+  --surface-nav:rgba(12,42,34,.9);
+  --surface-glass:rgba(212,175,55,.06);
+  --surface-glass-strong:rgba(212,175,55,.11);
+  --surface-scrim:rgba(8,11,13,.82);
+  --text-primary:#EDF2EE;
+  --text-secondary:#A9BDB4;
+  --text-tertiary:#6F837B;
+  --text-inverse:var(--ev-onyx-black);
+  --text-metal:var(--ev-brushed-gold);
+  --text-signal:var(--ev-acid-lime);
+  --line-divider:rgba(237,242,238,.11);
+  --line-strong:var(--ev-graphite-tech);
+  --line-metal:rgba(212,175,55,.55);
+  --line-signal:rgba(198,255,0,.5);
+  --action-primary-bg:var(--ev-brushed-gold);
+  --action-primary-fg:var(--ev-onyx-black);
+  --action-secondary-border:rgba(237,242,238,.2);
+  --action-secondary-fg:#EDF2EE;
+  --focus-ring:0 0 0 1px var(--ev-onyx-black),0 0 0 3px rgba(198,255,0,.55);
+  --glow-signal:0 0 20px rgba(198,255,0,.4);
+}

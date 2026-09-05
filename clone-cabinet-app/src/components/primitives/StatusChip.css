@@ -52,6 +52,15 @@ button.cc-chip:active {
   color: var(--text-signal);
 }
 
+/* Trade/rarity/caution: the oxblood family, per the reference design system's StatusChip
+   tones. Oxblood is itself colorway-derived (aliased to --surface-raised in the bridge), so
+   this stays a recessive tint rather than a fixed red area fill. */
+.cc-chip--trade {
+  border-color: color-mix(in oklab, var(--oxblood) 90%, transparent);
+  background: color-mix(in oklab, var(--oxblood) 35%, transparent);
+  color: var(--rose-alloy-light);
+}
+
 @media (prefers-reduced-motion: reduce) {
   button.cc-chip:active {
     transform: none;

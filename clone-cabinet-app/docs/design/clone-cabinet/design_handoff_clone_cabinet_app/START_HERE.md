@@ -1,7 +1,15 @@
 # Start here — building Clone Cabinet with Claude Code
 
-This folder is a design spec, not a codebase. `README.md` is the authoritative document;
-`prototype/` holds the runnable HTML prototype the spec was written from.
+This folder is a design spec, not a codebase.
+
+- `README.md` — the authoritative spec (screens, tokens, navigation, motion)
+- `ASSET_REQUEST_RESPONSE.md` — **read this second.** Point-by-point answers to the asset
+  request raised after Phase 1–2, including what's now delivered and what needs a decision
+- `tokens/` — all 13 published colorway skins, the semantic-alias bridge, the Riviera day variant
+- `theme/colorways.ts` — the colorway registry with day-support flags
+- `design-system/` — the design system's own token tree and component bundle
+- `assets/brand/`, `assets/icons/` — the brand marks and the five icons that exist
+- `prototype/` — the runnable HTML prototype the spec was written from
 
 ## 0. Put the files where Claude Code can read them
 
@@ -51,7 +59,7 @@ Build bottom-up — the token layer and nav shell first, because every screen de
 
 | Phase | Deliverable | Done when |
 |---|---|---|
-| 1 | **Token layer.** All colour/type/space/radius/shadow/motion values as code constants. Theme object keyed by `colorwayId` × `mode`, persisted. | Switching colorway at runtime re-skins a throwaway test screen with zero component edits. |
+| 1 | **Token layer.** All colour/type/space/radius/shadow/motion values as code constants. Theme object keyed by `colorwayId` × `mode`, persisted. Skins and registry ship in `tokens/` + `theme/`. | Switching colorway at runtime re-skins a throwaway test screen with zero component edits — all 13. |
 | 2 | **Primitives.** Button (with the .985 press), StatusChip, Toast, EmptyState, SkeletonLoader, VerifiedBadge, IrisSeam, Icon. | A primitives gallery screen matches the prototype side by side. |
 | 3 | **Shell + navigation.** Tab bar with the travelling chamber, TopBar, per-tab back stacks, depth-aware push/pop transition (advance 12px/420ms, recede -8px/300ms). | `navFor()` mapping holds: detail screens read as their parent tab, each tab keeps its own stack. |
 | 4 | **Domain components.** FragranceCard, BottlePortrait, AccordBar, MetricDial, LineageNode, CabinetShelf, OpenChamber, ReviewCard, TradeCard, TrustMetric, CollectorAvatar. | Each renders from the seeded shapes in `prototype/cc-data.js`. |

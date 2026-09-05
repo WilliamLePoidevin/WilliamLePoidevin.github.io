@@ -1,0 +1,13 @@
+/* Clone Cabinet - element defaults and two shared text helpers. */
+html,body{margin:0}
+body{background:var(--surface-canvas);color:var(--text-primary);font-family:var(--font-ui);font-size:var(--type-body-size);line-height:var(--type-body-lh);-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box}
+a{color:var(--text-metal);text-decoration:none;transition:color var(--dur-micro) var(--ease-material)}
+a:hover{color:var(--rose-alloy-light)}
+a:active{color:var(--rose-alloy)}
+:focus-visible{outline:none;box-shadow:var(--focus-ring)}
+::selection{background:rgba(139,92,255,.3);color:var(--text-primary)}
+.cc-label{font-family:var(--font-ui);font-size:var(--type-label-size);line-height:var(--type-label-lh);font-weight:var(--type-label-weight);letter-spacing:var(--track-label);text-transform:uppercase;color:var(--text-tertiary)}
+.cc-micro{font-family:var(--font-mono);font-size:var(--type-micro-size);line-height:var(--type-micro-lh);letter-spacing:var(--track-micro);color:var(--text-tertiary)}
+.cc-wordmark{font-family:var(--font-display);font-weight:500;letter-spacing:var(--track-wordmark);text-transform:uppercase;color:var(--text-primary)}
+.cc-divider{height:1px;background:var(--line-divider);border:0;margin:0}

@@ -1,0 +1,18 @@
+/* Clone Cabinet - surfaces read as tonal panels and inset trays, not floating cards. */
+:root{
+  --shadow-none:none;
+  --shadow-card-night:inset 0 1px 0 rgba(244,240,232,.05),0 12px 28px -20px rgba(13,9,13,.9);
+  --shadow-card-day:0 1px 2px rgba(38,34,37,.04),0 10px 24px -18px rgba(38,34,37,.16);
+  --shadow-sheet-night:0 -18px 60px -20px rgba(13,9,13,.95);
+  --shadow-sheet-day:0 -14px 44px -22px rgba(38,34,37,.28);
+  --shadow-inset-tray:inset 0 1px 3px rgba(13,9,13,.6);
+
+  --glow-iris-sm:0 0 8px rgba(139,92,255,.5);
+  --glow-iris-md:0 0 16px rgba(139,92,255,.55),0 0 40px rgba(92,50,214,.3);
+  --glow-rose-sm:0 0 12px rgba(216,173,162,.28);
+
+  --blur-glass:blur(20px) saturate(130%); /* @kind other */
+  --grain-opacity:.04; /* @kind other */
+}
+:root,[data-mode="night"]{--shadow-card:var(--shadow-card-night);--shadow-sheet:var(--shadow-sheet-night)}
+[data-mode="day"]{--shadow-card:var(--shadow-card-day);--shadow-sheet:var(--shadow-sheet-day)}

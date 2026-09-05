@@ -24,10 +24,9 @@ Read order for the whole package: `clone-cabinet-app/docs/design/clone-cabinet/0
 - Never invent colours, type sizes, spacing, radii, or motion values. Every value comes from
   the Design tokens section of the spec.
 - Theming is a runtime theme object keyed by colorway id × mode (night/day, day only for
-  Soft Tech Porcelain and Riviera Cobalt day). Never hard-code a hex in a component. Only the
-  Riviera Cobalt colorway ships with this handoff — the other 12 boards referenced in the spec
-  live in a design-system bundle that was not included; architect for more colorways, don't
-  fabricate their values.
+  Soft Tech Porcelain and Riviera Cobalt day). Never hard-code a hex in a component. All 13
+  published colorways ship in `src/theme/colorways.ts` / `styles/tokens/colorway-skins.css` —
+  add a 14th the same way if one is ever published, never fabricate values for one that isn't.
 - Signal colour (electric blue) is light, never paint: a core, an edge, a glow, one figure.
   Never a filled area larger than a chip.
 - Metal (champagne) is borders, active indicators, foil type, primary affordances.

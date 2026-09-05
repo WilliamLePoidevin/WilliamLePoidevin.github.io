@@ -1,5 +1,5 @@
 import { useTheme } from "../theme/ThemeProvider";
-import { getColorway } from "../theme/colorways";
+import { getColorway, supportsDay } from "../theme/colorways";
 import { Button } from "./primitives";
 import "./TweaksPanel.css";
 
@@ -13,6 +13,7 @@ interface TweaksPanelProps {
 export function TweaksPanel({ wide, onWideChange }: TweaksPanelProps) {
   const { mode, colorwayId, setMode, setColorwayId, colorways } = useTheme();
   const activeColorway = getColorway(colorwayId);
+  const activeSupportsDay = supportsDay(colorwayId);
 
   return (
     <div className="cc-tweaks cc-hairline">
@@ -20,53 +21,66 @@ export function TweaksPanel({ wide, onWideChange }: TweaksPanelProps) {
 
       <div className="cc-tweaks__group">
         <span className="cc-micro cc-tweaks__group-label">Display mode</span>
-        <div className="cc-tweaks__row">
-          <Button
-            size="sm"
-            variant={mode === "night" ? "primary" : "secondary"}
-            onClick={() => setMode("night")}
-          >
-            Night
-          </Button>
-          <Button
-            size="sm"
-            variant={mode === "day" ? "primary" : "secondary"}
-            onClick={() => setMode("day")}
-            disabled={!activeColorway.publishesDay}
-            title={
-              activeColorway.publishesDay
-                ? activeColorway.dayIsDerived
-                  ? "Derived, not published on the brand board — confirm before shipping"
-                  : undefined
-                : `${activeColorway.name} publishes a dark skin only`
-            }
-          >
-            Day
-          </Button>
-        </div>
-        {mode === "day" && activeColorway.dayIsDerived ? (
-          <span className="cc-micro cc-tweaks__flag">Derived day skin, unpublished — flagged in README.md</span>
-        ) : null}
+        {activeColorway.modes === "light-native" ? (
+          <span className="cc-micro cc-tweaks__flag">
+            {activeColorway.name} is always light — no Night/Day distinction, no data-mode needed.
+          </span>
+        ) : (
+          <>
+            <div className="cc-tweaks__row">
+              <Button
+                size="sm"
+                variant={mode === "night" ? "primary" : "secondary"}
+                onClick={() => setMode("night")}
+              >
+                Night
+              </Button>
+              <Button
+                size="sm"
+                variant={mode === "day" ? "primary" : "secondary"}
+                onClick={() => setMode("day")}
+                disabled={!activeSupportsDay}
+                title={
+                  !activeSupportsDay
+                    ? `${activeColorway.name} publishes a dark skin only`
+                    : "Derived, not published on the brand board — confirm before shipping"
+                }
+              >
+                Day
+              </Button>
+            </div>
+            {mode === "day" && activeColorway.modes === "night+derived-day" ? (
+              <span className="cc-micro cc-tweaks__flag">
+                Derived day skin, unpublished — flagged in ASSET_REQUEST_RESPONSE.md
+              </span>
+            ) : null}
+          </>
+        )}
       </div>
 
       <div className="cc-tweaks__group">
-        <span className="cc-micro cc-tweaks__group-label">Cabinet finish</span>
-        <div className="cc-tweaks__row">
+        <label className="cc-micro cc-tweaks__group-label" htmlFor="cc-finish-picker">
+          Cabinet finish
+        </label>
+        <select
+          id="cc-finish-picker"
+          className="cc-tweaks__select"
+          value={colorwayId}
+          onChange={(e) => setColorwayId(e.target.value)}
+        >
           {colorways.map((c) => (
-            <Button
-              key={c.id}
-              size="sm"
-              variant={colorwayId === c.id ? "primary" : "secondary"}
-              onClick={() => setColorwayId(c.id)}
-            >
-              {c.name}
-            </Button>
+            <option key={c.id} value={c.id}>
+              {c.board} — {c.name}
+              {c.modes === "light-native" ? " (light)" : ""}
+            </option>
           ))}
+        </select>
+        <div className="cc-tweaks__swatch-row">
+          <span className="cc-tweaks__swatch" style={{ background: activeColorway.ground }} title="ground" />
+          <span className="cc-tweaks__swatch" style={{ background: activeColorway.metal }} title="metal" />
+          <span className="cc-tweaks__swatch" style={{ background: activeColorway.signal }} title="signal" />
+          <span className="cc-micro cc-tweaks__note">{activeColorway.note}</span>
         </div>
-        <span className="cc-micro cc-tweaks__flag">
-          12 of 13 boards from the brand system weren't included in this handoff — add their
-          skins to colorway-skins.css when available.
-        </span>
       </div>
 
       <div className="cc-tweaks__group">

@@ -7,7 +7,9 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { COLORWAYS, DEFAULT_COLORWAY_ID, getColorway, type Mode } from "./colorways";
+import { COLORWAYS, DEFAULT_COLORWAY, getColorway } from "./colorways";
+
+export type Mode = "night" | "day";
 
 const MODE_KEY = "cc-mode";
 const COLORWAY_KEY = "cc-colorway";
@@ -47,7 +49,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   });
   const [colorwayId, setColorwayIdState] = useState<string>(() => {
     const stored = readStored(COLORWAY_KEY);
-    return stored && getColorway(stored) ? stored : DEFAULT_COLORWAY_ID;
+    return stored && COLORWAYS.some((c) => c.id === stored) ? stored : DEFAULT_COLORWAY;
   });
 
   const setMode = useCallback((next: Mode) => {
@@ -60,9 +62,14 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       const meta = getColorway(id);
       setColorwayIdState(meta.id);
       writeStored(COLORWAY_KEY, meta.id);
-      // Choosing a dark-only finish returns Display mode to Night — the board has no
-      // daylight ground to show.
-      if (!meta.publishesDay && mode === "day") {
+      // Only 'night+derived-day' skins render differently under data-mode="day". Dark-only
+      // skins have no daylight ground to show, and light-native skins render identically
+      // either way — but colorway-bridge.css's light-ground fold is MORE specific than a
+      // skin's own unconditional rule (two attribute selectors beat one), so leaving
+      // data-mode="day" set while on a light-native skin lets the generic fold silently
+      // override that skin's own hand-authored --text-tertiary. Force mode back to 'night'
+      // (i.e. no data-mode="day" at all) for both cases to avoid it.
+      if (meta.modes !== "night+derived-day" && mode === "day") {
         setMode("night");
       }
     },

@@ -1,0 +1,3 @@
+/* Clone Cabinet webfonts. Faces named in the brand master prompt; all Google Fonts.
+   The proprietary wordmark face is NOT included — see readme.md "Fonts". */
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@300;400;500&display=swap");

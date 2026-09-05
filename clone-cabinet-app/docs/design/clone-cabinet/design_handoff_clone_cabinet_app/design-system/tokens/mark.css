@@ -1,0 +1,21 @@
+/* Clone Cabinet — MARK CONSTRUCTION (board 04, icon construction proof).
+   The master mark is two mirrored cobras forming a doubled letter C around a
+   central atomizer. These ratios are the proof's own dimensions — use them when
+   scaling, spacing or reproducing the mark; never redraw it. */
+:root{
+  --mark-ratio-c:1; /* @kind other */            /* 1.00X — one cobra C */
+  --mark-ratio-spine:.18; /* @kind other */      /* 0.18X — atomizer spine gap between the curls */
+  --mark-ratio-width:2.18; /* @kind other */     /* 2.18X — total lockup width */
+  --mark-ratio-height:1.62; /* @kind other */    /* 1.62X — total lockup height */
+  --mark-aspect:2.18 / 1.62; /* @kind other */   /* use directly as aspect-ratio */
+
+  /* Clear space and minimum sizes */
+  --mark-clearspace:.18; /* @kind other */       /* × mark width, matches the spine gap */
+  --mark-min-size:16px;        /* monogram mark floor */
+  --mark-min-full:56px;        /* full cobra mark floor — below this use the monogram */
+
+  /* Icon system steps published on board 05 */
+  --appicon-1024:1024px;
+  --appicon-512:512px;
+  --appicon-180:180px;
+}

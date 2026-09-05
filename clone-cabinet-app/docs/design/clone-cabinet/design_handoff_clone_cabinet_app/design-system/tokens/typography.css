@@ -1,0 +1,24 @@
+/* Clone Cabinet - typography. Display echoes the architectural wordmark without
+   impersonating the proprietary logo face. */
+:root{
+  --font-display:"Space Grotesk","Manrope",-apple-system,sans-serif;
+  --font-ui:"Inter",-apple-system,"Helvetica Neue",sans-serif;
+  --font-editorial:"Cormorant Garamond",Georgia,serif;
+  --font-mono:"IBM Plex Mono","Space Mono",ui-monospace,monospace;
+
+  /* Mobile type scale - size / line-height / weight */
+  --type-display-size:36px;      --type-display-lh:40px;   --type-display-weight:500;
+  --type-h1-size:28px;           --type-h1-lh:32px;        --type-h1-weight:600;
+  --type-h2-size:22px;           --type-h2-lh:28px;        --type-h2-weight:600;
+  --type-h3-size:17px;           --type-h3-lh:22px;        --type-h3-weight:600;
+  --type-body-size:15px;         --type-body-lh:22px;      --type-body-weight:400;
+  --type-compact-size:13px;      --type-compact-lh:18px;   --type-compact-weight:500;
+  --type-label-size:11px;        --type-label-lh:14px;     --type-label-weight:600;
+  --type-micro-size:10px;        --type-micro-lh:14px;     --type-micro-weight:400;
+
+  --track-display:-0.01em;
+  --track-wordmark:0.16em;
+  --track-label:0.08em;
+  --track-micro:0.04em;
+  --track-body:0em;
+}

@@ -62,6 +62,34 @@
   background: var(--tint-06);
 }
 
+/* Live/confirmation actions — e.g. "confirm this lineage claim." Never used for a rating or
+   trade action; the signal colour is reserved for confidence/live states. */
+.cc-button--signal {
+  background: transparent;
+  color: var(--text-signal);
+  border: var(--hairline) solid var(--line-signal);
+}
+
+.cc-button--signal:active {
+  transform: scale(var(--press-scale));
+  transition-duration: var(--dur-press-in);
+  transition-timing-function: var(--ease-press-in);
+  background: color-mix(in oklab, var(--text-signal) 10%, transparent);
+}
+
+/* Destructive/high-stakes actions — e.g. "cancel this trade," "remove from cabinet." */
+.cc-button--caution {
+  background: var(--oxblood);
+  color: var(--porcelain);
+}
+
+.cc-button--caution:active {
+  transform: scale(var(--press-scale));
+  transition-duration: var(--dur-press-in);
+  transition-timing-function: var(--ease-press-in);
+  background: color-mix(in oklab, var(--oxblood) 88%, black);
+}
+
 .cc-button:disabled {
   opacity: var(--disabled-opacity);
   cursor: default;

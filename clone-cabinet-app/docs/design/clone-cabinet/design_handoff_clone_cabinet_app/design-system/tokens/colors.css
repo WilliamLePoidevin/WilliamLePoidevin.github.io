@@ -1,0 +1,41 @@
+/* Clone Cabinet - core colour tokens. Values are fixed by the brand master prompt. */
+:root{
+  /* Core brand */
+  --cabinet-plum:#170F16;            /* primary dark canvas */
+  --cabinet-plum-elevated:#21171F;   /* raised dark surfaces */
+  --archive-ink:#262225;             /* light-mode primary text */
+  --porcelain:#F4F0E8;               /* primary light canvas */
+  --porcelain-raised:#FBF8F2;        /* elevated light surfaces */
+  --rose-alloy:#B98579;              /* signature metal / action */
+  --rose-alloy-light:#D8ADA2;        /* controlled highlight */
+  --electric-iris:#8B5CFF;           /* digital signal only, <5% of a screen */
+  --iris-core:#B99CFF;               /* luminous centre / highlight */
+  --oxblood:#591D2A;                 /* trade, rarity, caution, depth */
+  --iris-smoke:#A7A0B3;              /* secondary neutral */
+  --vapor:#D8D5CE;                   /* light dividers / inactive controls */
+  --graphite:#353035;                /* dark dividers / secondary surfaces */
+  --success:#7FA98B;
+  --warning:#C99862;
+  --error:#B85F67;
+
+  /* Extended dark neutrals derived for depth work */
+  --plum-abyss:#0D090D;
+  --plum-shelf:#1C131B;
+  --graphite-soft:#2A252A;
+
+  /* Reference: hexes published on the concept boards (documentation only) */
+  --board-black-plum:#170F16;
+  --board-smoked-graphite:#2B2B2F;
+  --board-iris-accent:#7C6BFF;
+  --board-opal-glass:#F0F7FF;
+  --board-porcelain-flat:#F6F6F4;
+  --board-rose-alloy-soft:#D9B4A6;
+
+  /* Permitted gradients - narrow seams and reflections only */
+  --grad-iris-seam:linear-gradient(180deg,#5C32D6 0%,#8B5CFF 50%,#D6C9FF 100%); /* @kind color */
+  --grad-iris-seam-h:linear-gradient(90deg,rgba(92,50,214,0) 0%,#8B5CFF 50%,rgba(214,201,255,0) 100%); /* @kind color */
+  --grad-rose-reflection:linear-gradient(135deg,#7F514B 0%,#B98579 38%,#E1B7AC 52%,#8B5B53 100%); /* @kind color */
+  --grad-depth:linear-gradient(180deg,#0D090D 0%,#170F16 55%,#21171F 100%); /* @kind color */
+  --grad-protect-bottom:linear-gradient(180deg,rgba(13,9,13,0) 0%,rgba(13,9,13,.72) 58%,rgba(13,9,13,.96) 100%); /* @kind color */
+  --grad-protect-top:linear-gradient(180deg,rgba(13,9,13,.85) 0%,rgba(13,9,13,0) 100%); /* @kind color */
+}

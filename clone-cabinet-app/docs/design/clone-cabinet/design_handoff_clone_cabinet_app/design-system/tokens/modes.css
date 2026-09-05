@@ -1,0 +1,61 @@
+/* Clone Cabinet - semantic aliases per colour mode.
+   Night Cabinet is the default; Day Cabinet is set with [data-mode="day"]. */
+:root,
+[data-mode="night"]{
+  color-scheme:dark;
+  --surface-canvas:var(--cabinet-plum);
+  --surface-raised:var(--cabinet-plum-elevated);
+  --surface-shelf:var(--plum-shelf);
+  --surface-inset:var(--plum-abyss);
+  --surface-nav:rgba(33,23,31,.88);
+  --surface-glass:rgba(244,240,232,.05);
+  --surface-glass-strong:rgba(244,240,232,.1);
+  --surface-scrim:rgba(13,9,13,.74);
+
+  --text-primary:var(--porcelain);
+  --text-secondary:#B6ADB4;
+  --text-tertiary:var(--iris-smoke);
+  --text-inverse:var(--archive-ink);
+  --text-metal:var(--rose-alloy-light);
+  --text-signal:var(--iris-core);
+
+  --line-divider:rgba(244,240,232,.1);
+  --line-strong:var(--graphite);
+  --line-metal:rgba(185,133,121,.55);
+  --line-signal:rgba(139,92,255,.65);
+
+  --action-primary-bg:var(--rose-alloy);
+  --action-primary-fg:#1A1218;
+  --action-secondary-border:var(--graphite);
+  --action-secondary-fg:var(--porcelain);
+  --focus-ring:0 0 0 1px var(--cabinet-plum),0 0 0 3px rgba(139,92,255,.75);
+}
+[data-mode="day"]{
+  color-scheme:light;
+  --surface-canvas:var(--porcelain);
+  --surface-raised:var(--porcelain-raised);
+  --surface-shelf:#EFEAE1;
+  --surface-inset:#E7E1D6;
+  --surface-nav:rgba(251,248,242,.92);
+  --surface-glass:rgba(38,34,37,.04);
+  --surface-glass-strong:rgba(38,34,37,.07);
+  --surface-scrim:rgba(38,34,37,.4);
+
+  --text-primary:var(--archive-ink);
+  --text-secondary:#5C555A;
+  --text-tertiary:#847D88;
+  --text-inverse:var(--porcelain);
+  --text-metal:#9A6459;
+  --text-signal:#6B3FE0;
+
+  --line-divider:rgba(38,34,37,.1);
+  --line-strong:var(--vapor);
+  --line-metal:rgba(185,133,121,.6);
+  --line-signal:rgba(107,63,224,.5);
+
+  --action-primary-bg:var(--rose-alloy);
+  --action-primary-fg:#FBF8F2;
+  --action-secondary-border:var(--vapor);
+  --action-secondary-fg:var(--archive-ink);
+  --focus-ring:0 0 0 1px var(--porcelain),0 0 0 3px rgba(107,63,224,.6);
+}

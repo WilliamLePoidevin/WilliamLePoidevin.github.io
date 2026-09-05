@@ -1,0 +1,99 @@
+/* Clone Cabinet — COLORWAYS.
+   Two additional published colour systems, taken verbatim from the brand boards
+   (assets/boards/05-obsidian-rose.png, assets/boards/06-porcelain-aqua.png).
+   Hexes are the ones PRINTED on the palette panels — never re-sampled or re-derived.
+
+   Apply as a scope:  <body data-colorway="obsidian-rose">
+   Colorways remap the same semantic aliases that tokens/modes.css defines, so every
+   component inherits without change. Night Cabinet remains the system default. */
+
+:root{
+  /* ---- Obsidian Rose (board 05) — published ---- */
+  --or-obsidian-black:#0A0A0C;
+  --or-black-plum:#1A0F1D;
+  --or-smoky-charcoal:#1F1F22;
+  --or-rose-gold:#B8896E;
+  --or-champagne:#E8DCC6;
+  --or-electric-crimson:#FF1E3A;
+  --grad-or-rose:linear-gradient(90deg,#7A5340 0%,#B8896E 32%,#E8DCC6 58%,#8E6349 100%); /* @kind color */
+  --grad-or-plum:linear-gradient(90deg,#0A0A0C 0%,#1A0F1D 45%,#4A2B47 78%,#1A0F1D 100%); /* @kind color */
+  --grad-or-crimson:linear-gradient(90deg,#0A0A0C 0%,#5C0713 55%,#FF1E3A 100%); /* @kind color */
+
+  /* ---- Soft Tech Porcelain (board 06) — published ---- */
+  --pa-porcelain:#F6F4EF;
+  --pa-opal-white:#FFFFFF;
+  --pa-sea-glass:#CFEBE6;
+  --pa-aqua-teal:#5AC7C5;
+  --pa-turquoise:#00D1C2;
+  --pa-silver:#BFC5C9;
+  --pa-soft-taupe:#E4DED5;
+  --pa-deep-ocean:#0B2A33;
+  --grad-pa-seaglass:linear-gradient(180deg,#FFFFFF 0%,#CFEBE6 60%,#5AC7C5 100%); /* @kind color */
+  --grad-pa-turquoise:linear-gradient(90deg,rgba(0,209,194,0) 0%,#00D1C2 50%,rgba(0,209,194,0) 100%); /* @kind color */
+}
+
+/* ================= Obsidian Rose ================= */
+[data-colorway="obsidian-rose"]{
+  color-scheme:dark;
+  --surface-canvas:var(--or-obsidian-black);
+  --surface-raised:var(--or-black-plum);
+  --surface-shelf:var(--or-smoky-charcoal);
+  --surface-inset:#050506;
+  --surface-nav:rgba(26,15,29,.9);
+  --surface-glass:rgba(232,220,198,.05);
+  --surface-glass-strong:rgba(232,220,198,.1);
+  --surface-scrim:rgba(10,10,12,.78);
+
+  --text-primary:var(--or-champagne);
+  --text-secondary:#B5A896;
+  --text-tertiary:#7E7566;
+  --text-inverse:var(--or-obsidian-black);
+  --text-metal:var(--or-rose-gold);
+  --text-signal:var(--or-electric-crimson);
+
+  --line-divider:rgba(232,220,198,.11);
+  --line-strong:var(--or-smoky-charcoal);
+  --line-metal:rgba(184,137,110,.6);
+  --line-signal:rgba(255,30,58,.55);
+
+  --action-primary-bg:var(--or-rose-gold);
+  --action-primary-fg:var(--or-obsidian-black);
+  --action-secondary-border:rgba(232,220,198,.18);
+  --action-secondary-fg:var(--or-champagne);
+  --focus-ring:0 0 0 1px var(--or-obsidian-black),0 0 0 3px rgba(255,30,58,.7);
+
+  --glow-signal:0 0 18px rgba(255,30,58,.45);
+}
+
+/* ================= Soft Tech Porcelain ================= */
+[data-colorway="porcelain-aqua"]{
+  color-scheme:light;
+  --surface-canvas:var(--pa-porcelain);
+  --surface-raised:var(--pa-opal-white);
+  --surface-shelf:var(--pa-soft-taupe);
+  --surface-inset:#EDEAE3;
+  --surface-nav:rgba(255,255,255,.92);
+  --surface-glass:rgba(11,42,51,.04);
+  --surface-glass-strong:rgba(11,42,51,.07);
+  --surface-scrim:rgba(11,42,51,.42);
+
+  --text-primary:var(--pa-deep-ocean);
+  --text-secondary:#4A6570;
+  --text-tertiary:#8A969B;
+  --text-inverse:var(--pa-opal-white);
+  --text-metal:#8C9498;
+  --text-signal:#00A89C;
+
+  --line-divider:rgba(11,42,51,.1);
+  --line-strong:var(--pa-silver);
+  --line-metal:rgba(191,197,201,.9);
+  --line-signal:rgba(0,209,194,.5);
+
+  --action-primary-bg:var(--pa-aqua-teal);
+  --action-primary-fg:var(--pa-deep-ocean);
+  --action-secondary-border:var(--pa-silver);
+  --action-secondary-fg:var(--pa-deep-ocean);
+  --focus-ring:0 0 0 1px var(--pa-opal-white),0 0 0 3px rgba(0,209,194,.55);
+
+  --glow-signal:0 0 18px rgba(0,209,194,.35);
+}

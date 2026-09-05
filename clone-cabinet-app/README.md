@@ -15,12 +15,18 @@ Following the bottom-up build order from `docs/design/clone-cabinet/design_hando
 - [x] **Phase 1 — Token layer.** `src/styles/tokens/`: colour, typography, spacing, radii,
       motion, all as CSS custom properties. Theme is keyed by colorway × mode (`data-colorway`
       on the shell, `data-mode` on the root — see `src/theme/`), persisted to `localStorage`.
-      Only the Riviera Cobalt colorway ships (the other 12 boards weren't in the handoff
-      package); the registry in `src/theme/colorways.ts` is built to take more without
-      touching any component.
-- [x] **Phase 2 — Primitives.** `src/components/primitives/`: Button, StatusChip, Toast,
-      EmptyState, SkeletonLoader, VerifiedBadge, IrisSeam, Icon. Rendered together at
-      `src/screens/PrimitivesGallery.tsx`, the current `App.tsx` entry point.
+      All 13 published colorways ship in `src/theme/colorways.ts` / `colorway-skins.css`;
+      1 (Riviera Cobalt) has a derived, unpublished day skin, 1 (Soft Tech Porcelain) is
+      light-native, the other 11 are dark-only.
+- [x] **Phase 2 — Primitives.** `src/components/primitives/`: Button (+ signal/caution
+      variants), StatusChip (+ trade tone), Toast, EmptyState (+ glyph slot), SkeletonLoader
+      (+ multi-line mode), VerifiedBadge (label + dot, alloy/signal), IrisSeam, Icon (general
+      UI glyphs, Lucide), BrandMark and NavGlyph (real brand assets — see below). Rendered
+      together at `src/screens/PrimitivesGallery.tsx`, the current `App.tsx` entry point.
+      Cross-checked against the design system's own reference component bundle in
+      `docs/design/clone-cabinet/design_handoff_clone_cabinet_app/design-system/` (not more
+      authoritative than the README, but worth matching for consistency — see
+      `ASSET_REQUEST_RESPONSE.md` item 2).
 - [ ] **Phase 3 — Shell + navigation.** Tab bar with the travelling chamber, TopBar, per-tab
       back stacks, depth-aware push/pop transition.
 - [ ] **Phase 4 — Domain components.** FragranceCard, BottlePortrait, AccordBar, MetricDial,
@@ -43,14 +49,28 @@ npm run build    # outputs to ../clone-cabinet (this repo's Pages subpath)
 
 ## Known gaps inherited from the design handoff
 
-- Only 1 of 13 colorways is specified (Riviera Cobalt); the rest live in a design-system
-  bundle that wasn't included in this package.
-- Fonts are Google Fonts substitutes for the brand's licensed faces.
-- No icon assets shipped (PNG set referenced, not included) — `Icon.tsx` renders a small
-  inline-SVG placeholder set instead; swap for the real vectors when available.
-- No product photography — dataset's `image` field is `null` for every fragrance.
-- Riviera Cobalt day mode is derived, not published on the brand board — confirm before
-  shipping.
+Resolved by `ASSET_REQUEST_RESPONSE.md` (see
+`docs/design/clone-cabinet/design_handoff_clone_cabinet_app/`): all 13 colorways, the design
+system's own token/component bundle, and 5 real nav icons + brand logos (`BrandMark`,
+`NavGlyph`) are now in the repo. Still open:
 
-See `docs/design/clone-cabinet/design_handoff_clone_cabinet_app/README.md` and
-`INTEGRATION_GUIDE.md` for the full list.
+- **No vector logo exists, and never will** — the mark is a photographic 3D object (two
+  mirrored brackets around a central atomizer), not vector artwork; re-drawing it as SVG is
+  prohibited by the brand's own rules. `BrandMark` is raster-only by design; request the
+  original render/3D source for anything scaling past ~330px or sitting on a light field.
+- **No UI icon set exists in the source either** — Lucide is the design system's own decided
+  substitution (stroked, `currentColor`, one file for all 13 skins), wired up in `Icon.tsx`,
+  but it's flagged, not brand-confirmed. Ask the brand owner to confirm before launch.
+- Fonts are still Google Fonts substitutes for the brand's licensed faces (Cinzel Sans and
+  Söhne are named for Obsidian Rose specifically) — no font files were ever supplied.
+- No product photography — dataset's `image` field is `null` for every fragrance. Recommended
+  direction (not yet built): a deterministic per-fragrance placeholder portrait, not real
+  photos and not a coloured box — see `ASSET_REQUEST_RESPONSE.md` item 5 for the exact spec.
+- Riviera Cobalt day mode is derived, not published on the brand board — confirmed workable,
+  recommended to ship, but still needs the brand owner's sign-off.
+- Dataset enrichment (year, accords, score, sillage, projection, longevity) and the 29
+  disputed lineage entries are explicitly out of design-package scope — separate data
+  projects, tracked in `INTEGRATION_GUIDE.md` Sections 3 and 5.
+
+See `docs/design/clone-cabinet/design_handoff_clone_cabinet_app/ASSET_REQUEST_RESPONSE.md` for
+the full point-by-point response this was built from.

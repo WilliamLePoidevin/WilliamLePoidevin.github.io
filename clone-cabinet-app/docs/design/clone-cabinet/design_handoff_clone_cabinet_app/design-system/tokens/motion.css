@@ -1,0 +1,23 @@
+/* Clone Cabinet - motion principle: Open / Reveal / Return. Nothing bounces hard. */
+:root{
+  --dur-micro:140ms; /* @kind other */
+  --dur-standard:250ms; /* @kind other */
+  --dur-sheet:340ms; /* @kind other */
+  --dur-signature:900ms; /* @kind other */
+
+  --ease-material:cubic-bezier(.22,.61,.36,1); /* @kind other */
+  --ease-seam:cubic-bezier(.16,.84,.28,1); /* @kind other */
+  --ease-sheet:cubic-bezier(.2,.9,.24,1); /* @kind other */
+  --ease-in-out:cubic-bezier(.45,0,.25,1); /* @kind other */
+
+  --press-scale:.985; /* @kind other */
+  --disabled-opacity:.38; /* @kind other */
+}
+@keyframes cc-seam-open{from{transform:scaleX(0);opacity:0}to{transform:scaleX(1);opacity:1}}
+@keyframes cc-iris-pulse{0%,100%{opacity:.55}50%{opacity:1}}
+@keyframes cc-reveal{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes cc-sheet-rise{from{transform:translateY(18px);opacity:0}to{transform:none;opacity:1}}
+@keyframes cc-shimmer{0%{background-position:-140% 0}100%{background-position:240% 0}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
