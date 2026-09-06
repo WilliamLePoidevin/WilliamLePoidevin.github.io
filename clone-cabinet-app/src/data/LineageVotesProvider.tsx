@@ -36,6 +36,9 @@ interface LineageVotesContextValue {
    * eventually own.
    */
   getAdjustedCounts: (relationKey: string, seedConfirm: number, seedDispute: number) => { confirm: number; dispute: number };
+  /** How many relations this browser has voted on — a real, local count. */
+  voteCount: number;
+  clearAll: () => void;
 }
 
 const LineageVotesContext = createContext<LineageVotesContextValue | null>(null);
@@ -66,7 +69,17 @@ export function LineageVotesProvider({ children }: { children: ReactNode }) {
     [votes]
   );
 
-  const value = useMemo(() => ({ getVote, setVote, getAdjustedCounts }), [getVote, setVote, getAdjustedCounts]);
+  const clearAll = useCallback(() => {
+    writeStored({});
+    setVotes({});
+  }, []);
+
+  const voteCount = useMemo(() => Object.keys(votes).length, [votes]);
+
+  const value = useMemo(
+    () => ({ getVote, setVote, getAdjustedCounts, voteCount, clearAll }),
+    [getVote, setVote, getAdjustedCounts, voteCount, clearAll]
+  );
 
   return <LineageVotesContext.Provider value={value}>{children}</LineageVotesContext.Provider>;
 }

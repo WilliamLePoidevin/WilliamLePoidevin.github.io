@@ -127,14 +127,29 @@ Following the bottom-up build order from `docs/design/clone-cabinet/design_hando
       and is entirely separate from `value` (private, never shown here) — the "sharing a
       cabinet never shares values" non-negotiable holds even though both fields now live on
       the same `CabinetEntry`.
-      **Not done yet:** `you` tab root (still the Phase 3 placeholder screen); `launch`/
-      `welcome`/`onboard` (pre-shell flow); `tradeDetail`, `proposal`, `collector`,
-      `notifications`, `settings` (pushed screens — proposal and tradeDetail specifically need
-      a second real party the same way Trade's community browse does, so they wait on the
-      same thing); the full `isDetail` tabs (Overview/Lineage/Reviews/Market); Cabinet's
-      "edit-shelf" reorder mode; a Map view for Lineage; the confidence-history vote event log
-      (Section 11's sparkline needs a timestamped log,
-      not just a running total — today's vote is a single stored choice, no history).
+      Also **done:** `you` tab root (`src/screens/tabs/YouScreen.tsx`) and its pushed
+      `SettingsScreen` (`src/screens/SettingsScreen.tsx`). YouScreen's stats — cabinet size,
+      For Trade/Seeking count, lineage votes cast — are real counts read straight off
+      `CabinetProvider`/`LineageVotesProvider`, never invented; "collector level" (Collector/
+      Connoisseur/Curator) is a plain tier function over real cabinet size, not a fabricated
+      reputation score, since there's no community to rank against. The display name is a new
+      small localStorage-backed hook (`src/data/displayName.ts`) shared with Trade, which now
+      labels your own listings with whatever you set here instead of a hardcoded "You".
+      SettingsScreen gives the real app (not just the dev-only PrimitivesGallery) a working
+      Night/Day and Cabinet-finish picker via the existing `useTheme()`/`colorways.ts`
+      machinery, a privacy line reinforcing that cabinet values never leave the browser, and a
+      "Clear all local data" action gated behind an inline confirm/cancel step (no native
+      `confirm()` dialog, to stay in the app's own visual language) that clears Cabinet,
+      lineage votes, and the display name via new `clearAll()` methods on both providers —
+      deliberately leaving Night/Day and Cabinet-finish alone, since those are a display
+      preference, not collection data.
+      **Not done yet:** `launch`/`welcome`/`onboard` (pre-shell flow); `tradeDetail`,
+      `proposal`, `collector`, `notifications` (pushed screens — proposal and tradeDetail
+      specifically need a second real party the same way Trade's community browse does, so
+      they wait on the same thing); the full `isDetail` tabs (Overview/Lineage/Reviews/Market);
+      Cabinet's "edit-shelf" reorder mode; a Map view for Lineage; the confidence-history vote
+      event log (Section 11's sparkline needs a timestamped log, not just a running total —
+      today's vote is a single stored choice, no history).
 
 ## Develop
 

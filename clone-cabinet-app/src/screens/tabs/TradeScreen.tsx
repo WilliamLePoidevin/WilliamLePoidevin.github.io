@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { useCabinet } from "../../data/CabinetProvider";
 import { useDataset } from "../../data/DatasetProvider";
+import { useDisplayName } from "../../data/displayName";
 import { useNav } from "../../nav/NavProvider";
 import type { CabinetEntry } from "../../data/cabinet";
 import type { Fragrance } from "../../data/types";
@@ -18,6 +19,7 @@ import "./TradeScreen.css";
 export function TradeScreen() {
   const { entries } = useCabinet();
   const { dataset, loading } = useDataset();
+  const { name } = useDisplayName();
   const { push } = useNav();
 
   const listings = useMemo(() => {
@@ -56,7 +58,7 @@ export function TradeScreen() {
                   fill: entry.fillPercent,
                   presentation: entry.presentation ?? undefined,
                   price: entry.price,
-                  collectorName: "You",
+                  collectorName: name,
                   wants: entry.wants ?? undefined,
                 }}
                 onClick={() => openListing(entry.fragranceId)}

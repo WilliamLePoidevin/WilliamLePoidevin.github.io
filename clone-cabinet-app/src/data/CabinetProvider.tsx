@@ -26,6 +26,7 @@ interface CabinetContextValue {
   addEntry: (entry: CabinetEntry) => void;
   updateEntry: (fragranceId: string, patch: Partial<Omit<CabinetEntry, "fragranceId">>) => void;
   removeEntry: (fragranceId: string) => void;
+  clearAll: () => void;
 }
 
 const CabinetContext = createContext<CabinetContextValue | null>(null);
@@ -64,9 +65,14 @@ export function CabinetProvider({ children }: { children: ReactNode }) {
     });
   }, []);
 
+  const clearAll = useCallback(() => {
+    writeStored({});
+    setEntriesRecord({});
+  }, []);
+
   const value = useMemo<CabinetContextValue>(
-    () => ({ entries: new Map(Object.entries(entriesRecord)), addEntry, updateEntry, removeEntry }),
-    [entriesRecord, addEntry, updateEntry, removeEntry]
+    () => ({ entries: new Map(Object.entries(entriesRecord)), addEntry, updateEntry, removeEntry, clearAll }),
+    [entriesRecord, addEntry, updateEntry, removeEntry, clearAll]
   );
 
   return <CabinetContext.Provider value={value}>{children}</CabinetContext.Provider>;

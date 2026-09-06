@@ -1,0 +1,56 @@
+.cc-you {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  padding: var(--page-padding);
+}
+
+.cc-you__profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-12);
+  padding-top: var(--space-8);
+}
+
+.cc-you__name {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font-display);
+  font-size: var(--text-h3-size);
+  line-height: var(--text-h3-line);
+  font-weight: var(--text-h3-weight);
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.cc-you__name-edit {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.cc-you__name-input {
+  height: var(--control-height-sm);
+  padding: 0 var(--space-12);
+  border-radius: var(--radius-chip);
+  border: var(--hairline) solid var(--line-divider);
+  background: var(--surface-canvas);
+  color: var(--text-primary);
+  font-size: var(--text-body-size);
+}
+
+.cc-you__stats {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-12);
+  padding: var(--space-16);
+  background: var(--surface-raised);
+  border: var(--hairline) solid var(--line-divider);
+  border-radius: var(--radius-card);
+}
+
+.cc-you__hint {
+  color: var(--text-tertiary);
+}
