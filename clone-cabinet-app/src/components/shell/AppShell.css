@@ -1,0 +1,14 @@
+.cc-appshell {
+  display: flex;
+  height: 100vh;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.cc-appshell__column {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}

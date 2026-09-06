@@ -1,0 +1,60 @@
+name: Deploy Clone Cabinet
+
+# Builds clone-cabinet-app/ and commits the static output to /clone-cabinet/ at the repo
+# root, which GitHub Pages serves as a subpath of williamlepoidevin.github.io alongside the
+# resume at the root. Deliberately NOT the actions/deploy-pages flow: this repo's Pages source
+# is a branch (classic deploy), not a workflow artifact, and switching that would also take
+# over deployment of the resume site — a decision for the repo owner, not this workflow.
+#
+# The output path (/clone-cabinet/) is .gitignore'd as a normal build artifact, so this job
+# force-adds it. Paths filter excludes that directory from the trigger, so the deploy commit
+# never re-triggers itself.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "clone-cabinet-app/**"
+      - ".github/workflows/deploy-clone-cabinet.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deploy-clone-cabinet
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: clone-cabinet-app/package-lock.json
+
+      - name: Install dependencies
+        working-directory: clone-cabinet-app
+        run: npm ci
+
+      - name: Build
+        working-directory: clone-cabinet-app
+        run: npm run build
+
+      - name: Commit and push build output
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -f clone-cabinet
+          if git diff --cached --quiet; then
+            echo "Build output unchanged, nothing to deploy."
+            exit 0
+          fi
+          git commit -m "Deploy Clone Cabinet build [skip ci]"
+          git push

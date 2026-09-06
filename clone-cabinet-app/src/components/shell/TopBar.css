@@ -1,0 +1,30 @@
+.cc-topbar {
+  display: flex;
+  align-items: center;
+  height: var(--topbar-height);
+  padding: 0 var(--space-8);
+  background: var(--surface-nav);
+  border-bottom: var(--hairline) solid var(--line-divider);
+}
+
+.cc-topbar__back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--tap-min);
+  height: var(--tap-min);
+}
+
+.cc-topbar__spacer {
+  width: var(--tap-min);
+  flex-shrink: 0;
+}
+
+.cc-topbar__title {
+  flex: 1;
+  text-align: center;
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -27,8 +27,19 @@ Following the bottom-up build order from `docs/design/clone-cabinet/design_hando
       `docs/design/clone-cabinet/design_handoff_clone_cabinet_app/design-system/` (not more
       authoritative than the README, but worth matching for consistency — see
       `ASSET_REQUEST_RESPONSE.md` item 2).
-- [ ] **Phase 3 — Shell + navigation.** Tab bar with the travelling chamber, TopBar, per-tab
-      back stacks, depth-aware push/pop transition.
+- [x] **Phase 3 — Shell + navigation.** `src/nav/` (per-tab back stacks, push/pop) and
+      `src/components/shell/` (AppShell, TopBar, BottomNav, SideRail, ScreenTransition).
+      BottomNav's travelling chamber slides 260ms between adjacent tabs and crossfades for
+      non-adjacent jumps, with the IrisSeam flash-then-decay core line on selection; Cabinet
+      renders one step heavier as the centre tab. Push/pop applies the depth-aware
+      forward/back transform; a pushed screen's TopBar title and BottomNav selection both
+      read as its parent tab, per `navFor()`'s intent — there's no static screen→tab lookup
+      table yet since real screens don't exist until Phase 5, so a push simply lands on
+      whichever tab is currently active. SideRail is wide mode's stand-in for BottomNav; the
+      handoff doesn't specify a chamber-equivalent motion for it, so it reads via a metal fill
+      + vertical IrisSeam instead. Demoed against 5 placeholder tab-root screens in
+      `src/screens/tabs/` — reachable via the dev switcher (top-right) in `App.tsx`, which
+      also still exposes the Phase 1-2 primitives gallery for colorway/mode work.
 - [ ] **Phase 4 — Domain components.** FragranceCard, BottlePortrait, AccordBar, MetricDial,
       LineageNode, CabinetShelf, OpenChamber, ReviewCard, TradeCard, TrustMetric,
       CollectorAvatar.
@@ -46,6 +57,13 @@ npm install
 npm run dev      # http://localhost:5173/clone-cabinet/
 npm run build    # outputs to ../clone-cabinet (this repo's Pages subpath)
 ```
+
+## Deploy
+
+`.github/workflows/deploy-clone-cabinet.yml` builds this app and commits the output to
+`/clone-cabinet/` at the repo root on every push to `main` that touches `clone-cabinet-app/`
+(or via manual `workflow_dispatch`). No manual build/commit step needed once a change lands
+on `main` — GitHub Pages serves whatever's committed there.
 
 ## Known gaps inherited from the design handoff
 

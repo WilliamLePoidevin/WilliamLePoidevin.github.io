@@ -1,0 +1,43 @@
+.cc-screen-transition {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.cc-screen-transition__content {
+  min-height: 100%;
+}
+
+@keyframes cc-screen-forward {
+  from {
+    opacity: 0;
+    transform: translateY(var(--screen-forward-translate)) scale(var(--screen-forward-scale));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes cc-screen-back {
+  from {
+    opacity: 0;
+    transform: translateY(var(--screen-back-translate)) scale(var(--screen-back-scale));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.cc-screen-transition--forward {
+  animation: cc-screen-forward var(--dur-screen-forward) var(--ease-standard) both;
+}
+
+.cc-screen-transition--back {
+  animation: cc-screen-back var(--dur-screen-back) var(--ease-standard) both;
+}
+
+.cc-screen-transition--reveal {
+  animation: cc-reveal var(--dur-standard) var(--ease-material) both;
+}

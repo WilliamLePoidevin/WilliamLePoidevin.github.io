@@ -1,0 +1,62 @@
+.cc-bottomnav {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  height: var(--bottomnav-height);
+  background: var(--surface-nav);
+  backdrop-filter: var(--blur-glass);
+  border-top: var(--hairline) solid var(--line-divider);
+}
+
+.cc-bottomnav__chamber {
+  position: absolute;
+  top: 9px;
+  left: 0;
+  height: 58px;
+  border-radius: var(--radius-card);
+  border: var(--hairline) solid var(--line-metal);
+  box-shadow: inset 0 1px 0 color-mix(in oklab, var(--text-primary) 12%, transparent);
+  background: var(--surface-glass);
+  transition: transform var(--dur-nav-travel) var(--ease-standard),
+    opacity var(--dur-nav-crossfade) linear;
+}
+
+.cc-bottomnav__chamber--jump {
+  opacity: 0;
+  transition: opacity var(--dur-nav-crossfade) linear;
+}
+
+.cc-bottomnav__seam {
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cc-bottomnav__tab {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  min-height: var(--tap-min);
+  color: var(--text-tertiary);
+  transition: color var(--dur-standard) var(--ease-material);
+}
+
+.cc-bottomnav__tab--selected {
+  color: var(--text-primary);
+}
+
+.cc-bottomnav__label {
+  text-transform: uppercase;
+  letter-spacing: var(--track-micro);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cc-bottomnav__chamber {
+    transition: none;
+  }
+}

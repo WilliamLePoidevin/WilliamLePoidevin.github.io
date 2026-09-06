@@ -1,0 +1,12 @@
+.cc-dev-switcher {
+  position: fixed;
+  top: var(--space-8);
+  right: var(--space-8);
+  z-index: 100;
+  display: flex;
+  gap: var(--space-8);
+  padding: var(--space-8);
+  border-radius: var(--radius-chip);
+  background: var(--surface-raised);
+  box-shadow: var(--shadow-card);
+}
