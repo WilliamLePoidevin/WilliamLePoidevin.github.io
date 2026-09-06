@@ -5,7 +5,8 @@ import { useNav } from "../../nav/NavProvider";
 import { FragranceCard } from "../../components/fragrance";
 import { SkeletonLoader } from "../../components/primitives";
 import { FragranceDetailScreen } from "../FragranceDetailScreen";
-import type { Fragrance } from "../../data/types";
+import { HouseScreen } from "../HouseScreen";
+import type { Fragrance, House } from "../../data/types";
 import "./DiscoverScreen.css";
 
 export function DiscoverScreen() {
@@ -18,6 +19,7 @@ export function DiscoverScreen() {
   const results = useMemo(() => (dataset ? searchFragrances(dataset.fragrances, query, 24) : []), [dataset, query]);
 
   const openFragrance = (f: Fragrance) => push(f.name, () => <FragranceDetailScreen id={f.id} />);
+  const openHouse = (h: House) => push(h.name, () => <HouseScreen houseId={h.id} />);
 
   if (error) {
     return <p className="cc-discover__error cc-micro">Couldn't load the index: {error}</p>;
@@ -55,10 +57,10 @@ export function DiscoverScreen() {
           <span className="cc-label">Houses</span>
           <div className="cc-discover__hrow">
             {houses.map((h) => (
-              <div key={h.id} className="cc-discover__house">
+              <button type="button" key={h.id} className="cc-discover__house" onClick={() => openHouse(h)}>
                 <div className="cc-discover__house-name">{h.name}</div>
                 <div className="cc-micro">{h.count} scents</div>
-              </div>
+              </button>
             ))}
           </div>
         </section>

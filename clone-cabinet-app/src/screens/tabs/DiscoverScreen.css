@@ -55,6 +55,10 @@
   background: var(--surface-raised);
   border: var(--hairline) solid var(--line-divider);
   border-radius: var(--radius-chip);
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
 }
 
 .cc-discover__house-name {
