@@ -1,0 +1,914 @@
+[
+  {
+    "id": "lattafa",
+    "name": "Lattafa Perfumes",
+    "region": "UAE (Dubai)",
+    "founded": 1992,
+    "count": 178,
+    "note": "Ornate crystal-style bottles with gold-tone caps are the house signature \u2014 flagships like Khamrah and Ana Abiyedh Rouge lean into heavier, faceted glass built to look shelf-worthy next to niche houses."
+  },
+  {
+    "id": "maison-alhambra",
+    "name": "Maison Alhambra",
+    "region": "UAE (Dubai)",
+    "founded": 2020,
+    "count": 262,
+    "note": "Explicitly built around the 'total experience' \u2014 bottle and box design frequently mirrors the exact silhouette of the niche house it references, down to cap shape and box texture."
+  },
+  {
+    "id": "armaf",
+    "name": "Armaf",
+    "region": "UAE",
+    "founded": null,
+    "count": 160,
+    "note": "Understated compared to the crystal-heavy houses \u2014 clean rectangular bottles, brushed-metal caps, closer in presentation register to mainstream designer packaging than to ornate Arabic perfumery."
+  },
+  {
+    "id": "al-haramain",
+    "name": "Al Haramain Perfumes",
+    "region": "UAE/Saudi",
+    "founded": 2012,
+    "count": 63,
+    "note": "Known for oversized, heavily faceted bottles in the Amber Oud line \u2014 deliberately displayed as statement pieces rather than tucked away."
+  },
+  {
+    "id": "swiss-arabian",
+    "name": "Swiss Arabian",
+    "region": "UAE",
+    "founded": null,
+    "count": 9,
+    "note": "One of the older houses in the category \u2014 bottle design trends more traditional/attar-adjacent than the crystal-cut maximalism of newer entrants."
+  },
+  {
+    "id": "paris-corner",
+    "name": "Paris Corner",
+    "region": "UAE",
+    "founded": null,
+    "count": 78,
+    "note": "Entry-level packaging across most of the catalog."
+  },
+  {
+    "id": "khadlaj",
+    "name": "Khadlaj",
+    "region": "Saudi Arabia",
+    "founded": null,
+    "count": 31,
+    "note": "Mid-tier presentation with occasional standout releases (Island Dreams) that lean into brighter, more contemporary bottle design than the traditional Arabic-perfumery look."
+  },
+  {
+    "id": "rasasi",
+    "name": "Rasasi",
+    "region": "UAE",
+    "founded": null,
+    "count": 25,
+    "note": "Long-established Saudi/UAE house \u2014 solid, traditional bottle design, less focused on niche-mimicry than Maison Alhambra."
+  },
+  {
+    "id": "ajmal",
+    "name": "Ajmal",
+    "region": "UAE",
+    "founded": null,
+    "count": 6,
+    "note": "One of the more heritage-positioned houses \u2014 bottle design often nods to classical Arabic perfumery motifs rather than Western niche silhouettes."
+  },
+  {
+    "id": "al-wataniah",
+    "name": "Al Wataniah",
+    "region": "Saudi Arabia",
+    "founded": null,
+    "count": 1,
+    "note": "Modest, functional presentation."
+  },
+  {
+    "id": "arabiyat",
+    "name": "Arabiyat Prestige",
+    "region": "UAE",
+    "founded": null,
+    "count": 30,
+    "note": "Positioned as a value-forward sub-line \u2014 presentation is clean but not a collector centerpiece."
+  },
+  {
+    "id": "afnan",
+    "name": "Afnan Perfumes",
+    "region": "UAE",
+    "founded": null,
+    "count": 56,
+    "note": "Known for closely mirroring niche-house bottle silhouettes (Supremacy line in particular echoes Amouage/Nishane-style presentation)."
+  },
+  {
+    "id": "zimaya",
+    "name": "Zimaya",
+    "region": "UAE",
+    "founded": 2023,
+    "count": 57,
+    "note": "Confirmed via Fragrantica editorial as an Afnan sub-brand, not just community speculation. Uses pre-made fragrance oil bases rather than commissioning original perfumer work, per the same source."
+  },
+  {
+    "id": "rayhaan",
+    "name": "Rayhaan",
+    "region": "UAE",
+    "founded": 2020,
+    "count": 30,
+    "note": "Founded by Khalid Kalsekar, son of Rasasi's Salim Kalsekar \u2014 positioned under an 'Essential Luxury' banner with premium bottle detailing."
+  },
+  {
+    "id": "mykonos",
+    "name": "Mykonos",
+    "region": "Indonesia",
+    "founded": null,
+    "count": 8,
+    "note": "Viral Indonesian dupe house, known for stylish presentation; expanding to UK distribution via Fragrance Forte as of 2026. Notably difficult to buy at retail price due to high demand/markup, per multiple reviewers."
+  },
+  {
+    "id": "velixir",
+    "name": "Velixir",
+    "region": "Indonesia",
+    "founded": null,
+    "count": 2,
+    "note": "Greek-mythology-themed naming (Ares, Apollo, Athena, Icarus, etc). Distinctive flattened egg-shaped bottle design that sits upside down on its cap \u2014 praised by reviewers as one of the more unique bottle designs in the category."
+  },
+  {
+    "id": "gulf-orchid",
+    "name": "Gulf Orchid",
+    "region": "UAE",
+    "founded": null,
+    "count": 11,
+    "note": "Parent group to Maison Asrar; own-name releases (Mango Ice, Matcha Latte) lean into playful, contemporary bottle design."
+  },
+  {
+    "id": "maison-asrar",
+    "name": "Maison Asrar",
+    "region": "UAE",
+    "founded": null,
+    "count": 19,
+    "note": "Confirmed via Parfumo as marketed by Gulf Orchid Fragrances. One reviewer specifically praises the Belgravia bottle as 'nice and classy, unlike every other Middle Eastern bottle' \u2014 suggests above-average presentation investment relative to peers."
+  },
+  {
+    "id": "french-avenue",
+    "name": "French Avenue",
+    "region": "UAE",
+    "founded": null,
+    "count": 16,
+    "note": "Operates as a niche-adjacent sub-line (associated with Fragrance World); leans toward rarer/less-duped niche references rather than the usual Aventus/BR540 targets."
+  },
+  {
+    "id": "ahmed-al-maghribi",
+    "name": "Ahmed Al Maghribi",
+    "region": "Saudi Arabia",
+    "founded": null,
+    "count": 0,
+    "note": "Known primarily for attars/oil concentrates alongside spray formats \u2014 no verified spray-fragrance pairing data sourced yet."
+  },
+  {
+    "id": "bujairami",
+    "name": "Bin Bujairami",
+    "region": "UAE (also AU, Canada storefronts)",
+    "founded": null,
+    "count": 118,
+    "note": "Publishes explicit 'X Inspired by Y [Brand]' product titles directly on their own storefront \u2014 a first-party source rather than community speculation, though still single-sourced (their own claim) unless independently corroborated."
+  },
+  {
+    "id": "riiffs",
+    "name": "Riiffs",
+    "region": "UAE",
+    "founded": null,
+    "count": 4,
+    "note": "No verified packaging reputation sourced yet."
+  },
+  {
+    "id": "ard-al-zaafaran",
+    "name": "Ard Al Zaafaran",
+    "region": "UAE (Dubai)",
+    "founded": null,
+    "count": 13,
+    "note": "Budget-tier house; presentation is functional rather than a display centerpiece, per community sourcing."
+  },
+  {
+    "id": "dumont",
+    "name": "Dumont",
+    "region": "UAE",
+    "founded": null,
+    "count": 1,
+    "note": "No verified packaging reputation sourced yet."
+  },
+  {
+    "id": "atralia",
+    "name": "Atralia",
+    "region": "UAE",
+    "founded": null,
+    "count": 1,
+    "note": "No verified packaging reputation sourced yet. (Resolves an earlier uncertain 'Atrailia' name mention \u2014 confirmed as Atralia.)"
+  },
+  {
+    "id": "surrati",
+    "name": "Surrati",
+    "region": "Saudi Arabia",
+    "founded": null,
+    "count": 1,
+    "note": "No verified packaging reputation sourced yet."
+  },
+  {
+    "id": "montagne",
+    "name": "Montagne Parfums",
+    "region": "USA (NYC)",
+    "founded": 2019,
+    "count": 168,
+    "note": "NOT Middle Eastern \u2014 flagged for the record, since this dataset was scoped to ME clone houses. American (NYC-based) dupe house, self-described as 'Fine fragrances inspirations. Handcrafted in NYC.' Publishes explicit 'INSPIRED BY [designer]' titles directly on their own site, same pattern as Bujairami."
+  },
+  {
+    "id": "dua",
+    "name": "Dua Fragrances",
+    "region": "USA (Los Angeles)",
+    "founded": null,
+    "count": 598,
+    "note": "Publishes explicit 'Inspiration: X by Y' labeling directly on every product listing \u2014 a first-party source, consistent in format across the entire catalog. All fragrances made in extrait de parfum concentration (33% oil) per the brand. Also releases 'Hybrid/Tribrid/Quadbrid' products explicitly blending 2-4 designer references at once rather than targeting a single fragrance."
+  },
+  {
+    "id": "jo-milano",
+    "name": "Jo Milano Paris",
+    "region": "USA (New York) / Paris",
+    "founded": 2018,
+    "count": 22,
+    "note": "The 'Game of Spades' (Diamond Collection) line uses playing-card-themed names (King, Queen, Royale, Diamond, Full House, Bluff) rather than naming the target directly on their own site \u2014 inspiration data for this house comes from Fragrantica community reviews, not first-party retailer labeling. Multiple reviewers independently rate this collection's quality above typical budget dupe houses."
+  },
+  {
+    "id": "volare",
+    "name": "Volar\u00e9",
+    "region": "UAE",
+    "founded": 2023,
+    "count": 7,
+    "note": "From the house of Mamlakat Al Oud (est. 1994). A genuinely new brand (Fragrantica's earliest listing is 2023), already carried by multiple third-party retailers who append shorthand nicknames for the designer target directly in product titles."
+  },
+  {
+    "id": "alexandria-fragrances",
+    "name": "Alexandria Fragrances",
+    "region": "USA",
+    "founded": null,
+    "count": 29,
+    "note": "No verified packaging reputation sourced yet beyond a customer noting quick, tracked delivery."
+  },
+  {
+    "id": "ca-perfume",
+    "name": "CA Perfume",
+    "region": "USA (California)",
+    "founded": null,
+    "count": 1,
+    "note": "Body-oil and fragrance-oil format alongside sprays, marketed as 'HumanSafe Verified.' No independent reputation sourced yet beyond product listings."
+  },
+  {
+    "id": "al-rehab",
+    "name": "Al Rehab",
+    "region": null,
+    "founded": null,
+    "count": 2,
+    "note": null
+  },
+  {
+    "id": "althoor-al-alam",
+    "name": "Althoor Al Alam",
+    "region": null,
+    "founded": null,
+    "count": 2,
+    "note": null
+  },
+  {
+    "id": "amber-oud-exclusif",
+    "name": "Amber Oud Exclusif",
+    "region": null,
+    "founded": null,
+    "count": 2,
+    "note": null
+  },
+  {
+    "id": "amberry",
+    "name": "Amberry",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "ana-abiyedh",
+    "name": "Ana Abiyedh",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "ard-alkhaleej",
+    "name": "Ard Alkhaleej",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "aroma-concepts",
+    "name": "Aroma Concepts",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "artisan-collection",
+    "name": "Artisan Collection",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "asdaaf",
+    "name": "Asdaaf",
+    "region": null,
+    "founded": null,
+    "count": 2,
+    "note": null
+  },
+  {
+    "id": "autobiography",
+    "name": "Autobiography",
+    "region": null,
+    "founded": null,
+    "count": 2,
+    "note": null
+  },
+  {
+    "id": "ayaam",
+    "name": "Ayaam",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "barrett-fragrances",
+    "name": "Barrett Fragrances",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "berouj",
+    "name": "Berouj",
+    "region": null,
+    "founded": null,
+    "count": 3,
+    "note": null
+  },
+  {
+    "id": "bint-hooran",
+    "name": "Bint Hooran",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "chez-pierre",
+    "name": "Chez Pierre",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "dossier",
+    "name": "Dossier",
+    "region": null,
+    "founded": null,
+    "count": 5,
+    "note": null
+  },
+  {
+    "id": "dua-2",
+    "name": "Dua",
+    "region": null,
+    "founded": null,
+    "count": 3,
+    "note": null
+  },
+  {
+    "id": "dubai-essences",
+    "name": "Dubai Essences",
+    "region": null,
+    "founded": null,
+    "count": 16,
+    "note": null
+  },
+  {
+    "id": "emer",
+    "name": "Emer",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "emir",
+    "name": "Emir",
+    "region": null,
+    "founded": null,
+    "count": 10,
+    "note": null
+  },
+  {
+    "id": "emper",
+    "name": "Emper",
+    "region": null,
+    "founded": null,
+    "count": 6,
+    "note": null
+  },
+  {
+    "id": "essence",
+    "name": "Essence",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "essense-vault",
+    "name": "Essense Vault",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "estiara",
+    "name": "Estiara",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "fa-paris",
+    "name": "FA Paris",
+    "region": null,
+    "founded": null,
+    "count": 2,
+    "note": null
+  },
+  {
+    "id": "fomo",
+    "name": "Fomo",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "fragrance-world",
+    "name": "Fragrance World",
+    "region": "UAE (Dubai)",
+    "founded": null,
+    "count": 199,
+    "note": "Trading roots in Dubai's Deira market since 1988; the Fragrance World brand itself established 2004. One of the largest UAE clone/inspired-style houses, with production facilities distributing to 150+ countries."
+  },
+  {
+    "id": "fragrance-world-ministry-of-oud",
+    "name": "Fragrance World Ministry of Oud",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "genre-parfums",
+    "name": "Genre Parfums",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "geparlys",
+    "name": "Geparlys",
+    "region": null,
+    "founded": null,
+    "count": 5,
+    "note": null
+  },
+  {
+    "id": "grandeur",
+    "name": "Grandeur",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "grandeur-elite",
+    "name": "Grandeur Elite",
+    "region": null,
+    "founded": null,
+    "count": 3,
+    "note": null
+  },
+  {
+    "id": "halloween",
+    "name": "Halloween",
+    "region": null,
+    "founded": null,
+    "count": 2,
+    "note": null
+  },
+  {
+    "id": "harumme",
+    "name": "Harumme",
+    "region": null,
+    "founded": null,
+    "count": 2,
+    "note": null
+  },
+  {
+    "id": "jenny-glow",
+    "name": "Jenny Glow",
+    "region": null,
+    "founded": null,
+    "count": 8,
+    "note": null
+  },
+  {
+    "id": "just-jack",
+    "name": "Just Jack",
+    "region": null,
+    "founded": null,
+    "count": 5,
+    "note": null
+  },
+  {
+    "id": "la-ree-fragrances",
+    "name": "La Ree Fragrances",
+    "region": null,
+    "founded": null,
+    "count": 31,
+    "note": null
+  },
+  {
+    "id": "la-rive",
+    "name": "La Rive",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "le-monde-gourmand",
+    "name": "Le Monde Gourmand",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "legesi-homme",
+    "name": "Legesi Homme",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "lidi",
+    "name": "Lidi",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "lovely-cherie",
+    "name": "Lovely Cherie",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "luxe-vision",
+    "name": "Luxe Vision",
+    "region": null,
+    "founded": null,
+    "count": 2,
+    "note": null
+  },
+  {
+    "id": "luxodor",
+    "name": "Luxodor",
+    "region": null,
+    "founded": null,
+    "count": 2,
+    "note": null
+  },
+  {
+    "id": "mpf",
+    "name": "MPF",
+    "region": null,
+    "founded": null,
+    "count": 8,
+    "note": null
+  },
+  {
+    "id": "maison-amade",
+    "name": "Maison Amade",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "makin-scents",
+    "name": "Makin' Scents",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "mamlakat-al-oud",
+    "name": "Mamlakat Al Oud",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "manege-rouge",
+    "name": "Manege Rouge",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "milestone-perfumes",
+    "name": "Milestone Perfumes",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "monarch",
+    "name": "Monarch",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "my-perfumes",
+    "name": "My Perfumes",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "north-stag-expressions",
+    "name": "North Stag Expressions",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "nuha",
+    "name": "Nuha",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "nusuk",
+    "name": "Nusuk",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "oakcha",
+    "name": "Oakcha",
+    "region": null,
+    "founded": null,
+    "count": 2,
+    "note": null
+  },
+  {
+    "id": "orientica",
+    "name": "Orientica",
+    "region": null,
+    "founded": null,
+    "count": 7,
+    "note": null
+  },
+  {
+    "id": "pendora-scents",
+    "name": "Pendora Scents",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "perfume-parlour",
+    "name": "Perfume Parlour",
+    "region": null,
+    "founded": null,
+    "count": 2,
+    "note": null
+  },
+  {
+    "id": "pharmacia",
+    "name": "Pharmacia",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "reha",
+    "name": "Reha",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "rogue-perfumes",
+    "name": "Rogue Perfumes",
+    "region": null,
+    "founded": null,
+    "count": 18,
+    "note": null
+  },
+  {
+    "id": "rouge-perfumes",
+    "name": "Rouge Perfumes",
+    "region": null,
+    "founded": null,
+    "count": 5,
+    "note": null
+  },
+  {
+    "id": "rue-brocha",
+    "name": "Rue Brocha",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "saint-hilaire",
+    "name": "Saint Hilaire",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "samy-andraus-fragrances",
+    "name": "Samy Andraus Fragrances",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "santalys",
+    "name": "Santalys",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "sapil",
+    "name": "Sapil",
+    "region": null,
+    "founded": null,
+    "count": 2,
+    "note": null
+  },
+  {
+    "id": "scentual-obsessions",
+    "name": "Scentual Obsessions",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "smart-collection",
+    "name": "Smart Collection",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "sterling-parfums",
+    "name": "Sterling Parfums",
+    "region": null,
+    "founded": null,
+    "count": 2,
+    "note": null
+  },
+  {
+    "id": "szindore",
+    "name": "Szindore",
+    "region": null,
+    "founded": null,
+    "count": 10,
+    "note": null
+  },
+  {
+    "id": "talking-scents",
+    "name": "Talking Scents",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "the-woods-collection",
+    "name": "The Woods Collection",
+    "region": null,
+    "founded": null,
+    "count": 2,
+    "note": null
+  },
+  {
+    "id": "theoreme-homme",
+    "name": "Theoreme Homme",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "usa-inspired-fragrances",
+    "name": "USA Inspired Fragrances",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "volare-2",
+    "name": "Volare",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "white-oud-perfumes",
+    "name": "White Oud Perfumes",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "yasmeen",
+    "name": "Yasmeen",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  },
+  {
+    "id": "zakat",
+    "name": "Zakat",
+    "region": null,
+    "founded": null,
+    "count": 17,
+    "note": null
+  },
+  {
+    "id": "zara",
+    "name": "Zara",
+    "region": null,
+    "founded": null,
+    "count": 36,
+    "note": null
+  },
+  {
+    "id": "zoghbi",
+    "name": "Zoghbi",
+    "region": null,
+    "founded": null,
+    "count": 1,
+    "note": null
+  }
+]
