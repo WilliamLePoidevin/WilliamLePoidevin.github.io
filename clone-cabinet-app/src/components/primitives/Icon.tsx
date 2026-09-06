@@ -4,7 +4,18 @@
 // 1.25-1.5px on a 20px box, square terminals, fill="none", stroke="currentColor" so one file
 // serves all 13 colorways in both modes. Still a flagged substitution — ask the brand owner to
 // confirm Lucide before launch.
-import { AlertTriangle, Check, ChevronLeft, ChevronRight, Circle, Plus, X, type LucideIcon } from "lucide-react";
+import {
+  AlertTriangle,
+  Check,
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  ChevronUp,
+  Circle,
+  Plus,
+  X,
+  type LucideIcon,
+} from "lucide-react";
 import "./Icon.css";
 
 const ICONS: Record<string, LucideIcon> = {
@@ -12,6 +23,8 @@ const ICONS: Record<string, LucideIcon> = {
   close: X,
   "chevron-left": ChevronLeft,
   "chevron-right": ChevronRight,
+  "chevron-up": ChevronUp,
+  "chevron-down": ChevronDown,
   dot: Circle,
   alert: AlertTriangle,
   plus: Plus,

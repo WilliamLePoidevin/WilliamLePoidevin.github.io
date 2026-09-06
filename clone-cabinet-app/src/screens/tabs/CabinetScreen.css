@@ -7,10 +7,48 @@
 
 .cc-cabinet__sort {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   gap: var(--space-8);
 }
 
+.cc-cabinet__edit-toggle {
+  margin-left: auto;
+}
+
 .cc-cabinet__empty {
   padding-top: var(--space-32);
+}
+
+.cc-cabinet__tile {
+  position: relative;
+}
+
+.cc-cabinet__reorder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--space-4);
+  pointer-events: none;
+}
+
+.cc-cabinet__reorder button {
+  pointer-events: auto;
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-chip);
+  border: var(--hairline) solid var(--line-divider);
+  background: var(--surface-raised);
+  cursor: pointer;
+}
+
+.cc-cabinet__reorder button:disabled {
+  opacity: 0.35;
+  cursor: default;
 }

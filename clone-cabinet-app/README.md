@@ -143,13 +143,27 @@ Following the bottom-up build order from `docs/design/clone-cabinet/design_hando
       lineage votes, and the display name via new `clearAll()` methods on both providers —
       deliberately leaving Night/Day and Cabinet-finish alone, since those are a display
       preference, not collection data.
-      **Not done yet:** `launch`/`welcome`/`onboard` (pre-shell flow); `tradeDetail`,
-      `proposal`, `collector`, `notifications` (pushed screens — proposal and tradeDetail
-      specifically need a second real party the same way Trade's community browse does, so
-      they wait on the same thing); the full `isDetail` tabs (Overview/Lineage/Reviews/Market);
-      Cabinet's "edit-shelf" reorder mode; a Map view for Lineage; the confidence-history vote
-      event log (Section 11's sparkline needs a timestamped log, not just a running total —
-      today's vote is a single stored choice, no history).
+      Also **done:** Cabinet's "edit-shelf" reorder mode. An "Edit shelf" toggle switches the
+      sort to a new `"custom"` key and reveals per-tile up/down controls
+      (`src/data/cabinetOrder.ts`); the manual order is kept per status group in `localStorage`,
+      separate from `CabinetProvider`, since it's a display arrangement, not a field on a
+      `CabinetEntry` record. The stored order self-heals against the live cabinet — a removed
+      bottle drops out and a newly added one lands at the end — rather than needing manual
+      repair as the shelf changes.
+      **Not done yet:** `launch`/`welcome`/`onboard` (pre-shell flow) — investigated, but the
+      design package's screen table describes these only in one line each
+      (`design_handoff_clone_cabinet_app/README.md`); there is no prototype markup or copy for
+      them anywhere in the handoff, and inventing brand/marketing copy would break the "copy
+      comes from the prototype verbatim" non-negotiable, so this stays blocked on the brand
+      owner supplying real copy, not on effort; `tradeDetail`, `proposal`, `collector`,
+      `notifications` (pushed screens — proposal and tradeDetail specifically need a second real
+      party the same way Trade's community browse does, so they wait on the same thing); the
+      full `isDetail` tabs (Overview/Lineage/Reviews/Market) — confirmed against the real
+      dataset that `score`/`sillage`/`projection`/`longevity`/`year`/`price` are `null` for
+      100% of all 4,113 records today, so these tabs would be empty shells for every fragrance
+      in the index; a Map view for Lineage; the confidence-history vote event log (Section 11's
+      sparkline needs a timestamped log, not just a running total — today's vote is a single
+      stored choice, no history).
 
 ## Develop
 

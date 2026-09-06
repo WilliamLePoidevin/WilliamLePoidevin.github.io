@@ -37,4 +37,4 @@ export interface CabinetEntry {
   wants: string | null;
 }
 
-export type SortKey = "acquired" | "house" | "fill" | "value";
+export type SortKey = "acquired" | "house" | "fill" | "value" | "custom";
