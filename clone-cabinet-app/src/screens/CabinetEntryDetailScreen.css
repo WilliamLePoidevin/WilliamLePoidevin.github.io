@@ -1,0 +1,46 @@
+.cc-entry-detail__pad {
+  padding: var(--page-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.cc-entry-detail__house {
+  color: var(--text-metal);
+}
+
+.cc-entry-detail__name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--text-h1-size);
+  line-height: var(--text-h1-line);
+  font-weight: var(--text-h1-weight);
+  color: var(--text-primary);
+}
+
+.cc-entry-detail__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.cc-entry-detail__chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+}
+
+.cc-entry-detail__range {
+  width: 100%;
+  accent-color: var(--rose-alloy);
+}
+
+.cc-entry-detail__row {
+  display: flex;
+  gap: var(--space-12);
+  color: var(--text-tertiary);
+}
+
+.cc-entry-detail__value {
+  color: var(--text-metal);
+}

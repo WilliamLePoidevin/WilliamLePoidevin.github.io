@@ -77,13 +77,28 @@ Following the bottom-up build order from `docs/design/clone-cabinet/design_hando
       metric dials, reviews/market tabs) — those need fields (score, sillage, projection) this
       dataset doesn't have yet; expanding it is Section 3 of INTEGRATION_GUIDE.md's job, not a
       screens-phase one.
-      **Not done yet:** `cabinet`, `lineage`, `trade`, `you` tab roots (still the Phase 3
-      placeholder screen); `launch`/`welcome`/`onboard` (pre-shell flow); `tradeDetail`,
-      `proposal`, `collector`, `notifications`, `settings` (pushed screens); the full `isDetail`
-      tabs (Overview/Lineage/Reviews/Market); live confidence voting
-      (`CLONE_CABINET_UX_SPEC.md` Section 11 — a real vote action wired to `confirmVotes`/
-      `disputeVotes`, recomputing the displayed `confidence` instead of just reading the
-      seeded number, which is all `FragranceDetailScreen` does today).
+      Also **done:** `cabinet` tab root (`src/screens/tabs/CabinetScreen.tsx`) — genuinely
+      working, not a mock. `src/data/CabinetProvider.tsx` persists a collector's cabinet to
+      `localStorage` (there's no backend and no accounts, so this is real per-browser state,
+      not a stand-in for a server record — worth a Settings-screen note once that exists, not
+      a thing to paper over). Fields like fill%, value, and worn-count are the collector's own
+      input, never a dataset enrichment field, so "hide, don't fake" doesn't apply to them the
+      way it does to `fragrance.score` — there's no real value being faked. Shelf grouped by
+      the handoff's full status vocabulary (In Cabinet/For Trade/Seeking/Archived/Sampled, per
+      INTEGRATION_GUIDE.md Section 6), sortable by Acquired/House/Fill/Value.
+      `AddToCabinetScreen` (search the real index, then a short form) and
+      `CabinetEntryDetailScreen` (edit fill/status, log a wear, remove) are pushed from the
+      `OpenChamber` tile; `FragranceDetailScreen` also grew a quick "Add to Cabinet" action so
+      the Discover → Cabinet loop is real end to end. Verified in a real browser: add Aventus
+      from Discover, see it land in the Cabinet shelf, edit and remove it, then add a second
+      entry through the full search-and-form flow.
+      **Not done yet:** `lineage`, `trade`, `you` tab roots (still the Phase 3 placeholder
+      screen); `launch`/`welcome`/`onboard` (pre-shell flow); `tradeDetail`, `proposal`,
+      `collector`, `notifications`, `settings` (pushed screens); the full `isDetail` tabs
+      (Overview/Lineage/Reviews/Market); live confidence voting (`CLONE_CABINET_UX_SPEC.md`
+      Section 11 — a real vote action wired to `confirmVotes`/`disputeVotes`, recomputing the
+      displayed `confidence` instead of just reading the seeded number, which is all
+      `FragranceDetailScreen` does today); Cabinet's "edit-shelf" reorder mode.
 
 ## Develop
 

@@ -9,6 +9,10 @@
   color: var(--text-metal);
 }
 
+.cc-fdetail__cabinet-row {
+  margin-top: var(--space-8);
+}
+
 .cc-fdetail__name {
   margin: 0;
   font-family: var(--font-display);

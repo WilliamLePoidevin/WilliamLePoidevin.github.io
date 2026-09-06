@@ -1,6 +1,7 @@
 import { useDataset } from "../data/DatasetProvider";
+import { useCabinet, defaultEntry } from "../data/CabinetProvider";
 import { BottlePortrait, LineageNode } from "../components/fragrance";
-import { EmptyState } from "../components/primitives";
+import { Button, EmptyState, StatusChip } from "../components/primitives";
 import "./FragranceDetailScreen.css";
 
 // A minimal Detail screen — real fields only, nothing from the full isDetail spec (accord
@@ -9,6 +10,7 @@ import "./FragranceDetailScreen.css";
 // real today (lineage clearly is).
 export function FragranceDetailScreen({ id }: { id: string }) {
   const { dataset } = useDataset();
+  const { entries, addEntry } = useCabinet();
   if (!dataset) return null;
 
   const fragrance = dataset.fragrancesById.get(id);
@@ -18,6 +20,7 @@ export function FragranceDetailScreen({ id }: { id: string }) {
 
   const relations = dataset.lineage[id] ?? [];
   const meta = [fragrance.house, fragrance.concentration, fragrance.year].filter(Boolean).join(" · ");
+  const cabinetEntry = entries.get(id);
 
   return (
     <div className="cc-fdetail">
@@ -33,6 +36,16 @@ export function FragranceDetailScreen({ id }: { id: string }) {
         {fragrance.price != null ? (
           <div className="cc-fdetail__price cc-archive-code">${fragrance.price}</div>
         ) : null}
+
+        <div className="cc-fdetail__cabinet-row">
+          {cabinetEntry ? (
+            <StatusChip tone="cabinet">{cabinetEntry.status}</StatusChip>
+          ) : (
+            <Button size="sm" onClick={() => addEntry(defaultEntry(fragrance.id))}>
+              Add to Cabinet
+            </Button>
+          )}
+        </div>
 
         {fragrance.accords.length > 0 ? (
           <section className="cc-fdetail__section">

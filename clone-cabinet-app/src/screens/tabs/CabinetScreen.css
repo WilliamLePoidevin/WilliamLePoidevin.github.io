@@ -1,0 +1,16 @@
+.cc-cabinet {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap);
+  padding: var(--page-padding);
+}
+
+.cc-cabinet__sort {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+}
+
+.cc-cabinet__empty {
+  padding-top: var(--space-32);
+}
