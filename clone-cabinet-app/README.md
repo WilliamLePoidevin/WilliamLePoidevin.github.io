@@ -59,12 +59,31 @@ Following the bottom-up build order from `docs/design/clone-cabinet/design_hando
       `src/screens/DomainGallery.tsx` (reachable via the dev switcher) against both the real
       dataset's shape (everything enrichment-related null) and one hypothetical fully-enriched
       record, side by side.
-- [ ] **Phase 5 — Screens.** All 15, per the handoff's screen table.
-- [ ] **Phase 6 — Data layer.** Point components at `docs/design/clone-cabinet/data/*.json`
-      (real dataset: 4,113 fragrances, 114 houses, bidirectional lineage) — see
-      `docs/design/clone-cabinet/INTEGRATION_GUIDE.md`. Live confidence voting
-      (`CLONE_CABINET_UX_SPEC.md` Section 11) is new work beyond the handoff and belongs here
-      too, before Lineage/Detail are considered done.
+- [~] **Phase 5 — Screens** (started) **/ Phase 6 — Data layer** (started). Per
+      INTEGRATION_GUIDE.md's own recommendation, these two are being done together — one
+      data-swap instead of two — rather than building all 15 screens against fictional
+      `cc-data.js` first. `src/data/`: `DatasetProvider` fetches the real dataset (4,113
+      fragrances, 114 houses, full bidirectional lineage — `public/data/*.json`, ~4MB
+      combined, not bundled) at runtime rather than importing it statically, and
+      `selectors.ts` holds the honest, real-signal-only query logic.
+      **Done:** `discover` tab root (`src/screens/tabs/DiscoverScreen.tsx`) — a Featured row
+      (ranked by real `valueScore`, deliberately NOT labelled "Trending" since nothing in the
+      dataset can back that claim), a Houses row (real `houses.json`, sorted by count), and a
+      live search-filtered Browse list — plus a minimal `FragranceDetailScreen` (pushed from
+      Discover) rendering only the fields that are real for a given record: name, house,
+      family, price, accords as plain tags (no strength value exists, so no `AccordBar`), and
+      a real "Worth smelling next" lineage row pulled straight from `lineage.json`. This is
+      deliberately a smaller Detail than the handoff's full `isDetail` spec (no accord bars,
+      metric dials, reviews/market tabs) — those need fields (score, sillage, projection) this
+      dataset doesn't have yet; expanding it is Section 3 of INTEGRATION_GUIDE.md's job, not a
+      screens-phase one.
+      **Not done yet:** `cabinet`, `lineage`, `trade`, `you` tab roots (still the Phase 3
+      placeholder screen); `launch`/`welcome`/`onboard` (pre-shell flow); `tradeDetail`,
+      `proposal`, `collector`, `notifications`, `settings` (pushed screens); the full `isDetail`
+      tabs (Overview/Lineage/Reviews/Market); live confidence voting
+      (`CLONE_CABINET_UX_SPEC.md` Section 11 — a real vote action wired to `confirmVotes`/
+      `disputeVotes`, recomputing the displayed `confidence` instead of just reading the
+      seeded number, which is all `FragranceDetailScreen` does today).
 
 ## Develop
 

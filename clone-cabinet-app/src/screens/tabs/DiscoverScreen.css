@@ -1,0 +1,81 @@
+.cc-discover {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap);
+  padding: var(--page-padding) 0;
+}
+
+.cc-discover__loading {
+  padding: var(--page-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.cc-discover__error {
+  padding: var(--page-padding);
+  color: var(--error);
+}
+
+.cc-discover__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.cc-discover__section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0 var(--page-padding);
+}
+
+.cc-discover__section-note {
+  color: var(--text-tertiary);
+}
+
+.cc-discover .cc-label {
+  padding: 0 var(--page-padding);
+}
+
+.cc-discover__hrow {
+  display: flex;
+  gap: var(--card-gap);
+  overflow-x: auto;
+  padding: 0 var(--page-padding);
+}
+
+.cc-discover__hero-item {
+  flex: 0 0 168px;
+}
+
+.cc-discover__house {
+  flex: 0 0 140px;
+  padding: var(--space-12);
+  background: var(--surface-raised);
+  border: var(--hairline) solid var(--line-divider);
+  border-radius: var(--radius-chip);
+}
+
+.cc-discover__house-name {
+  font-size: var(--text-compact-size);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.cc-discover__search {
+  margin: 0 var(--page-padding);
+  height: var(--control-height);
+  padding: 0 var(--space-16);
+  border-radius: var(--radius-pill);
+  border: var(--hairline) solid var(--line-divider);
+  background: var(--surface-raised);
+  color: var(--text-primary);
+  font-size: var(--text-body-size);
+}
+
+.cc-discover__grid {
+  padding: 0 var(--page-padding);
+  display: flex;
+  flex-direction: column;
+}

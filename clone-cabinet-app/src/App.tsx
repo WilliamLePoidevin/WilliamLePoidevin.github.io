@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ThemeProvider } from "./theme/ThemeProvider";
+import { DatasetProvider } from "./data/DatasetProvider";
 import { NavProvider } from "./nav/NavProvider";
 import { PrimitivesGallery } from "./screens/PrimitivesGallery";
 import { DomainGallery } from "./screens/DomainGallery";
@@ -37,9 +38,11 @@ export default function App() {
       </div>
 
       {view === "app" ? (
-        <NavProvider>
-          <AppShell wide={wide} tabRoots={TAB_ROOTS} />
-        </NavProvider>
+        <DatasetProvider>
+          <NavProvider>
+            <AppShell wide={wide} tabRoots={TAB_ROOTS} />
+          </NavProvider>
+        </DatasetProvider>
       ) : view === "domain" ? (
         <DomainGallery />
       ) : (

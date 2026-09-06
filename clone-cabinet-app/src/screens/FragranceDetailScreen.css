@@ -1,0 +1,64 @@
+.cc-fdetail__pad {
+  padding: var(--page-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.cc-fdetail__house {
+  color: var(--text-metal);
+}
+
+.cc-fdetail__name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--text-h1-size);
+  line-height: var(--text-h1-line);
+  font-weight: var(--text-h1-weight);
+  color: var(--text-primary);
+}
+
+.cc-fdetail__meta,
+.cc-fdetail__family {
+  color: var(--text-tertiary);
+}
+
+.cc-fdetail__thesis {
+  margin: var(--space-8) 0 0;
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+  color: var(--text-secondary);
+}
+
+.cc-fdetail__price {
+  color: var(--text-metal);
+  font-size: var(--text-h3-size);
+}
+
+.cc-fdetail__section {
+  margin-top: var(--space-16);
+  padding-top: var(--space-16);
+  border-top: var(--hairline) solid var(--line-divider);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.cc-fdetail__accord-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+}
+
+.cc-fdetail__accord-tag {
+  padding: var(--space-4) var(--space-8);
+  border: var(--hairline) solid var(--line-divider);
+  border-radius: var(--radius-chip);
+  color: var(--text-secondary);
+}
+
+.cc-fdetail__lineage-row {
+  display: flex;
+  gap: var(--card-gap);
+  overflow-x: auto;
+}
