@@ -18,7 +18,7 @@
 --
 -- Idempotent — safe to paste into the Supabase SQL Editor more than once.
 
-create table if not exists lineage_votes (
+create table if not exists cc_lineage_votes (
     relation_key text not null,
     voter_id uuid not null,
     vote_type text not null check (vote_type in ('confirm', 'dispute')),
@@ -27,11 +27,11 @@ create table if not exists lineage_votes (
     primary key (relation_key, voter_id)
 );
 
-create index if not exists idx_lineage_votes_relation_key on lineage_votes (relation_key);
+create index if not exists idx_cc_lineage_votes_relation_key on cc_lineage_votes (relation_key);
 
-alter table lineage_votes enable row level security;
+alter table cc_lineage_votes enable row level security;
 -- No policies are created — RLS with zero policies denies all direct access by default.
-revoke all on lineage_votes from anon, authenticated;
+revoke all on cc_lineage_votes from anon, authenticated;
 
 -- Real, non-fakeable tally for one relation.
 create or replace function get_vote_counts(p_relation_key text)
@@ -44,7 +44,7 @@ as $$
     select
         count(*) filter (where vote_type = 'confirm') as confirm_count,
         count(*) filter (where vote_type = 'dispute') as dispute_count
-    from lineage_votes
+    from cc_lineage_votes
     where relation_key = p_relation_key;
 $$;
 
@@ -65,12 +65,12 @@ begin
 
     -- Voting the same way again is a toggle-off, mirroring the original local-only behavior.
     if exists (
-        select 1 from lineage_votes
+        select 1 from cc_lineage_votes
         where relation_key = p_relation_key and voter_id = p_voter_id and vote_type = p_vote_type
     ) then
-        delete from lineage_votes where relation_key = p_relation_key and voter_id = p_voter_id;
+        delete from cc_lineage_votes where relation_key = p_relation_key and voter_id = p_voter_id;
     else
-        insert into lineage_votes (relation_key, voter_id, vote_type, updated_at)
+        insert into cc_lineage_votes (relation_key, voter_id, vote_type, updated_at)
         values (p_relation_key, p_voter_id, p_vote_type, timezone('utc', now()))
         on conflict (relation_key, voter_id)
         do update set vote_type = excluded.vote_type, updated_at = timezone('utc', now());
@@ -90,7 +90,7 @@ language sql
 security definer
 set search_path = public
 as $$
-    delete from lineage_votes where voter_id = p_voter_id;
+    delete from cc_lineage_votes where voter_id = p_voter_id;
 $$;
 
 grant execute on function clear_voter_votes(uuid) to anon, authenticated;

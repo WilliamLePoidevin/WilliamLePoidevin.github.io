@@ -15,14 +15,21 @@ feature: lineage confirm/dispute vote counts, so they can be real across every v
 of reset-per-browser. Nothing else moves off local-only storage. `main` and the live site are
 untouched by this branch until it's explicitly merged.
 
-- `supabase/schema.sql` — paste into the Supabase SQL Editor once. Creates `lineage_votes`
-  (locked down with RLS, no direct grants) plus three `SECURITY DEFINER` functions
-  (`get_vote_counts`, `cast_lineage_vote`, `clear_voter_votes`) that are the only way in —
-  the client never sends a vote count it computed itself, only "I vote confirm/dispute on
-  this relation," so nobody can fabricate a tally.
+- `supabase/schema.sql` — creates `cc_lineage_votes` (locked down with RLS, no direct grants)
+  plus three `SECURITY DEFINER` functions (`get_vote_counts`, `cast_lineage_vote`,
+  `clear_voter_votes`) that are the only way in — the client never sends a vote count it
+  computed itself, only "I vote confirm/dispute on this relation," so nobody can fabricate a
+  tally. Named `cc_lineage_votes`, not `lineage_votes`, because this project's Supabase
+  database already had an unrelated, empty, unseeded `lineage_votes`/`fragrances`/`houses`/
+  `lineage_relations` set of tables from an earlier, different (and less secure — it trusted
+  client-computed vote counts) schema someone pasted in manually; those are left untouched
+  and unused rather than deleted, since deleting isn't this branch's call to make.
+  Already applied to the live project (`ssfxhvybkolkalxnapos`, via the Supabase MCP
+  connection) — verified end-to-end with direct SQL calls (vote → real count → toggle-off →
+  clear). Re-running it is still safe/idempotent if you ever need to.
 - Copy `.env.example` to `.env.local` and fill in your Supabase Project URL + `anon` key
-  (Project Settings → API). **Never** put the `service_role` key in this file — it isn't
-  needed here and must never reach frontend code.
+  (Project Settings → API — already done for the live project above). **Never** put the
+  `service_role` key in this file — it isn't needed here and must never reach frontend code.
 - Leave `.env.local` unset (or don't create it) and the app runs exactly like the local-only
   version — `src/data/LineageVotesProvider.tsx` detects a missing Supabase config and falls
   straight back to the original per-browser behavior. Verified working either way.
