@@ -1,0 +1,65 @@
+.cc-relation-detail__pair {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+  padding: var(--page-padding);
+}
+
+.cc-relation-detail__side {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.cc-relation-detail__side-name {
+  font-size: var(--text-compact-size);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.cc-relation-detail__arrow {
+  flex: 0 0 auto;
+  font-family: var(--font-mono);
+  color: var(--text-tertiary);
+}
+
+.cc-relation-detail__pad {
+  padding: 0 var(--page-padding) var(--page-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  border-top: var(--hairline) solid var(--line-divider);
+  padding-top: var(--space-16);
+}
+
+.cc-relation-detail__state-note {
+  color: var(--text-tertiary);
+}
+
+.cc-relation-detail__disputed-note {
+  color: var(--warning);
+}
+
+.cc-relation-detail__source {
+  margin: var(--space-8) 0;
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+  color: var(--text-secondary);
+}
+
+.cc-relation-detail__vote-row {
+  display: flex;
+  gap: var(--space-8);
+  margin-top: var(--space-8);
+}
+
+.cc-relation-detail__my-vote {
+  color: var(--text-tertiary);
+}
+
+.cc-relation-detail__label-note {
+  margin-top: var(--space-8);
+  color: var(--text-tertiary);
+}

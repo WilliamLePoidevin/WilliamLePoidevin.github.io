@@ -92,13 +92,35 @@ Following the bottom-up build order from `docs/design/clone-cabinet/design_hando
       the Discover → Cabinet loop is real end to end. Verified in a real browser: add Aventus
       from Discover, see it land in the Cabinet shelf, edit and remove it, then add a second
       entry through the full search-and-form flow.
-      **Not done yet:** `lineage`, `trade`, `you` tab roots (still the Phase 3 placeholder
-      screen); `launch`/`welcome`/`onboard` (pre-shell flow); `tradeDetail`, `proposal`,
-      `collector`, `notifications`, `settings` (pushed screens); the full `isDetail` tabs
-      (Overview/Lineage/Reviews/Market); live confidence voting (`CLONE_CABINET_UX_SPEC.md`
-      Section 11 — a real vote action wired to `confirmVotes`/`disputeVotes`, recomputing the
-      displayed `confidence` instead of just reading the seeded number, which is all
-      `FragranceDetailScreen` does today); Cabinet's "edit-shelf" reorder mode.
+      Also **done:** `lineage` tab root (`src/screens/tabs/LineageScreen.tsx`) and the live
+      confidence-voting mechanic from `CLONE_CABINET_UX_SPEC.md` Section 11 — genuinely
+      working, not a static badge. `src/data/confidence.ts` computes the displayed
+      Neutral/Emerging/Community Confirmed/Disputed/Community Disputes This state from the
+      current confirm/dispute tally at render time (never a stored field, per Section 11.2 —
+      this replaced the dataset's static `verified` flag everywhere it was read, including in
+      `FragranceDetailScreen`, which used to read it directly).
+      `src/data/LineageVotesProvider.tsx` persists one changeable "Confirms this"/"Doesn't
+      match" vote per relation to `localStorage`. Read its header comment before assuming this
+      is more than it is: **there's no backend, so only this browser's own vote can actually
+      move the count it sees** — every visitor starts from the same `lineage.json` seed, and
+      votes don't sync across people. That's an honest limit of a static site, not a hidden
+      one, and it's the same shape of limitation Cabinet already has.
+      List mode only (`src/data/lineageEdges.ts` flattens the bidirectional graph into 2,506
+      canonical dupe→original pairings, searchable) — a true Map mode (a spatial graph across
+      4,113 nodes) is a separate, larger visualization effort, deliberately deferred rather
+      than faked as a relabelled list. Building this surfaced a real data-quality artifact:
+      a handful of dupes carry two separate relation entries for the exact same original from
+      different source citations (e.g. confidence 70 and 40 for the same pairing) —
+      `mergeRelationsById` combines these (votes summed, both citations kept) rather than
+      silently dropping one or crashing on a duplicate React key. This does **not** touch
+      fragrances with several genuinely different real inspirations, which still render as
+      separate rows — only exact duplicate-target citations get merged.
+      **Not done yet:** `trade`, `you` tab roots (still the Phase 3 placeholder screen);
+      `launch`/`welcome`/`onboard` (pre-shell flow); `tradeDetail`, `proposal`, `collector`,
+      `notifications`, `settings` (pushed screens); the full `isDetail` tabs (Overview/
+      Lineage/Reviews/Market); Cabinet's "edit-shelf" reorder mode; a Map view for Lineage;
+      the confidence-history vote event log (Section 11's sparkline needs a timestamped log,
+      not just a running total — today's vote is a single stored choice, no history).
 
 ## Develop
 

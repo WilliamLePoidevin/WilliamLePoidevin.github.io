@@ -6,3 +6,4 @@ export { CabinetShelf } from "./CabinetShelf";
 export { OpenChamber } from "./OpenChamber";
 export { FragranceCard } from "./FragranceCard";
 export type { FragranceCardData } from "./FragranceCard";
+export { ConfidenceBadge } from "./ConfidenceBadge";

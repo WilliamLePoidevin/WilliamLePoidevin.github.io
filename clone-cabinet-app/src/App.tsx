@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ThemeProvider } from "./theme/ThemeProvider";
 import { DatasetProvider } from "./data/DatasetProvider";
 import { CabinetProvider } from "./data/CabinetProvider";
+import { LineageVotesProvider } from "./data/LineageVotesProvider";
 import { NavProvider } from "./nav/NavProvider";
 import { PrimitivesGallery } from "./screens/PrimitivesGallery";
 import { DomainGallery } from "./screens/DomainGallery";
@@ -41,9 +42,11 @@ export default function App() {
       {view === "app" ? (
         <DatasetProvider>
           <CabinetProvider>
-            <NavProvider>
-              <AppShell wide={wide} tabRoots={TAB_ROOTS} />
-            </NavProvider>
+            <LineageVotesProvider>
+              <NavProvider>
+                <AppShell wide={wide} tabRoots={TAB_ROOTS} />
+              </NavProvider>
+            </LineageVotesProvider>
           </CabinetProvider>
         </DatasetProvider>
       ) : view === "domain" ? (

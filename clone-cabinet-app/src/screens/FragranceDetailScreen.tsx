@@ -1,7 +1,12 @@
 import { useDataset } from "../data/DatasetProvider";
 import { useCabinet, defaultEntry } from "../data/CabinetProvider";
+import { useLineageVotes } from "../data/LineageVotesProvider";
+import { getConfidenceState, getConfidencePercent } from "../data/confidence";
+import { mergeRelationsById } from "../data/lineageEdges";
+import { useNav } from "../nav/NavProvider";
 import { BottlePortrait, LineageNode } from "../components/fragrance";
 import { Button, EmptyState, StatusChip } from "../components/primitives";
+import { RelationDetailScreen } from "./RelationDetailScreen";
 import "./FragranceDetailScreen.css";
 
 // A minimal Detail screen — real fields only, nothing from the full isDetail spec (accord
@@ -11,6 +16,8 @@ import "./FragranceDetailScreen.css";
 export function FragranceDetailScreen({ id }: { id: string }) {
   const { dataset } = useDataset();
   const { entries, addEntry } = useCabinet();
+  const { getAdjustedCounts } = useLineageVotes();
+  const { push } = useNav();
   if (!dataset) return null;
 
   const fragrance = dataset.fragrancesById.get(id);
@@ -18,7 +25,10 @@ export function FragranceDetailScreen({ id }: { id: string }) {
     return <EmptyState title="Not found" body="This fragrance isn't in the current index." />;
   }
 
-  const relations = dataset.lineage[id] ?? [];
+  // Merges only true duplicate citations of the exact same related fragrance (a data
+  // artifact — two sources logging the same pairing separately); distinct real inspirations
+  // for this fragrance are never touched and stay as separate rows below.
+  const relations = mergeRelationsById(dataset.lineage[id] ?? []);
   const meta = [fragrance.house, fragrance.concentration, fragrance.year].filter(Boolean).join(" · ");
   const cabinetEntry = entries.get(id);
 
@@ -67,13 +77,25 @@ export function FragranceDetailScreen({ id }: { id: string }) {
               {relations.map((r) => {
                 const related = dataset.fragrancesById.get(r.id);
                 if (!related) return null;
+                // r.relation tells us which side of the pairing the current fragrance is on;
+                // the canonical edge key is always dupeId:originalId, per lineageEdges.ts.
+                const dupeId = r.relation === "inspiration" ? fragrance.id : r.id;
+                const originalId = r.relation === "inspiration" ? r.id : fragrance.id;
+                const relationKey = `${dupeId}:${originalId}`;
+                const counts = getAdjustedCounts(relationKey, r.confirmVotes, r.disputeVotes);
+                const state = getConfidenceState(counts.confirm, counts.dispute);
                 return (
                   <LineageNode
                     key={r.id}
                     fragrance={{ id: related.id, name: related.name, house: related.house, image: related.image }}
                     relation={r.relation}
-                    verified={r.verified}
-                    confidence={r.confidence}
+                    verified={state === "confirmed"}
+                    confidence={getConfidencePercent(counts.confirm, counts.dispute)}
+                    onClick={() =>
+                      push(`${dataset.fragrancesById.get(dupeId)?.name} → ${dataset.fragrancesById.get(originalId)?.name}`, () => (
+                        <RelationDetailScreen dupeId={dupeId} originalId={originalId} />
+                      ))
+                    }
                   />
                 );
               })}
