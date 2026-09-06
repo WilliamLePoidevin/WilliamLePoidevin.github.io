@@ -1,4 +1,6 @@
-import { createContext, useCallback, useContext, useMemo, useState, type ReactNode } from "react";
+import { createContext, useCallback, useContext, useMemo, useRef, useState, type ReactNode } from "react";
+import { supabase, supabaseConfigured } from "./supabaseClient";
+import { getVoterId } from "./voterId";
 
 export type Vote = "confirm" | "dispute";
 
@@ -21,22 +23,24 @@ function writeStored(votes: Record<string, Vote>) {
   }
 }
 
+interface Counts {
+  confirm: number;
+  dispute: number;
+}
+
 interface LineageVotesContextValue {
   /** This browser's own vote on a relation, or undefined if it hasn't voted. */
   getVote: (relationKey: string) => Vote | undefined;
   /** One vote per browser per relation, changeable — CLONE_CABINET_UX_SPEC.md Section 11.1. */
   setVote: (relationKey: string, vote: Vote) => void;
   /**
-   * The seeded confirm/dispute counts plus this browser's own vote layered on top. There is no
-   * backend here — every visitor sees the same seed from lineage.json, and only their own vote
-   * (stored locally) moves the count they see. This is an honest, real, working version of the
-   * mechanic for one browser; it is NOT live-syncing across users, because nothing in this
-   * static site can aggregate votes across visitors. That needs a real backend — see
-   * CLONE_CABINET_UX_SPEC.md Section 11's own framing of this as the thing a live service must
-   * eventually own.
+   * v1.2: when Supabase is configured (see supabaseClient.ts), this is a REAL cross-device
+   * tally — every voter's row, counted server-side, never trusted from the client. Falls back
+   * to the original local-only approximation (seed counts + this browser's own vote layered
+   * on top) when no backend is configured, so the app still works with zero setup.
    */
-  getAdjustedCounts: (relationKey: string, seedConfirm: number, seedDispute: number) => { confirm: number; dispute: number };
-  /** How many relations this browser has voted on — a real, local count. */
+  getAdjustedCounts: (relationKey: string, seedConfirm: number, seedDispute: number) => Counts;
+  /** How many relations this browser has voted on — a real, local count either way. */
   voteCount: number;
   clearAll: () => void;
 }
@@ -44,37 +48,96 @@ interface LineageVotesContextValue {
 const LineageVotesContext = createContext<LineageVotesContextValue | null>(null);
 
 export function LineageVotesProvider({ children }: { children: ReactNode }) {
-  const [votes, setVotes] = useState<Record<string, Vote>>(readStored);
+  const [myVotes, setMyVotes] = useState<Record<string, Vote>>(readStored);
+  const [remoteCounts, setRemoteCounts] = useState<Record<string, Counts>>({});
+  const inFlight = useRef<Set<string>>(new Set());
+  const voterId = useRef<string>(getVoterId());
 
-  const getVote = useCallback((relationKey: string) => votes[relationKey], [votes]);
+  const getVote = useCallback((relationKey: string) => myVotes[relationKey], [myVotes]);
 
-  const setVote = useCallback((relationKey: string, vote: Vote) => {
-    setVotes((current) => {
-      // Voting the same way again is a no-op; the buttons are toggles, not stackable clicks.
-      const next = current[relationKey] === vote ? { ...current } : { ...current, [relationKey]: vote };
-      if (current[relationKey] === vote) delete next[relationKey];
-      writeStored(next);
-      return next;
-    });
+  const fetchCounts = useCallback((relationKey: string) => {
+    if (!supabase || inFlight.current.has(relationKey)) return;
+    inFlight.current.add(relationKey);
+    (async () => {
+      try {
+        const { data, error } = await supabase.rpc("get_vote_counts", { p_relation_key: relationKey });
+        if (error) {
+          console.warn("Clone Cabinet: get_vote_counts failed", relationKey, error.message);
+          return;
+        }
+        const row = Array.isArray(data) ? data[0] : data;
+        if (row) {
+          setRemoteCounts((current) => ({
+            ...current,
+            [relationKey]: { confirm: Number(row.confirm_count) || 0, dispute: Number(row.dispute_count) || 0 },
+          }));
+        }
+      } finally {
+        inFlight.current.delete(relationKey);
+      }
+    })();
   }, []);
 
+  const setVote = useCallback(
+    (relationKey: string, vote: Vote) => {
+      setMyVotes((current) => {
+        // Voting the same way again is a no-op; the buttons are toggles, not stackable clicks.
+        const next = current[relationKey] === vote ? { ...current } : { ...current, [relationKey]: vote };
+        if (current[relationKey] === vote) delete next[relationKey];
+        writeStored(next);
+        return next;
+      });
+
+      if (supabase) {
+        supabase
+          .rpc("cast_lineage_vote", { p_relation_key: relationKey, p_voter_id: voterId.current, p_vote_type: vote })
+          .then(({ data, error }) => {
+            if (error) {
+              console.warn("Clone Cabinet: cast_lineage_vote failed", relationKey, error.message);
+              return;
+            }
+            const row = Array.isArray(data) ? data[0] : data;
+            if (row) {
+              setRemoteCounts((current) => ({
+                ...current,
+                [relationKey]: { confirm: Number(row.confirm_count) || 0, dispute: Number(row.dispute_count) || 0 },
+              }));
+            }
+          });
+      }
+    },
+    []
+  );
+
   const getAdjustedCounts = useCallback(
-    (relationKey: string, seedConfirm: number, seedDispute: number) => {
-      const vote = votes[relationKey];
+    (relationKey: string, seedConfirm: number, seedDispute: number): Counts => {
+      if (supabaseConfigured) {
+        const cached = remoteCounts[relationKey];
+        if (cached) return cached;
+        fetchCounts(relationKey);
+        return { confirm: seedConfirm, dispute: seedDispute };
+      }
+      const vote = myVotes[relationKey];
       return {
         confirm: seedConfirm + (vote === "confirm" ? 1 : 0),
         dispute: seedDispute + (vote === "dispute" ? 1 : 0),
       };
     },
-    [votes]
+    [myVotes, remoteCounts, fetchCounts]
   );
 
   const clearAll = useCallback(() => {
     writeStored({});
-    setVotes({});
+    setMyVotes({});
+    setRemoteCounts({});
+    if (supabase) {
+      supabase.rpc("clear_voter_votes", { p_voter_id: voterId.current }).then(({ error }) => {
+        if (error) console.warn("Clone Cabinet: clear_voter_votes failed", error.message);
+      });
+    }
   }, []);
 
-  const voteCount = useMemo(() => Object.keys(votes).length, [votes]);
+  const voteCount = useMemo(() => Object.keys(myVotes).length, [myVotes]);
 
   const value = useMemo(
     () => ({ getVote, setVote, getAdjustedCounts, voteCount, clearAll }),

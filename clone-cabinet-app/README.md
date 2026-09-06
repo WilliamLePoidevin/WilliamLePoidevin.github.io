@@ -8,6 +8,28 @@ Design spec, real dataset, and the full non-negotiables list live in
 [`docs/design/clone-cabinet/`](./docs/design/clone-cabinet/00_READ_ORDER.md) and the repo-root
 `CLAUDE.md`. Read both before touching UI code.
 
+## v1.2 backend experiment (this branch only)
+
+This branch (`claude/clone-cabinet-v1.2-backend`) adds an OPTIONAL Supabase backend for one
+feature: lineage confirm/dispute vote counts, so they can be real across every visitor instead
+of reset-per-browser. Nothing else moves off local-only storage. `main` and the live site are
+untouched by this branch until it's explicitly merged.
+
+- `supabase/schema.sql` — paste into the Supabase SQL Editor once. Creates `lineage_votes`
+  (locked down with RLS, no direct grants) plus three `SECURITY DEFINER` functions
+  (`get_vote_counts`, `cast_lineage_vote`, `clear_voter_votes`) that are the only way in —
+  the client never sends a vote count it computed itself, only "I vote confirm/dispute on
+  this relation," so nobody can fabricate a tally.
+- Copy `.env.example` to `.env.local` and fill in your Supabase Project URL + `anon` key
+  (Project Settings → API). **Never** put the `service_role` key in this file — it isn't
+  needed here and must never reach frontend code.
+- Leave `.env.local` unset (or don't create it) and the app runs exactly like the local-only
+  version — `src/data/LineageVotesProvider.tsx` detects a missing Supabase config and falls
+  straight back to the original per-browser behavior. Verified working either way.
+- A "voter" is a random id a browser generates once (`src/data/voterId.ts`, same trust level
+  the local-only version already had — no accounts exist) so one vote per relation per device
+  still holds, now recognized across devices instead of only within one browser.
+
 ## Status
 
 Following the bottom-up build order from `docs/design/clone-cabinet/design_handoff_clone_cabinet_app/START_HERE.md`:
