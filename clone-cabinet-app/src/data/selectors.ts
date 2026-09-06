@@ -16,6 +16,10 @@ export function getTopHouses(houses: House[], count: number): House[] {
   return [...houses].sort((a, b) => b.count - a.count).slice(0, count);
 }
 
+export function getFragrancesByHouse(fragrances: Fragrance[], houseId: string): Fragrance[] {
+  return fragrances.filter((f) => f.houseId === houseId);
+}
+
 export function searchFragrances(fragrances: Fragrance[], query: string, limit: number): Fragrance[] {
   const q = query.trim().toLowerCase();
   if (!q) return fragrances.slice(0, limit);

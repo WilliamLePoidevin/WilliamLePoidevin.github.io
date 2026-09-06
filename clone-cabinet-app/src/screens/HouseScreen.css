@@ -1,0 +1,15 @@
+.cc-house {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  padding: var(--page-padding);
+}
+
+.cc-house__count {
+  color: var(--text-tertiary);
+}
+
+.cc-house__grid {
+  display: flex;
+  flex-direction: column;
+}
