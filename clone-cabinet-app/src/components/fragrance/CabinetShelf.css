@@ -1,0 +1,18 @@
+.cc-cabinet-shelf {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.cc-cabinet-shelf__grid {
+  display: grid;
+  gap: var(--card-gap);
+}
+
+.cc-cabinet-shelf__grid--tray {
+  padding: var(--space-12);
+  background: var(--surface-shelf);
+  border: var(--hairline) solid var(--line-divider);
+  border-radius: var(--radius-chip);
+  box-shadow: var(--shadow-inset-tray);
+}

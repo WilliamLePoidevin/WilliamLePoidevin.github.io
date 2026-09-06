@@ -1,0 +1,64 @@
+.cc-lineage-node {
+  position: relative;
+  width: 128px;
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  text-align: left;
+  background: var(--surface-raised);
+  border: var(--hairline) solid var(--line-strong);
+  border-radius: var(--radius-chip);
+  transition: all var(--dur-standard) var(--ease-material);
+}
+
+.cc-lineage-node--active {
+  background: var(--surface-glass-strong);
+  border-color: var(--line-signal);
+  box-shadow: var(--glow-iris-sm);
+}
+
+.cc-lineage-node--verified {
+  border-color: var(--line-metal);
+}
+
+.cc-lineage-node__name {
+  font-size: var(--text-compact-size);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.cc-lineage-node__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  border-top: var(--hairline) solid var(--line-divider);
+  padding-top: var(--space-8);
+}
+
+.cc-lineage-node__relation {
+  font-size: var(--text-micro-size);
+  font-weight: 600;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.cc-lineage-node__relation--verified {
+  color: var(--text-metal);
+}
+
+.cc-lineage-node__confidence {
+  color: var(--text-signal);
+}
+
+.cc-lineage-node__dot {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--rose-alloy);
+}

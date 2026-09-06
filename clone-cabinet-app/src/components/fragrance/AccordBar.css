@@ -1,0 +1,29 @@
+.cc-accord-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+}
+
+.cc-accord-bar__label {
+  flex: 0 0 92px;
+  color: var(--text-secondary);
+}
+
+.cc-accord-bar__track {
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--surface-glass);
+  overflow: hidden;
+  display: block;
+}
+
+.cc-accord-bar__fill {
+  display: block;
+  height: 100%;
+}
+
+.cc-accord-bar__value {
+  flex: 0 0 30px;
+  text-align: right;
+}

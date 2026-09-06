@@ -1,9 +1,20 @@
 /* Clone Cabinet — base tokens.
    Colorway-independent: typography, spacing, radii, sizing, motion.
-   Colour lives in colorway-skins.css + colorway-bridge.css — never add a hex here.
+   Colour lives in colorway-skins.css + colorway-bridge.css — never add a hex here, with one
+   exception: --success/--error below. Every colorway publishes the same 25 semantic aliases
+   (see colorway-skins.css's header) and neither of those is among them — the design system's
+   own tokens/colors.css fixes them once, universal across all 13 skins, "by the brand master
+   prompt." --warning is NOT duplicated here: the prototype's colorway-bridge.css (the higher-
+   authority source for brand tokens, cited directly by README.md) already aliases it to
+   --text-metal per colorway, and that's kept as-is rather than introduced as a second,
+   conflicting fixed value.
    Source: design_handoff_clone_cabinet_app/README.md "Design tokens" section. */
 
 :root {
+  /* Fixed status colours — flagged, not brand-confirmed (see comment above). */
+  --success: #7FA98B;
+  --error: #B85F67;
+
   /* Typography */
   --font-display: "Space Grotesk", "Manrope", sans-serif;
   --font-ui: "Inter", sans-serif;

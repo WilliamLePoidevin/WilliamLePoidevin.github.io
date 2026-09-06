@@ -1,0 +1,42 @@
+.cc-metric-dial {
+  position: relative;
+}
+
+.cc-metric-dial__svg {
+  display: block;
+  transform: rotate(-90deg);
+}
+
+.cc-metric-dial__arc {
+  transition: stroke-dashoffset var(--dur-signature) var(--ease-material);
+}
+
+.cc-metric-dial__arc--iris {
+  filter: drop-shadow(0 0 6px color-mix(in oklab, var(--electric-iris) 60%, transparent));
+}
+
+.cc-metric-dial__readout {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.cc-metric-dial__value {
+  font-family: var(--font-display);
+  font-weight: var(--text-display-weight);
+  color: var(--text-primary);
+}
+
+.cc-metric-dial__label {
+  color: var(--text-tertiary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cc-metric-dial__arc {
+    transition: none;
+  }
+}

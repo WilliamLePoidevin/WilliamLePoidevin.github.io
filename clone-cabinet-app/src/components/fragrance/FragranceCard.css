@@ -1,0 +1,136 @@
+.cc-fragrance-card {
+  background: var(--surface-raised);
+  border: var(--hairline) solid var(--line-divider);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  transition: border-color var(--dur-micro) var(--ease-material);
+}
+
+.cc-fragrance-card--editorial,
+.cc-fragrance-card--object {
+  box-shadow: var(--shadow-card);
+}
+
+.cc-fragrance-card__pad {
+  padding: var(--space-16);
+}
+
+.cc-fragrance-card--object .cc-fragrance-card__pad {
+  padding: var(--space-12);
+}
+
+.cc-fragrance-card__house {
+  color: var(--text-metal);
+}
+
+.cc-fragrance-card__name {
+  font-family: var(--font-display);
+  font-size: var(--text-h2-size);
+  line-height: var(--text-h2-line);
+  font-weight: var(--text-h2-weight);
+  color: var(--text-primary);
+}
+
+.cc-fragrance-card__name--sm {
+  font-size: var(--text-compact-size);
+  font-weight: 600;
+}
+
+.cc-fragrance-card__meta {
+  margin-top: 4px;
+  color: var(--text-tertiary);
+}
+
+.cc-fragrance-card__thesis {
+  margin: var(--space-8) 0 0;
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+  color: var(--text-secondary);
+}
+
+.cc-fragrance-card__row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  margin-top: var(--space-12);
+}
+
+.cc-fragrance-card__row--wrap {
+  flex-wrap: wrap;
+}
+
+.cc-fragrance-card__score-slot {
+  margin-left: auto;
+}
+
+.cc-fragrance-card__score {
+  font-size: var(--text-compact-size);
+  color: var(--text-metal);
+}
+
+.cc-fragrance-card__action {
+  margin-top: var(--space-16);
+}
+
+/* compact — a list row */
+.cc-fragrance-card--compact {
+  display: flex;
+  align-items: center;
+  gap: var(--card-gap);
+  padding: var(--space-8) 0;
+  border: none;
+  border-bottom: var(--hairline) solid var(--line-divider);
+  border-radius: 0;
+  background: transparent;
+}
+
+.cc-fragrance-card__thumb {
+  width: 56px;
+  flex: 0 0 56px;
+}
+
+.cc-fragrance-card__thumb--sm {
+  width: 44px;
+  flex-basis: 44px;
+}
+
+.cc-fragrance-card__text {
+  flex: 1;
+  min-width: 0;
+}
+
+/* shelf — bare tall portrait with a status dot */
+.cc-fragrance-card--shelf {
+  position: relative;
+  border: none;
+  background: none;
+  border-radius: 0;
+}
+
+.cc-fragrance-card__dot {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--rose-alloy);
+}
+
+/* object — fixed-width shelf tile */
+.cc-fragrance-card--object {
+  width: 168px;
+  flex: 0 0 168px;
+}
+
+/* lineage — a row inside the Lineage tab's list mode */
+.cc-fragrance-card--lineage {
+  display: flex;
+  gap: var(--card-gap);
+  padding: var(--space-12);
+}
+
+.cc-fragrance-card__lineage-note {
+  color: var(--text-signal);
+  margin-top: 6px;
+}

@@ -1,0 +1,35 @@
+.cc-trust-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.cc-trust-metric__value {
+  font-family: var(--font-mono);
+  font-size: var(--text-h3-size);
+  line-height: var(--text-h3-line);
+}
+
+.cc-trust-metric__value--neutral {
+  color: var(--text-primary);
+}
+
+.cc-trust-metric__value--good {
+  color: var(--success);
+}
+
+.cc-trust-metric__value--caution {
+  color: var(--warning);
+}
+
+.cc-trust-metric__value--alert {
+  color: var(--error);
+}
+
+.cc-trust-metric__label {
+  color: var(--text-secondary);
+}
+
+.cc-trust-metric__detail {
+  color: var(--text-tertiary);
+}

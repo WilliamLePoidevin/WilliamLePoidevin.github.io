@@ -40,9 +40,25 @@ Following the bottom-up build order from `docs/design/clone-cabinet/design_hando
       + vertical IrisSeam instead. Demoed against 5 placeholder tab-root screens in
       `src/screens/tabs/` — reachable via the dev switcher (top-right) in `App.tsx`, which
       also still exposes the Phase 1-2 primitives gallery for colorway/mode work.
-- [ ] **Phase 4 — Domain components.** FragranceCard, BottlePortrait, AccordBar, MetricDial,
-      LineageNode, CabinetShelf, OpenChamber, ReviewCard, TradeCard, TrustMetric,
-      CollectorAvatar.
+- [x] **Phase 4 — Domain components.** `src/components/fragrance/` (FragranceCard — 5
+      variants, BottlePortrait, AccordBar, MetricDial, LineageNode, CabinetShelf, OpenChamber)
+      and `src/components/community/` (ReviewCard, TradeCard, TrustMetric, CollectorAvatar).
+      BottlePortrait is the one deliberate departure from the reference bundle: since every
+      record in the real dataset has `image: null` and always will per-record (there's no
+      photography project, see `ASSET_REQUEST_RESPONSE.md` item 5), it renders the recommended
+      deterministic placeholder instead of a photo fallback — a shelf-toned ground derived from
+      a hash of the fragrance `id` (`src/lib/hash.ts`), the name's initial, and an archive code
+      formatted from that same real id (never a fabricated sequential number). AccordBar and
+      MetricDial require a real numeric value as a prop rather than accepting an optional one
+      and rendering a fake 0 — the caller decides whether to render the row/dial at all, which
+      is where "hide, don't fake" for null enrichment fields (year, accords, score, sillage,
+      projection...) actually has to live once real data arrives in Phase 6. Added `--success`/
+      `--error` as fixed, colorway-independent status tokens (TrustMetric's good/alert tones)
+      — flagged, not brand-confirmed, see `base.css`'s header comment for why they're the one
+      exception to "colour only in colorway-skins/bridge". Demoed in
+      `src/screens/DomainGallery.tsx` (reachable via the dev switcher) against both the real
+      dataset's shape (everything enrichment-related null) and one hypothetical fully-enriched
+      record, side by side.
 - [ ] **Phase 5 — Screens.** All 15, per the handoff's screen table.
 - [ ] **Phase 6 — Data layer.** Point components at `docs/design/clone-cabinet/data/*.json`
       (real dataset: 4,113 fragrances, 114 houses, bidirectional lineage) — see
