@@ -115,11 +115,25 @@ Following the bottom-up build order from `docs/design/clone-cabinet/design_hando
       silently dropping one or crashing on a duplicate React key. This does **not** touch
       fragrances with several genuinely different real inspirations, which still render as
       separate rows — only exact duplicate-target citations get merged.
-      **Not done yet:** `trade`, `you` tab roots (still the Phase 3 placeholder screen);
-      `launch`/`welcome`/`onboard` (pre-shell flow); `tradeDetail`, `proposal`, `collector`,
-      `notifications`, `settings` (pushed screens); the full `isDetail` tabs (Overview/
-      Lineage/Reviews/Market); Cabinet's "edit-shelf" reorder mode; a Map view for Lineage;
-      the confidence-history vote event log (Section 11's sparkline needs a timestamped log,
+      Also **done:** `trade` tab root (`src/screens/tabs/TradeScreen.tsx`), deliberately
+      scoped to what's honest without a backend (`CLONE_CABINET_UX_SPEC.md` Section 5). "Your
+      listings" is real — mark any Cabinet entry For Trade or Seeking and set its condition/
+      presentation/price/wants (new fields on `CabinetEntry`, edited in
+      `CabinetEntryDetailScreen`) and it lists here via `TradeCard`. Browsing *other*
+      collectors' listings needs other real collectors, and there are none — this is a
+      single-visitor static site with no accounts. Rather than invent fake sellers and posts
+      to fill that section (exactly the fabricated-placeholder problem the non-negotiables
+      rule out), that section says plainly why it's empty. `price` is the public asking term
+      and is entirely separate from `value` (private, never shown here) — the "sharing a
+      cabinet never shares values" non-negotiable holds even though both fields now live on
+      the same `CabinetEntry`.
+      **Not done yet:** `you` tab root (still the Phase 3 placeholder screen); `launch`/
+      `welcome`/`onboard` (pre-shell flow); `tradeDetail`, `proposal`, `collector`,
+      `notifications`, `settings` (pushed screens — proposal and tradeDetail specifically need
+      a second real party the same way Trade's community browse does, so they wait on the
+      same thing); the full `isDetail` tabs (Overview/Lineage/Reviews/Market); Cabinet's
+      "edit-shelf" reorder mode; a Map view for Lineage; the confidence-history vote event log
+      (Section 11's sparkline needs a timestamped log,
       not just a running total — today's vote is a single stored choice, no history).
 
 ## Develop

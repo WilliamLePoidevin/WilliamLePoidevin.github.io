@@ -9,6 +9,8 @@ interface TradeListing {
   condition?: string;
   fill?: number;
   presentation?: string;
+  /** The public asking price for this listing — distinct from a cabinet's private value. */
+  price?: number | null;
   collectorName: string;
   trades?: number;
   region?: string;
@@ -23,7 +25,7 @@ interface TradeCardProps {
 }
 
 export function TradeCard({ listing, onClick, action }: TradeCardProps) {
-  const { fragrance, condition, fill, presentation, collectorName, trades, region, wants, verified } = listing;
+  const { fragrance, condition, fill, presentation, price, collectorName, trades, region, wants, verified } = listing;
 
   return (
     <article className={`cc-trade-card${onClick ? " cc-trade-card--interactive" : ""}`} onClick={onClick}>
@@ -31,9 +33,12 @@ export function TradeCard({ listing, onClick, action }: TradeCardProps) {
         <BottlePortrait id={fragrance.id} name={fragrance.name} image={fragrance.image} radius="var(--radius-chip)" />
       </div>
       <div className="cc-trade-card__body">
-        <div>
-          {fragrance.house ? <div className="cc-label cc-trade-card__house">{fragrance.house}</div> : null}
-          <div className="cc-trade-card__name">{fragrance.name}</div>
+        <div className="cc-trade-card__header">
+          <div>
+            {fragrance.house ? <div className="cc-label cc-trade-card__house">{fragrance.house}</div> : null}
+            <div className="cc-trade-card__name">{fragrance.name}</div>
+          </div>
+          {price != null ? <span className="cc-trade-card__price cc-archive-code">${price}</span> : null}
         </div>
         <div className="cc-trade-card__chips">
           {condition ? <StatusChip tone="trade">{condition}</StatusChip> : null}

@@ -43,6 +43,41 @@ export function CabinetEntryDetailScreen({ fragranceId }: { fragranceId: string 
           </div>
         </div>
 
+        {entry.status === "For Trade" || entry.status === "Seeking" ? (
+          <div className="cc-entry-detail__trade-fields">
+            <span className="cc-label">Listing terms</span>
+            <input
+              className="cc-entry-detail__input"
+              type="text"
+              placeholder="Condition (e.g. 95% full, like new)"
+              value={entry.condition ?? ""}
+              onChange={(e) => updateEntry(fragranceId, { condition: e.target.value || null })}
+            />
+            <input
+              className="cc-entry-detail__input"
+              type="text"
+              placeholder="Presentation (e.g. boxed, bottle only)"
+              value={entry.presentation ?? ""}
+              onChange={(e) => updateEntry(fragranceId, { presentation: e.target.value || null })}
+            />
+            <input
+              className="cc-entry-detail__input"
+              type="number"
+              min="0"
+              placeholder="Asking price (public)"
+              value={entry.price ?? ""}
+              onChange={(e) => updateEntry(fragranceId, { price: e.target.value ? Number(e.target.value) : null })}
+            />
+            <input
+              className="cc-entry-detail__input"
+              type="text"
+              placeholder="What you want in return"
+              value={entry.wants ?? ""}
+              onChange={(e) => updateEntry(fragranceId, { wants: e.target.value || null })}
+            />
+          </div>
+        ) : null}
+
         <div className="cc-entry-detail__field">
           <span className="cc-label">Fill: {entry.fillPercent}%</span>
           <input

@@ -88,5 +88,9 @@ export function defaultEntry(fragranceId: string, status: CabinetStatus = "In Ca
     value: null,
     wornCount: 0,
     lastWorn: null,
+    condition: null,
+    presentation: null,
+    price: null,
+    wants: null,
   };
 }

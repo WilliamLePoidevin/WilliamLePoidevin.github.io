@@ -26,6 +26,15 @@ export interface CabinetEntry {
   value: number | null;
   wornCount: number;
   lastWorn: string | null;
+
+  // Meaningful only when status is "For Trade" or "Seeking" — the public asking terms for a
+  // listing, entirely distinct from `value` above. `value` is a private appraisal that must
+  // never be shown outside the owner's own cabinet view (the non-negotiable: "sharing a
+  // cabinet never shares values"); these are terms the collector is choosing to publish.
+  condition: string | null;
+  presentation: string | null;
+  price: number | null;
+  wants: string | null;
 }
 
 export type SortKey = "acquired" | "house" | "fill" | "value";

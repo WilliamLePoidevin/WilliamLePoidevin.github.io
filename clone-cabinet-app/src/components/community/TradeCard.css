@@ -25,7 +25,19 @@
   gap: var(--space-8);
 }
 
+.cc-trade-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+
 .cc-trade-card__house {
+  color: var(--text-metal);
+}
+
+.cc-trade-card__price {
+  flex-shrink: 0;
   color: var(--text-metal);
 }
 

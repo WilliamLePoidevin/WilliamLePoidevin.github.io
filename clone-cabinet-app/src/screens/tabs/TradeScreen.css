@@ -1,0 +1,22 @@
+.cc-trade {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap);
+  padding: var(--page-padding);
+}
+
+.cc-trade__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.cc-trade__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--card-gap);
+}
+
+.cc-trade__hint {
+  color: var(--text-tertiary);
+}
