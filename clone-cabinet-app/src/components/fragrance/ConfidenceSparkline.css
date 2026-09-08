@@ -1,0 +1,37 @@
+.cc-confidence-spark {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.cc-confidence-spark__label {
+  color: var(--text-tertiary);
+}
+
+.cc-confidence-spark__svg {
+  width: 100%;
+  height: 40px;
+}
+
+.cc-confidence-spark__midline {
+  stroke: var(--line-divider);
+  stroke-width: 1;
+  stroke-dasharray: 2 3;
+}
+
+.cc-confidence-spark__line {
+  fill: none;
+  stroke: var(--text-signal);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 3px color-mix(in oklab, var(--text-signal) 55%, transparent));
+}
+
+.cc-confidence-spark__dot {
+  fill: var(--text-signal);
+}
+
+.cc-confidence-spark__note {
+  color: var(--text-tertiary);
+}

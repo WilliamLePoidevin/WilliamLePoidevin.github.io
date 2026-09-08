@@ -161,9 +161,21 @@ Following the bottom-up build order from `docs/design/clone-cabinet/design_hando
       full `isDetail` tabs (Overview/Lineage/Reviews/Market) — confirmed against the real
       dataset that `score`/`sillage`/`projection`/`longevity`/`year`/`price` are `null` for
       100% of all 4,113 records today, so these tabs would be empty shells for every fragrance
-      in the index; a Map view for Lineage; the confidence-history vote event log (Section 11's
-      sparkline needs a timestamped log, not just a running total — today's vote is a single
-      stored choice, no history).
+      in the index; a Map view for Lineage.
+      Also **done:** the confidence-history vote log + sparkline (Section 11.2).
+      `LineageVotesProvider` now stores a timestamped event per vote/undo/change
+      (`cc-lineage-vote-log`, migrated automatically from the old single-choice
+      `cc-lineage-votes` key) instead of just the latest choice, and exposes `getVoteHistory`
+      alongside the existing `getAdjustedCounts`. `ConfidenceSparkline`
+      (`src/components/fragrance/`) renders it on `RelationDetailScreen` as the brand board's
+      "intensity waveform" motif — a glowing signal-colored line, reusing the same
+      `color-mix`/glow technique as `IrisSeam` — finally given honest data instead of a
+      decorative number. It only renders once at least one real vote exists (`history.length >
+      1`); a lone seeded point isn't a history, so there's nothing to draw before that. Same
+      honesty limit as the vote counts themselves: only this browser's own timestamped activity
+      is real here, not other collectors' — genuinely useful once it exists, but thin until
+      real usage (or the v1.2 Supabase branch, whose `cc_lineage_votes` table already carries
+      real per-vote timestamps) gives it more than one browser's history to draw from.
 
 ## Develop
 

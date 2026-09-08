@@ -2,7 +2,7 @@ import { useDataset } from "../data/DatasetProvider";
 import { useLineageVotes } from "../data/LineageVotesProvider";
 import { getConfidenceState, getConfidencePercent, CONFIDENCE_LABEL } from "../data/confidence";
 import { mergeRelationsById } from "../data/lineageEdges";
-import { BottlePortrait, ConfidenceBadge } from "../components/fragrance";
+import { BottlePortrait, ConfidenceBadge, ConfidenceSparkline } from "../components/fragrance";
 import { Button, EmptyState } from "../components/primitives";
 import "./RelationDetailScreen.css";
 
@@ -17,7 +17,7 @@ interface RelationDetailScreenProps {
 // not a hidden one.
 export function RelationDetailScreen({ dupeId, originalId }: RelationDetailScreenProps) {
   const { dataset } = useDataset();
-  const { getVote, setVote, getAdjustedCounts } = useLineageVotes();
+  const { getVote, setVote, getAdjustedCounts, getVoteHistory } = useLineageVotes();
 
   if (!dataset) return null;
   const dupe = dataset.fragrancesById.get(dupeId);
@@ -33,6 +33,7 @@ export function RelationDetailScreen({ dupeId, originalId }: RelationDetailScree
   const relationKey = `${dupeId}:${originalId}`;
   const myVote = getVote(relationKey);
   const counts = getAdjustedCounts(relationKey, relation.confirmVotes, relation.disputeVotes);
+  const history = getVoteHistory(relationKey, relation.confirmVotes, relation.disputeVotes);
   const state = getConfidenceState(counts.confirm, counts.dispute);
   const percent = getConfidencePercent(counts.confirm, counts.dispute);
   const total = counts.confirm + counts.dispute;
@@ -90,6 +91,8 @@ export function RelationDetailScreen({ dupeId, originalId }: RelationDetailScree
             change your vote.
           </p>
         ) : null}
+
+        <ConfidenceSparkline history={history} />
 
         <p className="cc-micro cc-relation-detail__label-note">Currently: {CONFIDENCE_LABEL[state]}</p>
       </div>
