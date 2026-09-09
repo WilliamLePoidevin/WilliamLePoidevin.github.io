@@ -7,6 +7,7 @@ import { useNav } from "../nav/NavProvider";
 import { BottlePortrait, LineageNode } from "../components/fragrance";
 import { Button, EmptyState, StatusChip } from "../components/primitives";
 import { RelationDetailScreen } from "./RelationDetailScreen";
+import { CabinetEntryDetailScreen } from "./CabinetEntryDetailScreen";
 import "./FragranceDetailScreen.css";
 
 // A minimal Detail screen — real fields only, nothing from the full isDetail spec (accord
@@ -49,7 +50,12 @@ export function FragranceDetailScreen({ id }: { id: string }) {
 
         <div className="cc-fdetail__cabinet-row">
           {cabinetEntry ? (
-            <StatusChip tone="cabinet">{cabinetEntry.status}</StatusChip>
+            <StatusChip
+              tone="cabinet"
+              onClick={() => push("Bottle Detail", () => <CabinetEntryDetailScreen fragranceId={fragrance.id} />)}
+            >
+              {cabinetEntry.status}
+            </StatusChip>
           ) : (
             <Button size="sm" onClick={() => addEntry(defaultEntry(fragrance.id))}>
               Add to Cabinet

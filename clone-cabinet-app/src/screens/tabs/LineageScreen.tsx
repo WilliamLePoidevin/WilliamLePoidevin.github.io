@@ -4,7 +4,7 @@ import { useLineageVotes } from "../../data/LineageVotesProvider";
 import { useNav } from "../../nav/NavProvider";
 import { getLineageEdges, searchLineageEdges, type LineageEdge } from "../../data/lineageEdges";
 import { BottlePortrait, ConfidenceBadge } from "../../components/fragrance";
-import { SkeletonLoader } from "../../components/primitives";
+import { Icon, SkeletonLoader } from "../../components/primitives";
 import { RelationDetailScreen } from "../RelationDetailScreen";
 import "./LineageScreen.css";
 
@@ -63,14 +63,21 @@ export function LineageScreen() {
   return (
     <div className="cc-lineage">
       <p className="cc-micro cc-lineage__count">{edges.length.toLocaleString()} traced pairings</p>
-      <input
-        className="cc-lineage__search"
-        type="search"
-        placeholder="Search a dupe or an original"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        aria-label="Search lineage"
-      />
+      <div className="cc-lineage__search-row">
+        <input
+          className="cc-lineage__search"
+          type="search"
+          placeholder="Search a dupe or an original"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          aria-label="Search lineage"
+        />
+        {query ? (
+          <button type="button" className="cc-lineage__search-clear" onClick={() => setQuery("")} aria-label="Clear search">
+            <Icon name="close" size={16} tone="idle" />
+          </button>
+        ) : null}
+      </div>
       <div className="cc-lineage__list">
         {results.map((edge) => (
           <EdgeRow key={edge.key} edge={edge} onOpen={() => openEdge(edge)} />

@@ -54,6 +54,21 @@ export function CabinetScreen() {
     return list;
   }, [entries, dataset]);
 
+  // Real, owner-only totals — never shown outside this screen, per the "sharing a cabinet
+  // never shares values" non-negotiable. Value is omitted entirely (not shown as $0) when no
+  // entry has one, rather than fabricating a total from nothing.
+  const stats = useMemo(() => {
+    let totalValue = 0;
+    let hasAnyValue = false;
+    for (const { entry } of rows) {
+      if (entry.value != null) {
+        totalValue += entry.value;
+        hasAnyValue = true;
+      }
+    }
+    return { count: rows.length, totalValue: hasAnyValue ? totalValue : null };
+  }, [rows]);
+
   const openAdd = () => push("Add to Cabinet", () => <AddToCabinetScreen />);
   const openEntry = (fragranceId: string) =>
     push("Bottle Detail", () => <CabinetEntryDetailScreen fragranceId={fragranceId} />);
@@ -81,6 +96,15 @@ export function CabinetScreen() {
 
   return (
     <div className="cc-cabinet">
+      <div className="cc-cabinet__summary">
+        <span className="cc-micro">
+          {stats.count} {stats.count === 1 ? "bottle" : "bottles"}
+        </span>
+        {stats.totalValue != null ? (
+          <span className="cc-archive-code cc-cabinet__summary-value">${stats.totalValue.toLocaleString()} · private</span>
+        ) : null}
+      </div>
+
       <div className="cc-cabinet__sort">
         {editing ? (
           <StatusChip selected tone="cabinet">

@@ -3,7 +3,7 @@ import { useDataset } from "../../data/DatasetProvider";
 import { getFeatured, getTopHouses, searchFragrances } from "../../data/selectors";
 import { useNav } from "../../nav/NavProvider";
 import { FragranceCard } from "../../components/fragrance";
-import { SkeletonLoader } from "../../components/primitives";
+import { Icon, SkeletonLoader } from "../../components/primitives";
 import { FragranceDetailScreen } from "../FragranceDetailScreen";
 import { HouseScreen } from "../HouseScreen";
 import type { Fragrance, House } from "../../data/types";
@@ -68,14 +68,21 @@ export function DiscoverScreen() {
 
       <section className="cc-discover__section">
         <span className="cc-label">Browse</span>
-        <input
-          className="cc-discover__search"
-          type="search"
-          placeholder="Search a fragrance or house"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          aria-label="Search the index"
-        />
+        <div className="cc-discover__search-row">
+          <input
+            className="cc-discover__search"
+            type="search"
+            placeholder="Search a fragrance or house"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            aria-label="Search the index"
+          />
+          {query ? (
+            <button type="button" className="cc-discover__search-clear" onClick={() => setQuery("")} aria-label="Clear search">
+              <Icon name="close" size={16} tone="idle" />
+            </button>
+          ) : null}
+        </div>
         <div className="cc-discover__grid">
           {results.map((f) => (
             <FragranceCard key={f.id} fragrance={f} variant="compact" onClick={() => openFragrance(f)} />

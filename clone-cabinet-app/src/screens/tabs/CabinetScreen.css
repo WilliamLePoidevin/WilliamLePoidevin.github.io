@@ -5,6 +5,17 @@
   padding: var(--page-padding);
 }
 
+.cc-cabinet__summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  color: var(--text-tertiary);
+}
+
+.cc-cabinet__summary-value {
+  color: var(--text-metal);
+}
+
 .cc-cabinet__sort {
   display: flex;
   align-items: center;

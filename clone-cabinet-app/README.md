@@ -176,6 +176,13 @@ Following the bottom-up build order from `docs/design/clone-cabinet/design_hando
       is real here, not other collectors' — genuinely useful once it exists, but thin until
       real usage (or the v1.2 Supabase branch, whose `cc_lineage_votes` table already carries
       real per-vote timestamps) gives it more than one browser's history to draw from.
+      Also **done:** three small UI improvements. `CabinetScreen` now shows a real summary row
+      (bottle count, and private total value only when at least one entry has one — never a
+      fabricated `$0`) above the sort/edit controls. Discover's and Lineage's search inputs
+      both grew a clear (×) button, visible only once there's text to clear. And
+      `FragranceDetailScreen`'s "already in your cabinet" indicator is now the real status chip
+      as a link straight into that bottle's `CabinetEntryDetailScreen`, instead of a
+      non-interactive label you'd have to go find again from the Cabinet tab.
 
 ## Develop
 

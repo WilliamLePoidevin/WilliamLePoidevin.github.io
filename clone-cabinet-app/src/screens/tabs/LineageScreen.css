@@ -13,14 +13,34 @@
   color: var(--text-tertiary);
 }
 
+.cc-lineage__search-row {
+  position: relative;
+}
+
 .cc-lineage__search {
+  width: 100%;
   height: var(--control-height);
-  padding: 0 var(--space-16);
+  padding: 0 var(--space-32) 0 var(--space-16);
   border-radius: var(--radius-pill);
   border: var(--hairline) solid var(--line-divider);
   background: var(--surface-raised);
   color: var(--text-primary);
   font-size: var(--text-body-size);
+}
+
+.cc-lineage__search-clear {
+  position: absolute;
+  right: var(--space-8);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
 .cc-lineage__list {
