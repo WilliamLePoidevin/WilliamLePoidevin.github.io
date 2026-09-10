@@ -41,6 +41,13 @@
   border: none;
   background: none;
   cursor: pointer;
+  transition: transform var(--dur-press-out) var(--ease-standard);
+}
+
+.cc-lineage__search-clear:active {
+  transform: translateY(-50%) scale(var(--press-scale));
+  transition-duration: var(--dur-press-in);
+  transition-timing-function: var(--ease-press-in);
 }
 
 .cc-lineage__list {
@@ -55,6 +62,23 @@
   padding: var(--space-8) 0;
   border-bottom: var(--hairline) solid var(--line-divider);
   text-align: left;
+  transition: transform var(--dur-press-out) var(--ease-standard);
+}
+
+/* Button press, applies to every tappable — README's motion spec. */
+.cc-lineage-row:active {
+  transform: scale(var(--press-scale));
+  transition-duration: var(--dur-press-in);
+  transition-timing-function: var(--ease-press-in);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cc-lineage__search-clear:active {
+    transform: translateY(-50%);
+  }
+  .cc-lineage-row:active {
+    transform: none;
+  }
 }
 
 .cc-lineage-row__thumb {

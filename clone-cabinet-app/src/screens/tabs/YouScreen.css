@@ -23,6 +23,20 @@
   font-weight: var(--text-h3-weight);
   color: var(--text-primary);
   cursor: pointer;
+  transition: transform var(--dur-press-out) var(--ease-standard);
+}
+
+/* Button press, applies to every tappable — README's motion spec. */
+.cc-you__name:active {
+  transform: scale(var(--press-scale));
+  transition-duration: var(--dur-press-in);
+  transition-timing-function: var(--ease-press-in);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cc-you__name:active {
+    transform: none;
+  }
 }
 
 .cc-you__name-edit {

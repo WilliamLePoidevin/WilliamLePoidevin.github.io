@@ -6,10 +6,25 @@
   border: var(--hairline) solid var(--line-divider);
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-card);
+  transition: transform var(--dur-press-out) var(--ease-standard);
 }
 
 .cc-trade-card--interactive {
   cursor: pointer;
+}
+
+/* Button press, applies to every tappable — README's motion spec. Scoped to the interactive
+   modifier only, since a non-interactive card (no onClick) shouldn't feel pressable. */
+.cc-trade-card--interactive:active {
+  transform: scale(var(--press-scale));
+  transition-duration: var(--dur-press-in);
+  transition-timing-function: var(--ease-press-in);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cc-trade-card--interactive:active {
+    transform: none;
+  }
 }
 
 .cc-trade-card__portrait {

@@ -1,3 +1,7 @@
+.cc-entry-detail__portrait {
+  animation: cc-open var(--dur-hero-open) var(--ease-standard) both;
+}
+
 .cc-entry-detail__pad {
   padding: var(--page-padding);
   display: flex;

@@ -57,9 +57,23 @@
   border: var(--hairline) solid var(--line-divider);
   background: var(--surface-raised);
   cursor: pointer;
+  transition: transform var(--dur-press-out) var(--ease-standard);
 }
 
 .cc-cabinet__reorder button:disabled {
   opacity: 0.35;
   cursor: default;
+}
+
+/* Button press, applies to every tappable — README's motion spec. */
+.cc-cabinet__reorder button:not(:disabled):active {
+  transform: scale(var(--press-scale));
+  transition-duration: var(--dur-press-in);
+  transition-timing-function: var(--ease-press-in);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cc-cabinet__reorder button:not(:disabled):active {
+    transform: none;
+  }
 }

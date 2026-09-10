@@ -10,11 +10,25 @@
   border: 1px dashed var(--line-strong);
   border-radius: var(--radius-chip);
   text-align: center;
-  transition: border-color var(--dur-standard) var(--ease-material);
+  transition: border-color var(--dur-standard) var(--ease-material),
+    transform var(--dur-press-out) var(--ease-standard);
 }
 
 .cc-open-chamber:hover {
   border-color: var(--line-metal);
+}
+
+/* Button press, applies to every tappable — README's motion spec. */
+.cc-open-chamber:active {
+  transform: scale(var(--press-scale));
+  transition-duration: var(--dur-press-in);
+  transition-timing-function: var(--ease-press-in);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cc-open-chamber:active {
+    transform: none;
+  }
 }
 
 .cc-open-chamber__label {

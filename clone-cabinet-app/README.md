@@ -183,6 +183,20 @@ Following the bottom-up build order from `docs/design/clone-cabinet/design_hando
       `FragranceDetailScreen`'s "already in your cabinet" indicator is now the real status chip
       as a link straight into that bottle's `CabinetEntryDetailScreen`, instead of a
       non-interactive label you'd have to go find again from the Cabinet tab.
+      Also **done:** a motion-consistency pass against the handoff's own spec, not new
+      invented effects. The README's own motion section says "Button press... Applies to every
+      tappable," but the press-scale treatment (`--press-scale`, `--dur-press-in`,
+      `--ease-press-in`, dropped under `prefers-reduced-motion`) previously lived only on
+      `Button` and `StatusChip`. It's now on every other tappable too — `FragranceCard` (all
+      variants), `LineageNode`, `OpenChamber`, the Lineage list rows, `TradeCard` (only its
+      `--interactive` modifier, so a non-clickable card doesn't feel pressable), Discover's
+      house tiles and search-clear button, Cabinet's reorder buttons, You's display-name
+      button, and Settings' finish tiles. Separately, `cc-open` — the spec's named 440ms
+      detail-screen hero-expansion keyframe — existed in `motion.css` completely unused; it now
+      plays on `FragranceDetailScreen`'s and `CabinetEntryDetailScreen`'s hero portraits, which
+      previously just appeared with no entrance treatment of their own. No new colors, spacing,
+      or motion curves were invented — every value here already existed in the token system,
+      just not applied everywhere the spec says it should be.
 
 ## Develop
 

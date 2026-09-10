@@ -12,6 +12,19 @@
   transition: all var(--dur-standard) var(--ease-material);
 }
 
+/* Button press, applies to every tappable — README's motion spec. */
+.cc-lineage-node:active {
+  transform: scale(var(--press-scale));
+  transition-duration: var(--dur-press-in);
+  transition-timing-function: var(--ease-press-in);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cc-lineage-node:active {
+    transform: none;
+  }
+}
+
 .cc-lineage-node--active {
   background: var(--surface-glass-strong);
   border-color: var(--line-signal);

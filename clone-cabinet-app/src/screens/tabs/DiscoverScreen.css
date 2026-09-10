@@ -59,6 +59,20 @@
   font: inherit;
   color: inherit;
   cursor: pointer;
+  transition: transform var(--dur-press-out) var(--ease-standard);
+}
+
+/* Button press, applies to every tappable — README's motion spec. */
+.cc-discover__house:active {
+  transform: scale(var(--press-scale));
+  transition-duration: var(--dur-press-in);
+  transition-timing-function: var(--ease-press-in);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cc-discover__house:active {
+    transform: none;
+  }
 }
 
 .cc-discover__house-name {
@@ -96,6 +110,19 @@
   border: none;
   background: none;
   cursor: pointer;
+  transition: transform var(--dur-press-out) var(--ease-standard);
+}
+
+.cc-discover__search-clear:active {
+  transform: translateY(-50%) scale(var(--press-scale));
+  transition-duration: var(--dur-press-in);
+  transition-timing-function: var(--ease-press-in);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cc-discover__search-clear:active {
+    transform: translateY(-50%);
+  }
 }
 
 .cc-discover__grid {

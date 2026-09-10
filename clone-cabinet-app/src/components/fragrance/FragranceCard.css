@@ -3,7 +3,21 @@
   border: var(--hairline) solid var(--line-divider);
   border-radius: var(--radius-card);
   overflow: hidden;
-  transition: border-color var(--dur-micro) var(--ease-material);
+  transition: border-color var(--dur-micro) var(--ease-material),
+    transform var(--dur-press-out) var(--ease-standard);
+}
+
+/* Button press, applies to every tappable — README's motion spec. */
+.cc-fragrance-card:active {
+  transform: scale(var(--press-scale));
+  transition-duration: var(--dur-press-in);
+  transition-timing-function: var(--ease-press-in);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cc-fragrance-card:active {
+    transform: none;
+  }
 }
 
 .cc-fragrance-card--editorial,

@@ -1,3 +1,7 @@
+.cc-fdetail__hero {
+  animation: cc-open var(--dur-hero-open) var(--ease-standard) both;
+}
+
 .cc-fdetail__pad {
   padding: var(--page-padding);
   display: flex;

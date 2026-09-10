@@ -38,6 +38,20 @@
   border-radius: var(--radius-chip);
   color: var(--text-secondary);
   cursor: pointer;
+  transition: transform var(--dur-press-out) var(--ease-standard);
+}
+
+/* Button press, applies to every tappable — README's motion spec. */
+.cc-settings__finish:active {
+  transform: scale(var(--press-scale));
+  transition-duration: var(--dur-press-in);
+  transition-timing-function: var(--ease-press-in);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cc-settings__finish:active {
+    transform: none;
+  }
 }
 
 .cc-settings__finish--active {
